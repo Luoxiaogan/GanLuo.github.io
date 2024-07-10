@@ -49,6 +49,11 @@ My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at S
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
+## 🎖 Honors and Awards
+- **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
+- **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). The prize is awarded to the top 150 high school students in chemical throughout China.
+- **First Prize**, 35th Chinese Chemical Olympiad (**Chongqing Division**).
+
 # 📖 Educations
 - *2023.06 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
 - *2022.09 - 2023.06*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
