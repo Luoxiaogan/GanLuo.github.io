@@ -54,9 +54,9 @@ My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at S
 - **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). The prize is awarded to the top 150 high school students in chemical throughout China.
 - **First Prize**, 35th Chinese Chemical Olympiad (**Chongqing Division**).
 
-# 📖 Educations
-- *2023.06 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
-- *2022.09 - 2023.06*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
+## 📖 Educations
+- *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
+- *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 
 ## 🔗 Links
 - 👨‍🏫 **Advisors**: [Kun Yuan](https://kunyuan827.github.io/)
