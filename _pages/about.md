@@ -54,7 +54,6 @@ My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at S
 - *2022.09 - 2023.06*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 
 ## 🔗 Links
-(Alphabetical Order)
 - 👨‍🏫 **Advisors**: [Kun Yuan](https://kunyuan827.github.io/)
 
 <!-- # 💬 Invited Talks
