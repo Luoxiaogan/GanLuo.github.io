@@ -68,4 +68,12 @@ My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at S
 # 💻 Internships
 - *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
 
+
+<style>
+  #mapmyvisitors {
+    width: 600px;
+    height: 400px;
+  }
+</style>
+
 <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=wXhj3VMV8ErHKlAkznvwdiZom4zFOwbyHEAM86vXFIM&cl=ffffff&w=a"></script>
