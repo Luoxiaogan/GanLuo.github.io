@@ -25,6 +25,8 @@ ul {
 
 My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at School of Mathematical Sciences, Peking University. I am currently doing research on distributed machine learning at Prof. [Kun Yuan](https://kunyuan827.github.io/)'s lab. My CV [Gan Luo's CV](CV_GanLuo.pdf). I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16).
 
+For detailed information about research experience, please see my CV [Gan Luo's CV](CV_GanLuo.pdf).
+
 
 ## 🔥 News
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
