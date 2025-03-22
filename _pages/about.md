@@ -23,7 +23,7 @@ ul {
 
 <span class='anchor' id='about-me'></span>
 
-My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at School of Mathematical Sciences, Peking University. I am currently doing research on distributed machine learning at Prof. [Kun Yuan](https://kunyuan827.github.io/)'s lab. My CV [Gan Luo's CV](CV_GanLuo.pdf). I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16). Test
+My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at School of Mathematical Sciences, Peking University. I am currently doing research on distributed machine learning at Prof. [Kun Yuan](https://kunyuan827.github.io/)'s lab. My CV [Gan Luo's CV](CV_GanLuo.pdf). I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16).
 
 
 ## 🔥 News
