@@ -1,3 +1,15 @@
 _site/
 push.sh
 .DS_Store
+CV_GanLuo/cv.aux
+.gitignore
+CV_GanLuo/cv.fdb_latexmk
+.gitignore
+CV_GanLuo/cv.fls
+CV_GanLuo/cv.log
+.gitignore
+CV_GanLuo/cv.synctex.gz
+.gitignore
+CV_GanLuo/cv.out
+.gitignore
+.vscode/settings.json
