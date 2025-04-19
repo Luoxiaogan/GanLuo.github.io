@@ -73,8 +73,8 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 
 <style>
   #mapmyvisitors {
-    width: 600px;
-    height: 400px;
+    width: 300px;
+    height: 200px;
   }
 </style>
 
