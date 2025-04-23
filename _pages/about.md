@@ -70,14 +70,6 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 # 💻 Internships
 - *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
 
-
-<style>
-  #clustrmaps {
-    width: 30px;
-    height: 20px;
-  }
-</style>
-
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=mS3Vsya2HCyKulNI4V41JaYK9Kf4rgnnPyB8MfEOcLs&cl=ffffff&w=a"></script>
-
-<!-- <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=wXhj3VMV8ErHKlAkznvwdiZom4zFOwbyHEAM86vXFIM&cl=ffffff&w=a"></script> -->
+<div class="clustrmaps-container" style="width: 200px; height: 100px; overflow: hidden; margin: 1em 0; border: 1px solid #ccc; /* Optional: border helps visualize the container */">
+  <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=wXhj3VMV8ErHKlAkznvwdiZom4zFOwbyHEAM86vXFIM&cl=ffffff&w=a"></script>
+</div>
