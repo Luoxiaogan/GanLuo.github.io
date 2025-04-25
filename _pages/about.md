@@ -31,6 +31,8 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 ## 🔥 News
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
 
+<!-- ## 📝 Selected Papers -->
+
 <!-- ## 📝 Publications 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
@@ -59,7 +61,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 ## 📖 Educations
 - *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
-
+- *2019.09 - 2022.06*, Senior High School Student, Chongqing Nankai Secondary School
 ## 🔗 Links
 - 👨‍🏫 **Advisors**: [Kun Yuan](https://kunyuan827.github.io/)
 
@@ -70,6 +72,6 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 # 💻 Internships
 - *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
 
-<div class="clustrmaps-container" style="width: 300px; height: 250px; overflow: hidden; margin: 1em 0; border: 1px solid #ccc; /* Optional: border helps visualize the container */">
+<div class="clustrmaps-container" style="width: 300px; height: 180px; overflow: hidden; margin: 1em 0; border: 1px solid #ccc; /* Optional: border helps visualize the container */">
   <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=wXhj3VMV8ErHKlAkznvwdiZom4zFOwbyHEAM86vXFIM&cl=ffffff&w=a"></script>
 </div>
