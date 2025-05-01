@@ -29,6 +29,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 
 
 ## 🔥 News
+- *2025.05*: &nbsp;🎉 Our paper Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks is accepted as a **Spotlight** paper in **ICML 2025**.
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
 
 <!-- ## 📝 Selected Papers -->
