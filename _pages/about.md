@@ -64,7 +64,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 ## 📝 Publications
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_ICML 2025 Spotlight_**\\
+**_ICML 2025 Spotlight_**
 
 ## 🎖 Honors and Awards
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
