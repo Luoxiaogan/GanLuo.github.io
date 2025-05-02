@@ -29,7 +29,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 
 
 ## 🔥 News
-- *2025.05*: &nbsp;🎉 Our paper Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks is accepted as a **Spotlight** paper in **ICML 2025**.
+- *2025.05*: &nbsp;🎉 Our paper, Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks, is accepted as a **Spotlight** paper in **ICML 2025**.
 - *2024.04*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2504.11320) on **LLM Inference Scheduling** is available online.
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
 
@@ -54,6 +54,17 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 # 🎖 Honors and Awards
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
+
+## 📝 PrePrints
+- **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
+($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo\*</u>**, David Simchi-Levi, Xinshang Wang\\
+**_Preprint_**\\
+[[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
+
+## 📝 Publications
+- **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
+Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo\*</u>**, Kun Yuan\\
+**_ICML 2025 Spotlight_**\\
 
 ## 🎖 Honors and Awards
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
