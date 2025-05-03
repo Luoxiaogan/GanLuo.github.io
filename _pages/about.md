@@ -58,13 +58,13 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 ## 📝 PrePrints
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
-**_Preprint_**\\
+**_In submission_**\\
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
 
 ## 📝 Publications
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_ICML 2025 Spotlight_**
+**_ICML 2025_** <span style="color:red">***Spotlight (top 2.6%)***</span>
 
 ## 🎖 Honors and Awards
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
