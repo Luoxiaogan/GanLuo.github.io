@@ -29,7 +29,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 
 
 ## 🔥 News
-- *2025.05*: &nbsp;🎉 Our paper, Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks, is accepted as a **Spotlight** paper in **ICML 2025**.
+- *2025.05*: &nbsp;🎉 Our paper, **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**, is accepted as a <span style="color:red">**Spotlight (top 2.6%)**</span> paper in **ICML 2025**.
 - *2024.04*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2504.11320) on **LLM Inference Scheduling** is available online.
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
 
@@ -58,7 +58,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 ## 📝 PrePrints
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
-**_In submission_**\\
+**_In submission to Operations Research_**\\
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
 
 ## 📝 Publications
