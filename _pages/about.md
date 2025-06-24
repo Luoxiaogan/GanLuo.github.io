@@ -63,7 +63,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**\\
-($\alpha$-$\beta$) Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
+Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_In submission to Siam Optimization_**\\
 [[Arxiv](https://arxiv.org/abs/2506.18075)]
 
