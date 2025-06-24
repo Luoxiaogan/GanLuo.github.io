@@ -29,6 +29,7 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 
 
 ## 🔥 News
+- *2025.06*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2506.18075) on **Distributed Optimization** is available online.
 - *2025.05*: &nbsp;🎉 Our paper, **[Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks](https://arxiv.org/pdf/2506.04600)**, is accepted as a <span style="color:red">**Spotlight (top 2.6%)**</span> paper in **ICML 2025**.
 - *2025.04*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2504.11320) on **LLM Inference Scheduling** is available online.
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
@@ -60,6 +61,11 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
 **_In submission to Operations Research_**\\
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
+
+- **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**\\
+($\alpha$-$\beta$) Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
+**_In submission to Siam Optimization_**\\
+[[Arxiv](https://arxiv.org/abs/2506.18075)]
 
 ## 📝 Publications
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
