@@ -59,12 +59,12 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 ## 📝 PrePrints
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
-**_In submission to Operations Research_**\\
+**_Submitted to to Operations Research_**\\
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**\\
 Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_In submission to Siam Optimization_**\\
+**_Submitted to to Siam Optimization_**\\
 [[Arxiv](https://arxiv.org/abs/2506.18075)]
 
 ## 📝 Publications
