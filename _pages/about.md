@@ -82,8 +82,6 @@ Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 - *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 - *2019.09 - 2022.06*, Senior High School Student, Chongqing Nankai Secondary School
-<!-- ## 🔗 Links
-- 👨‍🏫 **Advisors**: [Kun Yuan](https://kunyuan827.github.io/)(PKU), [David Simchi-Levi](https://slevi1.mit.edu)(MIT) -->
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
