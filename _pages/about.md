@@ -62,7 +62,7 @@ You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
 ## 📝 PrePrints
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
 **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
-Work during internship in Wotao Yin's group at Alibaba\\
+Work during internship in [Wotao Yin](https://wotaoyin.mathopt.com)'s group at Alibaba\\
 As project lead, coming soon to Arxiv
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
