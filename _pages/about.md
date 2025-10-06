@@ -27,10 +27,13 @@ My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at S
 
 For detailed information about research experience, please see my CV [Gan Luo's CV](../CV_GanLuo/cv.pdf).
 
+**I am seeking PhD opportunities starting in Fall 2026**. Please feel free to reach out!
+You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
+
 
 ## 🔥 News
 - *2025.06*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2506.18075) on **Distributed Optimization** is available online.
-- *2025.05*: &nbsp;🎉 Our paper, **[Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks](https://arxiv.org/pdf/2506.04600)**, is accepted as a <span style="color:red">**Spotlight (top 2.6%)**</span> paper in **ICML 2025**.
+- *2025.05*: &nbsp;🎉 Our paper, **[Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks](https://arxiv.org/abs/2506.04600)**, is accepted as a <span style="color:red">**Spotlight (top 2.6%)**</span> paper in **ICML 2025**.
 - *2025.04*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2504.11320) on **LLM Inference Scheduling** is available online.
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
 
@@ -57,21 +60,25 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 ## 📝 PrePrints
+- **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
+**<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
+As project lead, coming soon to Arxiv
+
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
-**_Submitted to to Operations Research_**\\
+**_Submitted to Operations Research_**\\
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**\\
 Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_Submitted to to Siam Optimization_**\\
-[[Arxiv](https://arxiv.org/abs/2506.18075)]
+**_Submitted to Siam Optimization_**\\
+[[Arxiv](https://arxiv.org/abs/2506.18075)], [[Code](https://github.com/pkumelon/PushPull)]
 
 ## 📝 Publications
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_ICML 2025_** <span style="color:red">***Spotlight (top 2.6%)***</span>\\
-[[Arxiv](https://arxiv.org/pdf/2506.04600)]
+[[Arxiv](https://arxiv.org/abs/2506.04600)]
 
 ## 🎖 Honors and Awards
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.

@@ -27,6 +27,20 @@ layout: compress
       </article>
     </div>
 
+    <!-- 页脚部分：包含版权信息和最后更新日期 -->
+    <footer class="page__footer">
+      <div class="page__footer-copyright" style="text-align: center; padding: 30px 0 20px 0; margin-top: 50px; border-top: 1px solid #e7e7e7;">
+        <!-- 版权信息，使用当前年份 -->
+        <p style="margin: 0; color: #666; font-size: 0.9em;">
+          &copy; {{ site.time | date: '%Y' }} Gan Luo
+        </p>
+        <!-- 网站最后更新日期，Jekyll构建时自动更新 -->
+        <p style="margin: 5px 0 0 0; color: #666; font-size: 0.9em;">
+          Site last updated {{ site.time | date: '%Y-%m-%d' }}
+        </p>
+      </div>
+    </footer>
+
     {% include scripts.html %}
 
   </body>
