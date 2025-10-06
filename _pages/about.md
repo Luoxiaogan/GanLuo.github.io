@@ -27,7 +27,7 @@ My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at S
 
 For detailed information about research experience, please see my CV [Gan Luo's CV](../CV_GanLuo/cv.pdf).
 
-**I am seeking PhD opportunities starting in Fall 2026**. Please feel free to reach out!
+**I am seeking PhD opportunities starting in Fall 2026**. Please feel free to reach out!\\
 You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
 
 
