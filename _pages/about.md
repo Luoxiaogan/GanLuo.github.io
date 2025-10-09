@@ -33,7 +33,7 @@ You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
 
 ## 🔥 News
 - *2025.06*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2506.18075) on **Distributed Optimization** is available online.
-- *2025.05*: &nbsp;🎉 Our paper, **[Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks](https://arxiv.org/abs/2506.04600)**, is accepted as a <span style="color:red">**Spotlight (top 2.6%)**</span> paper in **ICML 2025**.
+- *2025.05*: &nbsp;🎉 Our paper, **[Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks](https://arxiv.org/abs/2506.04600)**, is accepted as a **_Spotlight (top 2.6%)_** paper in **ICML 2025**.
 - *2025.04*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2504.11320) on **LLM Inference Scheduling** is available online.
 - *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
 
@@ -78,7 +78,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 ## 📝 Publications
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_ICML 2025_** <span style="color:red">***Spotlight (top 2.6%)***</span>\\
+**_ICML 2025 Spotlight (top 2.6%)_**\\
 [[Arxiv](https://arxiv.org/abs/2506.04600)]
 
 ## 🎖 Honors and Awards
