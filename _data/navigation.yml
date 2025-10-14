@@ -1,11 +1,20 @@
 # main links links
 main:
   - title: "About Me"
-    url: "/#about-me"
+    url: "#about-me"
 
   - title: "News"
-    url: "/#-news"
+    url: "#news"
+
+  - title: "PrePrints"
+    url: "#preprints"
+
+  - title: "Publications"
+    url: "#publications"
+
+  - title: "Honors"
+    url: "#honors"
 
   - title: "Educations"
-    url: "/#-educations"
-  
+    url: "#educations"
+

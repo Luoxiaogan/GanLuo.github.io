@@ -31,6 +31,8 @@ For detailed information about research experience, please see my CV [Gan Luo's 
 You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
 
 
+<span class='anchor' id='news'></span>
+
 ## 🔥 News
 - *2025.06*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2506.18075) on **Distributed Optimization** is available online.
 - *2025.05*: &nbsp;🎉 Our paper, **[Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks](https://arxiv.org/abs/2506.04600)**, is accepted as a **_Spotlight (top 2.6%)_** paper in **ICML 2025**.
@@ -59,6 +61,8 @@ You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
+<span class='anchor' id='preprints'></span>
+
 ## 📝 PrePrints
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
 **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
@@ -75,16 +79,22 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_Submitted to Siam Optimization_**\\
 [[Arxiv](https://arxiv.org/abs/2506.18075)], [[Code](https://github.com/pkumelon/PushPull)]
 
+<span class='anchor' id='publications'></span>
+
 ## 📝 Publications
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_ICML 2025 Spotlight (top 2.6%)_**\\
 [[Arxiv](https://arxiv.org/abs/2506.04600)]
 
+<span class='anchor' id='honors'></span>
+
 ## 🎖 Honors and Awards
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
 - **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). The prize is awarded to the top 150 high school students in chemical throughout China.
 - **First Prize**, 35th Chinese Chemical Olympiad (**Chongqing Division**).
+
+<span class='anchor' id='educations'></span>
 
 ## 📖 Educations
 - *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
