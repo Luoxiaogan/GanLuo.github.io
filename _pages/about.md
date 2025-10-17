@@ -72,6 +72,7 @@ As project lead, coming soon to Arxiv
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
 **_Submitted to Operations Research_**\\
+Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**\\
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**\\
