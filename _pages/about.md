@@ -75,7 +75,7 @@ Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
 **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
-Work during internship in [[Wotao Yin](https://wotaoyin.mathopt.com)]'s group at Alibaba\\
+Work during internship in Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)]'s group at Alibaba\\
 As project lead, coming soon to Arxiv
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
@@ -99,7 +99,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 
 ## 📖 Educations and Experiments
 - *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
-- *2025.07 - 2025.09*, Intern, advised by [[Wotao Yin](https://wotaoyin.mathopt.com)], DAMO Academy, Hangzhou, China
+- *2025.07 - 2025.09*, Intern, woking with [[Zihan Qin](https://scholar.google.com/citations?user=PeSEGr0AAAAJ&hl=zh-CN)], advised by Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)], DAMO Academy, Hangzhou, China
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 - *2019.09 - 2022.06*, Senior High School Student, Chongqing Nankai Secondary School
 
