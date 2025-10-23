@@ -19,12 +19,12 @@ redirect_from:
 ul {
   line-height: 1.5;
 }
-/* .page__content a {
+.page__content a {
   color: rgb(99,142,201);
 }
 .page__content a:hover {
   color: rgb(79,122,181);
-} */
+}
 </style>
 
 <span class='anchor' id='about-me'></span>
