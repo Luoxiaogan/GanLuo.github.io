@@ -19,15 +19,21 @@ redirect_from:
 ul {
   line-height: 1.5;
 }
+.page__content a {
+  color: rgb(99,142,201);
+}
+.page__content a:hover {
+  color: rgb(79,122,181);
+}
 </style>
 
 <span class='anchor' id='about-me'></span>
 
-+ Gan Luo(<font face=STKaiti>罗淦</font>)
-+ Undergraduate Student
-+ [[School of Mathematical Sciences, Peking University](https://www.math.pku.edu.cn)]
-+ Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
-+ [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)]
+- Gan Luo(<font face=STKaiti>罗淦</font>)
+- Undergraduate Student
+- [[School of Mathematical Sciences, Peking University](https://www.math.pku.edu.cn)]
+- Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
+- [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)]
 
 I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://scholar.google.com/citations?user=uPVoCcwAAAAJ&hl=zh-CN)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://scholar.google.com/citations?user=PeSEGr0AAAAJ&hl=zh-CN)].
 <!-- I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16). -->
@@ -102,6 +108,14 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan (*equal contribution)\\
 - *2025.07 - 2025.09*, Intern, woking with [[Zihan Qin](https://scholar.google.com/citations?user=PeSEGr0AAAAJ&hl=zh-CN)], advised by Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)], DAMO Academy, Hangzhou, China
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 - *2019.09 - 2022.06*, Senior High School Student, Chongqing Nankai Secondary School
+
+
+<span class='anchor' id='miscs'></span>
+
+## 😉 Miscs
+- My nickname is little_wolf, which comes from a Chinese pun on my name.
+- <span style="color: rgb(99,142,201)">My favorite color is light blue, rgb(99,142,201)</span>.
+- I sometimes write blogs on [[Zhihu](https://www.zhihu.com/people/zou-chu-dong-xue-16)].
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
