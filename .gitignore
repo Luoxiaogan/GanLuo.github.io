@@ -10,3 +10,6 @@ push.sh
 *.log
 *.synctex.gz
 *.out
+
+SoP_GanLuo/
+.vscode/
