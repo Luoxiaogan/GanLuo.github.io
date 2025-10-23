@@ -23,21 +23,23 @@ ul {
 
 <span class='anchor' id='about-me'></span>
 
-My name is Gan Luo(<font face=STKaiti>罗淦</font>). I am an undergraduate at School of Mathematical Sciences, Peking University. I am currently doing research on distributed machine learning at Prof. [Kun Yuan](https://kunyuan827.github.io/)'s lab. My CV [Gan Luo's CV](../CV_GanLuo/cv.pdf). I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16).
++ Gan Luo(<font face=STKaiti>罗淦</font>)
++ Undergraduate Student
++ [[School of Mathematical Sciences, Peking University](https://www.math.pku.edu.cn)]
++ Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
++ [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)]
 
-For detailed information about research experience, please see my CV [Gan Luo's CV](../CV_GanLuo/cv.pdf).
+I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)].
+<!-- I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16). -->
 
-**I am seeking PhD opportunities starting in Fall 2026**. Please feel free to reach out!\\
-You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
+<span style="background-color: #ffff0082; padding: 2px 4px;">I am seeking PhD opportunities starting in Fall 2026</span>. Please feel free to reach out!
+<!-- <span class='anchor' id='news'></span> -->
 
-
-<span class='anchor' id='news'></span>
-
-## 🔥 News
+<!-- ## 🔥 News
 - *2025.06*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2506.18075) on **Distributed Optimization** is available online.
 - *2025.05*: &nbsp;🎉 Our paper, **[Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks](https://arxiv.org/abs/2506.04600)**, is accepted as a **_Spotlight (top 2.6%)_** paper in **ICML 2025**.
 - *2025.04*: &nbsp;🌟 Our new [preprint](https://arxiv.org/abs/2504.11320) on **LLM Inference Scheduling** is available online.
-- *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200).
+- *2024.05*: &nbsp;🎉 Accepted into the Applied Mathematics Elite Program(15/200). -->
 
 <!-- ## 📝 Selected Papers -->
 
@@ -61,12 +63,19 @@ You can find me at: luogan [at] stu [dot] pku [dot] edu [dot] cn.
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
-<span class='anchor' id='preprints'></span>
+<!-- <span class='anchor' id='preprints'></span> -->
 
-## 📝 PrePrints
+<span class='anchor' id='publications'></span>
+
+## 📝 Publications and PrePrints
+- **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
+Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
+**_ICML 2025 Spotlight (top 2.6%)_**\\
+[[Arxiv](https://arxiv.org/abs/2506.04600)]
+
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
 **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
-Work during internship in [Wotao Yin](https://wotaoyin.mathopt.com)'s group at Alibaba\\
+Work during internship in [[Wotao Yin](https://wotaoyin.mathopt.com)]'s group at Alibaba\\
 As project lead, coming soon to Arxiv
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
@@ -80,25 +89,17 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_Submitted to Siam Optimization_**\\
 [[Arxiv](https://arxiv.org/abs/2506.18075)], [[Code](https://github.com/pkumelon/PushPull)]
 
-<span class='anchor' id='publications'></span>
-
-## 📝 Publications
-- **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
-Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_ICML 2025 Spotlight (top 2.6%)_**\\
-[[Arxiv](https://arxiv.org/abs/2506.04600)]
-
 <span class='anchor' id='honors'></span>
 
-## 🎖 Honors and Awards
+## 🎖 Slected Honors and Awards
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
 - **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). The prize is awarded to the top 150 high school students in chemical throughout China.
-- **First Prize**, 35th Chinese Chemical Olympiad (**Chongqing Division**).
-
+<!-- - **First Prize**, 35th Chinese Chemical Olympiad (**Chongqing Division**). -->
 <span class='anchor' id='educations'></span>
 
-## 📖 Educations
+## 📖 Educations and Experiments
 - *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
+- *2025.07 - 2025.09*, Intern, advised by [[Wotao Yin](https://wotaoyin.mathopt.com)], DAMO Academy, Hangzhou, China
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 - *2019.09 - 2022.06*, Senior High School Student, Chongqing Nankai Secondary School
 

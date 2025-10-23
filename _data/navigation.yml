@@ -3,11 +3,11 @@ main:
   - title: "About Me"
     url: "#about-me"
 
-  - title: "News"
-    url: "#news"
+  # - title: "News"
+  #   url: "#news"
 
-  - title: "PrePrints"
-    url: "#preprints"
+  # - title: "PrePrints"
+  #   url: "#preprints"
 
   - title: "Publications"
     url: "#publications"
