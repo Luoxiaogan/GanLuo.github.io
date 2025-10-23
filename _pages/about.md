@@ -29,7 +29,7 @@ ul {
 + Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
 + [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)]
 
-I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)].
+I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://lavaei.ieor.berkeley.edu/Group.html)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://scholar.google.com/citations?user=PeSEGr0AAAAJ&hl=zh-CN)].
 <!-- I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16). -->
 
 <span style="background-color: #ffff0082; padding: 2px 4px;">I am seeking PhD opportunities starting in Fall 2026</span>. Please feel free to reach out!
@@ -69,23 +69,23 @@ I am currently a senior undergraduate at School of Mathematical Sciences, Peking
 
 ## 📝 Publications and PrePrints
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks**\\
-Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
+Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan (*equal contribution)\\
 **_ICML 2025 Spotlight (top 2.6%)_**\\
 [[Arxiv](https://arxiv.org/abs/2506.04600)]
 
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
-**<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
+**<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin (*equal contribution)\\
 Work during internship in Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)]'s group at Alibaba\\
 As project lead, coming soon to Arxiv
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints**\\
-($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
+Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang ($\alpha$-$\beta$)\\
 **_Submitted to Operations Research_**\\
 Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**\\
 [[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**\\
-Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
+Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan (*equal contribution)\\
 **_Submitted to Siam Optimization_**\\
 [[Arxiv](https://arxiv.org/abs/2506.18075)], [[Code](https://github.com/pkumelon/PushPull)]
 
