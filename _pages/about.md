@@ -35,7 +35,7 @@ ul {
 - Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
 - [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)]
 
-I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://scholar.google.com/citations?user=uPVoCcwAAAAJ&hl=zh-CN)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://scholar.google.com/citations?user=PeSEGr0AAAAJ&hl=zh-CN)].
+I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://scholar.google.com/citations?user=uPVoCcwAAAAJ&hl=en)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)].
 <!-- I actively write blogs on Zhihu:[Gan Luo's Zhihu Homepage](https://www.zhihu.com/people/zou-chu-dong-xue-16). -->
 
 <span style="background-color: #ffff0082; padding: 2px 4px;">I am seeking PhD opportunities starting in Fall 2026</span>. Please feel free to reach out!
@@ -105,7 +105,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan (*equal contribution)\\
 
 ## 📖 Educations and Experiments
 - *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
-- *2025.07 - 2025.09*, Intern, woking with [[Zihan Qin](https://scholar.google.com/citations?user=PeSEGr0AAAAJ&hl=zh-CN)], advised by Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)], DAMO Academy, Hangzhou, China
+- *2025.07 - 2025.09*, Intern, woking with [[Zihan Qin](https://scholar.google.com/citations?user=uPVoCcwAAAAJ&hl=en)], advised by Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)], DAMO Academy, Hangzhou, China
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 - *2019.09 - 2022.06*, Senior High School Student, Chongqing Nankai Secondary School
 
