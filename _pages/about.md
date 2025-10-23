@@ -82,7 +82,7 @@ As project lead, coming soon to Arxiv
 Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang ($\alpha$-$\beta$)\\
 **_Submitted to Operations Research_**\\
 Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**\\
-[[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)]
+[[Arxiv](https://arxiv.org/abs/2504.11320)], [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)], [[Code](https://github.com/Luoxiaogan/vidur_or)], [[vLLM Simulator](https://github.com/Luoxiaogan/vllm_simulation)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**\\
 Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan (*equal contribution)\\
