@@ -27,7 +27,7 @@ ul {
 - Undergraduate Student
 - [[School of Mathematical Sciences, Peking University](https://www.math.pku.edu.cn)]
 - Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
-- [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)]
+- [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)], [[Github](https://github.com/Luoxiaogan)]
 
 I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://scholar.google.com/citations?user=uPVoCcwAAAAJ&hl=en)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)].
 
@@ -36,8 +36,9 @@ I am currently a senior undergraduate at School of Mathematical Sciences, Peking
 <span class='anchor' id='publications'></span>
 
 ## 📝 Publications and PrePrints
+\* denotes equal contribution; ($\alpha$-$\beta$) denotes alphabetical order; expand **TL;DR** for details.
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks** [[Arxiv](https://arxiv.org/abs/2506.04600)]\\
-Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan (*equal contribution)\\
+Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_ICML 2025 Spotlight (top 2.6%)_**
 
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
@@ -51,12 +52,14 @@ As project lead, coming soon to Arxiv
 Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs** [[Arxiv](https://arxiv.org/abs/2506.18075)] [[Code: Linear Speedup](https://github.com/pkumelon/PushPull)]\\
-Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan (*equal contribution)\\
+Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_Submitted to Siam Optimization_**
-  <details style="margin-top: -0.5em; margin-bottom: 0;"><summary><strong>TL;DR</strong>: We propose a novel multi-step descent analysis framework and first to prove that the [<a href="https://arxiv.org/abs/1810.06653">Push-Pull algorithm</a>] achieves linear speedup over arbitrary strongly connected digraphs.</summary><br>This is my first research project, started in December 2023, advised by Prof. Kun Yuan and in collaboration with Liyuan Liang, whom I am fortunate to learn from. At first, we wanted to use the [<a href="https://arxiv.org/abs/2312.04928">traditional approach</a>] to analyze the problem, but after several months we found that this would give a non-vanishing noise term in the upper bound. We further found that this was because we first analyzed the single-term noise and then added them together, which motivated us to try a multi-step descent analysis framework, and finally we succeeded at about October 2024. You can see how we clearly analyze the multi-step term in the [<a href="{{ site.baseurl }}/PDFs/new_proof.pdf">notes</a>].<br><br>For the empirical experiments, we struggled when validating the linear speedup properties of neural networks on the MNIST dataset. The challenge was in correctly measuring the gradient norm: we needed to compute the normalized gradient norm by averaging the gradients from all <i>n</i> nodes (where each node computes its gradient on its own batch) and then normalizing by the square root of the total parameter count, rather than using the average of the individual node gradient norms. See the [<a href="https://github.com/pkumelon/PushPull/blob/main/neural_network_experiments/training/training_track_grad_norm.py#L27">implementation</a>].
-  <!-- <ul>
-  <li>test</li>
-  </ul> -->
+  <details style="margin-top: -0.5em; margin-bottom: 0;"><summary><strong>TL;DR</strong>: We propose a novel multi-step descent analysis framework and first to prove that the [<a href="https://arxiv.org/abs/1810.06653">Push-Pull algorithm</a>] achieves linear speedup over arbitrary strongly connected digraphs.</summary>
+  <!-- <br>This is my first research project, started in December 2023, advised by Prof. Kun Yuan and in collaboration with Liyuan Liang, whom I am fortunate to learn from. At first, we wanted to use the [<a href="https://arxiv.org/abs/2312.04928">traditional approach</a>] to analyze the problem, but after several months we found that this would give a non-vanishing noise term in the upper bound. We further found that this was because we first analyzed the single-term noise and then added them together, which motivated us to try a multi-step descent analysis framework, and finally we succeeded at about October 2024. You can see how we clearly analyze the multi-step term in the [<a href="{{ site.baseurl }}/PDFs/new_proof.pdf">notes</a>].<br><br>For the empirical experiments, we struggled when validating the linear speedup properties of neural networks on the MNIST dataset. The challenge was in correctly measuring the gradient norm: we needed to compute the normalized gradient norm by averaging the gradients from all <i>n</i> nodes (where each node computes its gradient on its own batch) and then normalizing by the square root of the total parameter count, rather than using the average of the individual node gradient norms. See the [<a href="https://github.com/pkumelon/PushPull/blob/main/neural_network_experiments/training/training_track_grad_norm.py#L27">implementation</a>]. -->
+  <ul>
+  <li>This is my first research project, started in December 2023, advised by Prof. Kun Yuan and in collaboration with Liyuan Liang, whom I am fortunate to learn from. At first, we wanted to use the [<a href="https://arxiv.org/abs/2312.04928">traditional approach</a>] to analyze the problem, but after several months we found that this would give a non-vanishing noise term in the upper bound. We further found that this was because we first analyzed the single-term noise and then added them together, which motivated us to try a multi-step descent analysis framework, and finally we succeeded at about October 2024. You can see how we clearly analyze the multi-step term in the [<a href="{{ site.baseurl }}/PDFs/new_proof.pdf">notes</a>].</li>
+  <li>For the empirical experiments, we struggled when validating the linear speedup properties of neural networks on the MNIST dataset. The challenge was in correctly measuring the gradient norm: we needed to compute the normalized gradient norm by averaging the gradients from all <i>n</i> nodes (where each node computes its gradient on its own batch) and then normalizing by the square root of the total parameter count, rather than using the average of the individual node gradient norms. See the [<a href="https://github.com/pkumelon/PushPull/blob/main/neural_network_experiments/training/training_track_grad_norm.py#L27">implementation</a>]</li>
+  </ul>
   </details>
 
 ## 🎖 Slected Honors and Awards
