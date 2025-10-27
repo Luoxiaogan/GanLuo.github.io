@@ -9,6 +9,7 @@
 title                    : "Gan Luo (罗淦)"
 description              : "Undergraduate student in School of Mathematical Sciences, Peking University"
 repository               : "Luoxiaogan/luogan.github.io"
+baseurl                  : "/GanLuo.github.io"
 google_scholar_stats_use_cdn : false
 
 # google analytics
