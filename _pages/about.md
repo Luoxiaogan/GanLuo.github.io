@@ -39,7 +39,7 @@ I am currently a senior undergraduate at School of Mathematical Sciences, Peking
 \* denotes equal contribution; ($\alpha$-$\beta$) denotes alphabetical order; expand **TL;DR** for details.
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks** [[Arxiv](https://arxiv.org/abs/2506.04600)] [[Code](https://github.com/Luoxiaogan/ICML2025_project)]\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_ICML 2025 Spotlight (top 2.6%)_**
+**_ICML 2025 Spotlight (top 2.6%)_** [[Link](https://icml.cc/virtual/2025/poster/45127)]
 
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
 ($\alpha$-$\beta$) **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
@@ -49,7 +49,8 @@ As project lead, coming soon to Arxiv
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints** [[Arxiv](https://arxiv.org/abs/2504.11320)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)] [[Code1](https://github.com/Luoxiaogan/vidur_or)] [[Code2: vLLM Simulator](https://github.com/Luoxiaogan/vllm_simulation)]\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
 **_Submitted to Operations Research_**\\
-Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**
+Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**\\
+**_Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025_** [[Link](https://connect.informs.org/aps/apsawards/awards)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs** [[Arxiv](https://arxiv.org/abs/2506.18075)] [[Code: Linear Speedup](https://github.com/pkumelon/PushPull)]\\
 Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
@@ -81,6 +82,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 <!-- - My nickname is <span style="background-color: #ffff0082; padding: 2px 4px;">little_wolf</span>, which comes from a Chinese pun on my name. -->
 - <span style="color: rgb(99,142,201)">My favorite color is light blue, rgb(99,142,201)</span>.
 - I sometimes write blogs on [[Zhihu](https://www.zhihu.com/people/zou-chu-dong-xue-16)].
+<!-- - (๑•̀ㅂ•́)و✧ -->
 
 <!-- <div class="clustrmaps-container" style="width: 300px; height: 180px; overflow: hidden; margin: 1em 0; border: 1px solid #ccc; /* Optional: border helps visualize the container */">
   <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=wXhj3VMV8ErHKlAkznvwdiZom4zFOwbyHEAM86vXFIM&cl=ffffff&w=a"></script>
