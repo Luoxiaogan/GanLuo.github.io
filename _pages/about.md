@@ -79,7 +79,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 <span class='anchor' id='miscs'></span>
 
 ## 😉 Miscs
-- My nickname is little_wolf, which comes from a Chinese pun on my name.
+- My nickname is little_wolf, which comes from a Chinese pun on my name. <span style="color: white; user-select: text;" title="bonus scene 😋">[little_wolf = little_lang_gou 🐺🐶 = little_lg = little_luo_gan = my_name]</span>
 <!-- - My nickname is <span style="background-color: #ffff0082; padding: 2px 4px;">little_wolf</span>, which comes from a Chinese pun on my name. -->
 - <span style="color: rgb(99,142,201)">My favorite color is light blue, rgb(99,142,201)</span>.
 - I sometimes write blogs on [[Zhihu](https://www.zhihu.com/people/zou-chu-dong-xue-16)].
