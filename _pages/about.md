@@ -64,6 +64,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
   </details>
 
 ## 🎖 Slected Honors and Awards
+- **Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025** [[Link](https://connect.informs.org/aps/apsawards/awards)]
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
 - **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). The prize is awarded to the top 150 high school students in chemical throughout China.
 <span class='anchor' id='educations'></span>
