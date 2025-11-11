@@ -52,7 +52,7 @@ As project lead, coming soon to Arxiv
 Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**\\
 **_Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025_** [[Link](https://connect.informs.org/aps/apsawards/awards)]
 
-- **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs** [[Arxiv](https://arxiv.org/abs/2506.18075)] [[Code: Linear Speedup](https://github.com/pkumelon/PushPull)]\\
+- **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs** [[Arxiv](https://arxiv.org/abs/2506.18075)] [[Code: Linear Speedup](https://github.com/pkumelon/PushPull)] [[Old Notes](../PDFs/new_proof.pdf)]\\
 Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_Submitted to Siam Optimization_**
   <details style="margin-top: -0.5em; margin-bottom: 0;"><summary><strong>TL;DR</strong>: We propose a novel multi-step descent analysis framework and first to prove that the [<a href="https://arxiv.org/abs/1810.06653">Push-Pull algorithm</a>] achieves linear speedup over arbitrary strongly connected digraphs.</summary>
