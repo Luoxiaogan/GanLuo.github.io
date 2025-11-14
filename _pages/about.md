@@ -49,7 +49,7 @@ Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
 ($\alpha$-$\beta$) **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
-Work during internship in Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)]'s group at Alibaba, with my friend [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)] who's constantly brimming with inspiration!\\
+<!-- Work during internship in Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)]'s group at Alibaba, with my friend [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)] who's constantly brimming with inspiration!\\ -->
 As project lead, coming soon to Arxiv.
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints** [[Arxiv](https://arxiv.org/abs/2504.11320)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)] [[Code1](https://github.com/Luoxiaogan/vidur_or)] [[Code2: vLLM Simulator](https://github.com/Luoxiaogan/vllm_simulation)]\\
