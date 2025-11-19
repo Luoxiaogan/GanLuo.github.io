@@ -56,7 +56,7 @@ As project lead, coming soon to Arxiv.
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
 **_Submitted to Operations Research_**\\
 Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**\\
-**_Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025_** [[Link](https://connect.informs.org/aps/apsawards/awards)]
+**_Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025_** [[Link](https://connect.informs.org/aps/apsawards/awards)] [[Award](../images/best_paper_finalist_pdf_20251119.pdf)]
 
 - **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs** [[Arxiv](https://arxiv.org/abs/2506.18075)] [[Code: Linear Speedup](https://github.com/pkumelon/PushPull)] [[Notes](../PDFs/new_proof.pdf)]\\
 Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
@@ -70,7 +70,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
   </details>
 
 ## 🎖 Slected Honors and Awards
-- **Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025**. [[Link](https://connect.informs.org/aps/apsawards/awards)]
+- **Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025**. [[Link](https://connect.informs.org/aps/apsawards/awards)] [[Award](../images/best_paper_finalist_pdf_20251119.pdf)]
 - **Applied Mathematics Elite Program**, the program accepted only 15 people this year.
 - **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). I still find the methodology of total synthesis quite fascinating.
 <!-- - **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). The prize is awarded to the top 150 high school students in chemical throughout China. -->
