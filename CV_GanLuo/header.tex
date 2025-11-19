@@ -126,11 +126,12 @@ Use \Me{} in the content when mention yourself (i.e., author of the publications
 \newcommand*{\webpagesymbol}{{\small\faGlobe}~}
 
 
+% 修改后的head命令 - homepage链接放在右边，删除phone
 \newcommand*{\head}{\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
             \Huge{\Me} & \emailsymbol \href{mailto:\Email}{\color{themecolor!70!white}{\Email}}\\
             \href{\Home}{\color{themecolor!70!white}{\homepagesymbol}}%
             \href{\GoogleScholar}{\color{themecolor!70!white}{\faGraduationCap}}
             \href{\LinkedIn}{\color{themecolor!70!white}{\faLinkedinSquare}}
             \href{\GitHub}{\color{themecolor!70!white}{\faGithub}}
-            & \mobilephonesymbol \phone \\
+            & \homepagesymbol \href{\Home}{\color{themecolor!70!white}{\Home}} \\
       \end{tabular*}}
