@@ -41,10 +41,10 @@ I am currently a senior undergraduate at School of Mathematical Sciences, Peking
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_ICML 2025 Spotlight (top 2.6%)_** [[Link](https://icml.cc/virtual/2025/poster/45127)]
   <details style="margin-top: -0.0em; margin-bottom: 0;"><summary><strong>TL;DR</strong>: We determine the optimal convergence rate for decentralized optimization over a row stochastic network and design an algorithm to achieve it.</summary>
-  <!-- <ul>
-  <li>This is my first research project, started in December 2023, advised by Prof. Kun Yuan and in collaboration with Liyuan Liang, whom I am fortunate to learn from. At first, we wanted to use the [<a href="https://arxiv.org/abs/2312.04928">traditional approach</a>] to analyze the problem, but after several months we found that this would give a non-vanishing noise term in the upper bound. We further found that this was because we first analyzed the single-term noise and then added them together, which motivated us to try a multi-step descent analysis framework, and finally we succeeded at about October 2024. You can see how we clearly analyze the multi-step term in the [<a href="{{ site.baseurl }}/PDFs/new_proof.pdf">notes</a>].</li>
-  <li>For the empirical experiments, we struggled when validating the linear speedup properties of neural networks on the MNIST dataset. The challenge was in correctly measuring the gradient norm: we needed to compute the normalized gradient norm by averaging the gradients from all <i>n</i> nodes (where each node computes its gradient on its own batch) and then normalizing by the square root of the total parameter count, rather than using the average of the individual node gradient norms. See the [<a href="https://github.com/pkumelon/PushPull/blob/main/neural_network_experiments/training/training_track_grad_norm.py#L27">implementation</a>]</li>
-  </ul> -->
+  <ul>
+  <li>Introduced novel metrics to characterize the influence of row-stochastic mixing matrices and established the first convergence lower bound for decentralized optimization over row-stochastic networks. Developed a new analysis framework proving that [<a href="https://arxiv.org/pdf/1803.09169">PULL-DIAG algorithm</a>] achieves linear speedup and proposed a multi-gossip protocol that resolves instability issues and attains the lower bound with near-optimal complexity.</li>
+  <li>Conducted all numerical experiments to validate the theoretical results on convergence lower bound, linear speedup, and near-optimal complexity.</li>
+  </ul>
   </details>
 
 - **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
