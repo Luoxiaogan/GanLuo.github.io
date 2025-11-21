@@ -2,7 +2,7 @@
 
 GPA(x) = 4-3*(100-x)2/1600
 
-+ Overall GPA: 3.52/4.0 (cohort of 220 students; cohort highest GPA: 3.90/4.0)
++ Overall GPA: 3.52/4.0 (cohort of 220 students; cohort highest GPA: 3.89/4.0)
 + Rank: approximately 30% (not sure, see [[ranking_explain_by_PKU](https://luoxiaogan.github.io/GanLuo.github.io/Transcript_and_Enrollment/ranking_explain.pdf)])
 
 <p align="center">
