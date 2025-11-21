@@ -1,4 +1,4 @@
-Transcripts Printing Date: 2025.11.21
+**Transcripts Printing Date: 2025.11.21**
 
 GPA(x) = 4-3*(100-x)2/1600
 
