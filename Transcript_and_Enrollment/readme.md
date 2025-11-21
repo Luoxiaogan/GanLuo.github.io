@@ -11,3 +11,5 @@ GPA(x) = 4-3*(100-x)2/1600
 + https://luoxiaogan.github.io/GanLuo.github.io/Transcript_and_Enrollment/Transcript_English.pdf
 
 + https://luoxiaogan.github.io/GanLuo.github.io/Transcript_and_Enrollment/Certificate_of_Enrollment.pdf
+
++ https://luoxiaogan.github.io/GanLuo.github.io/Transcript_and_Enrollment/ranking_explain.pdf
