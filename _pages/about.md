@@ -54,7 +54,7 @@ As project lead, coming soon to Arxiv.
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints** [[Arxiv](https://arxiv.org/abs/2504.11320)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)] [[Code1](https://github.com/Luoxiaogan/vidur_or)] [[Code2: Simulator](https://github.com/Luoxiaogan/vllm_simulation)] [[Demo](https://or4llm.github.io)]\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
-**_Submitted to Operations Research_**\\
+**_Major Revision at Operations Research_**\\
 Preliminary version accepted at **_NeurIPS 2025 MLxOR Workshop_**\\
 **_Finalist in INFORMS Applied Probability Society Best Student Paper Prize, 2025_** [[Link](https://connect.informs.org/aps/apsawards/awards)] [[Award](../images/best_paper_finalist_pdf_20251119.pdf)]
 
