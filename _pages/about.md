@@ -76,7 +76,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 <!-- - **Silver Medal**, 35th Chinese Chemical Olympiad (**National Final**). The prize is awarded to the top 150 high school students in chemical throughout China. -->
 <span class='anchor' id='educations'></span>
 
-## 📖 Educations and Experiments
+## 📖 Educations and Experience
 - *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
 - *2025.07 - 2025.09*, Intern, DAMO Academy, Hangzhou, China
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
