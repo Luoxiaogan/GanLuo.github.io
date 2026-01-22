@@ -1,350 +1,452 @@
 {
-  "scrape_time": "2025-12-16T14:28:09.460390",
+  "scrape_time": "2026-01-01T19:14:20.419391",
   "url": "https://mapmyvisitors.com/web/1bw90",
-  "total_pageviews": "1790",
-  "today_pageviews": "4",
+  "total_pageviews": "1982",
+  "today_pageviews": "1",
   "raw_data": {
-    "pot3rje4hu4auu8mldvhnq6jp7": [
+    "98abp8ovrcnrv0dopb8ouba8vb": [
       {
-        "date": "December 16, 2025, 6:12 am",
-        "timestamp": 1765865571
+        "date": "December 29, 2025, 11:59 am",
+        "timestamp": 1767009545
       }
     ],
-    "cgap4icut6mgvq4qt9igkaejvn": [
+    "thnep2j33mnsoj8beombikef9e": [
       {
-        "date": "December 16, 2025, 6:00 am",
-        "timestamp": 1765864813
+        "date": "December 29, 2025, 11:56 am",
+        "timestamp": 1767009364
       }
     ],
-    "drmuosmfvrmj8v88pg6h60gcb6": [
+    "p55hg2dlv0ca5rqfll8u35mpv9": [
       {
-        "date": "December 16, 2025, 5:54 am",
-        "timestamp": 1765864461
+        "date": "December 29, 2025, 11:29 am",
+        "timestamp": 1767007782
       }
     ],
-    "anb4276uqsiv9cdsri6cnt7eoj": [
+    "iu6qigg6ndv7gi5i2mrrjqq54j": [
       {
-        "date": "December 16, 2025, 4:02 am",
-        "timestamp": 1765857759
+        "date": "December 29, 2025, 11:29 am",
+        "timestamp": 1767007770
       }
     ],
-    "0pdch8kd5lfifhvehtjr1eo024": [
+    "df3uvs1dev3ievq0ubaop2l970": [
       {
-        "date": "December 15, 2025, 11:12 pm",
-        "timestamp": 1765840379
+        "date": "December 29, 2025, 11:23 am",
+        "timestamp": 1767007417
       }
     ],
-    "p99q2dq4prvgko6v38vc0ns5nr": [
+    "78mb5g9cetn9jsrs6970gfu6nk": [
       {
-        "date": "December 15, 2025, 1:39 pm",
-        "timestamp": 1765805993
+        "date": "December 29, 2025, 10:52 am",
+        "timestamp": 1767005533
       }
     ],
-    "09t7hru98otnl9lqfiirjeobob": [
+    "frg6kopamc6idm2e1pa23f4ju4": [
       {
-        "date": "December 15, 2025, 1:29 pm",
-        "timestamp": 1765805368
+        "date": "December 29, 2025, 9:54 am",
+        "timestamp": 1767002059
       }
     ],
-    "7ne8bddnnuukhv1819ud9h7d87": [
+    "li9882smouhcdkv6f93ob238nk": [
       {
-        "date": "December 15, 2025, 12:19 pm",
-        "timestamp": 1765801149
+        "date": "December 29, 2025, 9:15 am",
+        "timestamp": 1766999731
       }
     ],
-    "9vkkj2v9812lh9tuda0ojvmd1u": [
+    "27salsdtsvod0blgu44lbtn5qr": [
       {
-        "date": "December 15, 2025, 12:15 pm",
-        "timestamp": 1765800918
+        "date": "December 29, 2025, 8:40 am",
+        "timestamp": 1766997606
       }
     ],
-    "53r850i1ctu99qkhhqtde9q88h": [
+    "hmngv929caisre9b28logb4nl5": [
       {
-        "date": "December 15, 2025, 12:12 pm",
-        "timestamp": 1765800748
+        "date": "December 29, 2025, 7:20 am",
+        "timestamp": 1766992853
       }
     ],
-    "vr8j5lf7us837gls5o7tvotcst": [
+    "ba0as0nm7v6eb6qmvfqjh4hq42": [
       {
-        "date": "December 15, 2025, 12:08 pm",
-        "timestamp": 1765800489
+        "date": "December 29, 2025, 7:18 am",
+        "timestamp": 1766992715
       }
     ],
-    "va4doap3904nqtl7g9tmvn0l62": [
+    "4ttk2pacp8n8a4a6p589c86vg6": [
       {
-        "date": "November 20, 2025, 2:31 pm",
-        "timestamp": 1763649084
+        "date": "December 29, 2025, 7:15 am",
+        "timestamp": 1766992533
       }
     ],
-    "7k1uq7j0qkjpret3ftf3ovoig7": [
+    "4018ovs1dh86ud9bgjeec3nb1m": [
       {
-        "date": "November 3, 2025, 7:37 am",
-        "timestamp": 1762155448
+        "date": "December 29, 2025, 6:43 am",
+        "timestamp": 1766990630
       }
     ],
-    "67ou2esre4h9c45gthbc5en689": [
+    "ki1huleskd1i7cgqni446qb9tt": [
       {
-        "date": "October 26, 2025, 9:47 am",
-        "timestamp": 1761472070
+        "date": "December 29, 2025, 6:38 am",
+        "timestamp": 1766990318
       }
     ],
-    "hrdjntt30vv9c8legu8ve0e7up": [
+    "skps86humpnlhgm4vlr7rm47kg": [
       {
-        "date": "October 23, 2025, 6:07 pm",
-        "timestamp": 1761242867
+        "date": "December 29, 2025, 6:38 am",
+        "timestamp": 1766990289
       }
     ],
-    "ed68nda5dk5q4bf9f20ql6sbim": [
+    "on36n3njhrtq966ntf580r1la4": [
       {
-        "date": "October 23, 2025, 12:53 pm",
-        "timestamp": 1761224034
+        "date": "December 29, 2025, 3:19 am",
+        "timestamp": 1766978367
       }
     ],
-    "kig57abs79buno3k607grg34ki": [
+    "d3iq96egrec3m3t3lus8l6ijed": [
       {
-        "date": "October 23, 2025, 12:37 pm",
-        "timestamp": 1761223075
+        "date": "December 29, 2025, 3:10 am",
+        "timestamp": 1766977855
       }
     ],
-    "nln7jhhat63di6ekvahpteosuq": [
+    "4vmj08dcrpao62ovd13ai356cq": [
       {
-        "date": "October 23, 2025, 12:36 pm",
-        "timestamp": 1761223016
+        "date": "December 29, 2025, 1:56 am",
+        "timestamp": 1766973397
       }
     ],
-    "62kreoi9gt1fkn34rquau3qcij": [
+    "eh70k4dr0vs7fq2961fak3h2mt": [
       {
-        "date": "October 23, 2025, 12:34 pm",
-        "timestamp": 1761222875
+        "date": "December 28, 2025, 8:30 am",
+        "timestamp": 1766910634
       }
     ],
-    "gl5vqd1vuubgajv82itdqjk1or": [
+    "qovjk22kq5p1smtbd412ikdst1": [
       {
-        "date": "October 23, 2025, 12:32 pm",
-        "timestamp": 1761222757
+        "date": "December 28, 2025, 6:59 am",
+        "timestamp": 1766905155
       }
     ],
-    "2pfp6i33mu7jv3vhj656p8t972": [
+    "iigebikntc8m5elcba5d321fb1": [
       {
-        "date": "October 23, 2025, 12:30 pm",
-        "timestamp": 1761222648
+        "date": "December 28, 2025, 6:57 am",
+        "timestamp": 1766905062
       }
     ],
-    "knjfv2ma8iaveoe9t20hsjgv1s": [
+    "3gmj96v1r7cq6o1dri4nerupp4": [
       {
-        "date": "October 23, 2025, 12:30 pm",
-        "timestamp": 1761222647
+        "date": "December 27, 2025, 7:13 pm",
+        "timestamp": 1766862789
       }
     ],
-    "o95mrcfot3og8gr53smhf65i3e": [
+    "h9bvreur91su78t28a5omjuf5i": [
       {
-        "date": "October 23, 2025, 12:28 pm",
-        "timestamp": 1761222518
+        "date": "December 27, 2025, 4:22 pm",
+        "timestamp": 1766852522
       }
     ],
-    "kg80eusr51rshjpp1bcuqlm13q": [
+    "7q77fok0fr349bfivc2e1a6eie": [
       {
-        "date": "October 23, 2025, 12:27 pm",
-        "timestamp": 1761222443
+        "date": "December 27, 2025, 7:47 am",
+        "timestamp": 1766821629
       }
     ],
-    "h3fovdicc2r7c3lh2cv8bvgpq9": [
+    "0ccc6aki2b9g898oai5867186e": [
       {
-        "date": "October 23, 2025, 12:26 pm",
-        "timestamp": 1761222375
+        "date": "December 26, 2025, 9:50 pm",
+        "timestamp": 1766785810
       }
     ],
-    "5cdm9vvjt10lsroru546uaiv7m": [
+    "7shusctem6g5tdm58aes2vtl7o": [
       {
-        "date": "October 23, 2025, 12:23 pm",
-        "timestamp": 1761222186
+        "date": "December 26, 2025, 9:47 pm",
+        "timestamp": 1766785635
       }
     ],
-    "js722olg507phk7q7bvmcfrf7u": [
+    "pgiaumv3165632si03jlho1t24": [
       {
-        "date": "October 23, 2025, 12:19 pm",
-        "timestamp": 1761221954
+        "date": "December 26, 2025, 9:26 pm",
+        "timestamp": 1766784386
       }
     ],
-    "nh2oii9e9tt6621vbbg2hg7v8f": [
+    "p2uktb96i4t7fq5g39d52isffn": [
       {
-        "date": "October 23, 2025, 12:19 pm",
-        "timestamp": 1761221953
+        "date": "December 26, 2025, 8:38 pm",
+        "timestamp": 1766781530
       }
     ],
-    "vo3jblvn4rcjp2mj84dc42ob40": [
+    "s1uahiu7p5g7noobdb4bhisia4": [
       {
-        "date": "October 23, 2025, 11:44 am",
-        "timestamp": 1761219889
+        "date": "December 26, 2025, 4:10 pm",
+        "timestamp": 1766765454
       }
     ],
-    "vl282sjute5hmp3mdt6gqf1jk3": [
+    "i767hq6id3ob4udauv5dsinrls": [
       {
-        "date": "October 23, 2025, 11:44 am",
-        "timestamp": 1761219887
+        "date": "December 26, 2025, 12:59 pm",
+        "timestamp": 1766753952
       }
     ],
-    "qlbs7e0reepv8l46spj5aoe6ji": [
+    "0g9psiltjju8c54r9l10im8u42": [
       {
-        "date": "October 23, 2025, 11:44 am",
-        "timestamp": 1761219883
+        "date": "December 26, 2025, 12:44 pm",
+        "timestamp": 1766753047
       }
     ],
-    "rv1fqdbeh9nr5djh6e47d9v8ll": [
+    "5uai5hr81splg7tnphc4ddl0d5": [
       {
-        "date": "October 23, 2025, 11:44 am",
-        "timestamp": 1761219882
+        "date": "December 26, 2025, 12:16 pm",
+        "timestamp": 1766751374
       }
     ],
-    "v49fmjkc39bsroceq8vf30081r": [
+    "9l70s80i3b9jnktb3mpbd8qva4": [
       {
-        "date": "October 23, 2025, 11:41 am",
-        "timestamp": 1761219698
+        "date": "December 26, 2025, 12:14 pm",
+        "timestamp": 1766751284
       }
     ],
-    "pjddcio2uop7g1d37vdtbhdedi": [
+    "ql84nhqg0gfk4fhl3ubnu980bp": [
       {
-        "date": "October 23, 2025, 11:37 am",
-        "timestamp": 1761219451
+        "date": "December 26, 2025, 11:59 am",
+        "timestamp": 1766750376
       }
     ],
-    "g0h3ad8j1ll796a692q24stvno": [
+    "4smrnsqhl28nbkve2gd0f1f9v8": [
       {
-        "date": "October 23, 2025, 11:34 am",
-        "timestamp": 1761219246
+        "date": "December 26, 2025, 10:46 am",
+        "timestamp": 1766745998
       }
     ],
-    "agrob4e721g3e3vkther1st8jb": [
+    "6hft450vtsntlah0ppp7oc5vt4": [
       {
-        "date": "October 23, 2025, 11:31 am",
-        "timestamp": 1761219071
+        "date": "December 26, 2025, 10:46 am",
+        "timestamp": 1766745990
       }
     ],
-    "39ofcrch2gogo1kasorb4nrj9v": [
+    "90fupgserude87d75nalvscugp": [
       {
-        "date": "October 23, 2025, 11:30 am",
-        "timestamp": 1761219020
+        "date": "December 26, 2025, 8:42 am",
+        "timestamp": 1766738571
       }
     ],
-    "55c3arr687mvr4ofm1hfc9ojt0": [
+    "97q2elu7b20ke93e3nqcokclv2": [
       {
-        "date": "October 23, 2025, 11:27 am",
-        "timestamp": 1761218820
+        "date": "December 26, 2025, 8:38 am",
+        "timestamp": 1766738310
       }
     ],
-    "icld2u51tqnimtbo1o0ujb6s7d": [
+    "7rcio4sgd07184sac1epk7097a": [
       {
-        "date": "October 23, 2025, 11:24 am",
-        "timestamp": 1761218649
+        "date": "December 26, 2025, 8:33 am",
+        "timestamp": 1766738028
       }
     ],
-    "dhq3mjiif8mt0q9ktrqqiegi76": [
+    "bofq2gjev8rhntsojbvlglgt47": [
       {
-        "date": "October 23, 2025, 11:23 am",
-        "timestamp": 1761218609
+        "date": "December 26, 2025, 8:25 am",
+        "timestamp": 1766737532
       }
     ],
-    "cg6kj556m89u0pijfu3iaj8lj3": [
+    "2kcqpn5q78738cn83pehfrlmhf": [
       {
-        "date": "October 23, 2025, 11:21 am",
-        "timestamp": 1761218501
+        "date": "December 26, 2025, 6:11 am",
+        "timestamp": 1766729468
       }
     ],
-    "f4d1dvjmukokr5kkdg0bej87a5": [
+    "g3v6lcgc9350cegql57gvf78i9": [
       {
-        "date": "October 23, 2025, 11:20 am",
-        "timestamp": 1761218426
+        "date": "December 26, 2025, 6:10 am",
+        "timestamp": 1766729445
       }
     ],
-    "n070539e35blpg2kj5rkiq3sku": [
+    "jvk052q71gs48kklqh78n8826r": [
       {
-        "date": "October 23, 2025, 11:13 am",
-        "timestamp": 1761217994
+        "date": "December 26, 2025, 4:50 am",
+        "timestamp": 1766724616
       }
     ],
-    "53896o7s67spih742c7824unjj": [
+    "1f3g3ro8olrp53kk938ii7d1bt": [
       {
-        "date": "October 23, 2025, 10:35 am",
-        "timestamp": 1761215717
+        "date": "December 25, 2025, 11:02 pm",
+        "timestamp": 1766703769
       }
     ],
-    "ovjm9beu4q86lctsj2mujoo11c": [
+    "a24ee6hr5ac4sgbkf06ji4lk76": [
       {
-        "date": "October 23, 2025, 9:08 am",
-        "timestamp": 1761210537
+        "date": "December 25, 2025, 10:38 am",
+        "timestamp": 1766659138
       }
     ],
-    "m8fqmrah3194mhcgdfd9gfq3o1": [
+    "t2fpt040fivc9q42shnqs2ap2g": [
       {
-        "date": "October 23, 2025, 9:08 am",
-        "timestamp": 1761210498
+        "date": "December 25, 2025, 10:12 am",
+        "timestamp": 1766657574
       }
     ],
-    "8lhqac9fhtvp70op60r0oem2e5": [
+    "c3urfg0fmaeld47ghnf8jaiisl": [
       {
-        "date": "October 23, 2025, 9:06 am",
-        "timestamp": 1761210364
+        "date": "December 25, 2025, 9:29 am",
+        "timestamp": 1766654988
       }
     ],
-    "1i2kto6nflciihk4vp82q45vp1": [
+    "0rnteqnhfiog06micom0bl99k8": [
       {
-        "date": "October 23, 2025, 9:05 am",
-        "timestamp": 1761210305
+        "date": "December 25, 2025, 9:29 am",
+        "timestamp": 1766654980
       }
     ],
-    "ppj9pt2t4g3b6mnmnni11obpff": [
+    "sqhe8sv6ctgisa8f9lqcmcfdsk": [
       {
-        "date": "October 23, 2025, 9:04 am",
-        "timestamp": 1761210269
+        "date": "December 25, 2025, 9:06 am",
+        "timestamp": 1766653605
       }
     ],
-    "6mm637s1ja3hphedhpt0ch4ju7": [
+    "3jet1jlnqd6eb3lu9irl9nvadk": [
       {
-        "date": "October 23, 2025, 9:00 am",
-        "timestamp": 1761210033
+        "date": "December 25, 2025, 7:13 am",
+        "timestamp": 1766646809
+      }
+    ],
+    "u4h3j7q8e5eb7h2jfd7jfcds2q": [
+      {
+        "date": "January 1, 2026, 11:13 am",
+        "timestamp": 1767266018
+      }
+    ],
+    "mop6atj31cble2e2s7t7mg4qfl": [
+      {
+        "date": "January 1, 2026, 3:59 am",
+        "timestamp": 1767239954
+      }
+    ],
+    "s8u6o0m9qh38kpl5mb1ko0ntte": [
+      {
+        "date": "December 31, 2025, 3:26 am",
+        "timestamp": 1767151591
+      }
+    ],
+    "v0e88u76oum7grs8ndd7fr063u": [
+      {
+        "date": "December 30, 2025, 6:19 pm",
+        "timestamp": 1767118749
+      }
+    ],
+    "69icspu0sqqfqrumt9j7mfpbo1": [
+      {
+        "date": "December 30, 2025, 12:14 pm",
+        "timestamp": 1767096857
+      }
+    ],
+    "aqrsib5dp0fil1jb2hsthav4m0": [
+      {
+        "date": "December 30, 2025, 11:25 am",
+        "timestamp": 1767093900
+      }
+    ],
+    "7qhpucst6s1aejo2hjjriamtk2": [
+      {
+        "date": "December 30, 2025, 11:19 am",
+        "timestamp": 1767093578
+      }
+    ],
+    "j9b6fg7u2j43og1oqgjefdcl01": [
+      {
+        "date": "December 30, 2025, 11:19 am",
+        "timestamp": 1767093554
+      }
+    ],
+    "m7vu7svbk7r6alq8unsmua3c1m": [
+      {
+        "date": "December 30, 2025, 5:52 am",
+        "timestamp": 1767073962
+      }
+    ],
+    "rd2itqvh7cj8du4i5ks53751hd": [
+      {
+        "date": "December 30, 2025, 5:51 am",
+        "timestamp": 1767073916
+      }
+    ],
+    "fpuv3jh8v7vfosl9h3v4pftsti": [
+      {
+        "date": "December 30, 2025, 5:04 am",
+        "timestamp": 1767071089
+      }
+    ],
+    "v9f3keoava8h0b50bmaao1pcvi": [
+      {
+        "date": "December 30, 2025, 3:52 am",
+        "timestamp": 1767066766
+      }
+    ],
+    "r298hpph8qimigd6frgnp64d67": [
+      {
+        "date": "December 30, 2025, 3:05 am",
+        "timestamp": 1767063935
+      }
+    ],
+    "h3t4vh5mo650i3skre56df4u0c": [
+      {
+        "date": "December 30, 2025, 1:55 am",
+        "timestamp": 1767059733
+      }
+    ],
+    "ml0dhtvvvc4fqv9b93vn0bnep8": [
+      {
+        "date": "December 30, 2025, 1:48 am",
+        "timestamp": 1767059289
+      }
+    ],
+    "98visnktetgl9sr4um2mkjkir3": [
+      {
+        "date": "December 29, 2025, 8:27 pm",
+        "timestamp": 1767040038
+      }
+    ],
+    "tl7vcvrjfokgiogtv2vjdg0hd2": [
+      {
+        "date": "December 29, 2025, 12:52 pm",
+        "timestamp": 1767012744
       }
     ]
   },
   "countries": [
     {
-      "country": "NewVisitor from United States                                with1 pageview",
+      "country": "NewVisitor from Santa Clara, United States                                with1 pageview",
       "visits": "Safari",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onDecember 16, 2025, 6:12 am",
+      "country": "TimeVisited onJanuary 1, 2026, 11:13 am",
       "visits": "Time",
-      "unique": "Visited onDecember 16, 2025, 6:12 am"
+      "unique": "Visited onJanuary 1, 2026, 11:13 am"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onDecember 16, 2025, 6:00 am",
-      "visits": "Time",
-      "unique": "Visited onDecember 16, 2025, 6:00 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onDecember 16, 2025, 5:54 am",
-      "visits": "Time",
-      "unique": "Visited onDecember 16, 2025, 5:54 am"
-    },
-    {
-      "country": "NewVisitor from South Korea                                with1 pageview",
-      "visits": "Chrome",
+      "country": "NewVisitor from Chicago, United States                                with1 pageview",
+      "visits": "Edge",
       "unique": "Win10"
     },
     {
-      "country": "TimeVisited onDecember 16, 2025, 4:02 am",
+      "country": "TimeVisited onJanuary 1, 2026, 3:59 am",
       "visits": "Time",
-      "unique": "Visited onDecember 16, 2025, 4:02 am"
+      "unique": "Visited onJanuary 1, 2026, 3:59 am"
+    },
+    {
+      "country": "NewVisitor from Sydney, Australia                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "TimeVisited onDecember 31, 2025, 3:26 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 31, 2025, 3:26 am"
+    },
+    {
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 30, 2025, 6:19 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 30, 2025, 6:19 pm"
     },
     {
       "country": "NewVisitor from United States                                with1 pageview",
@@ -352,69 +454,139 @@
       "unique": "iOS"
     },
     {
-      "country": "TimeVisited onDecember 15, 2025, 11:12 pm",
+      "country": "TimeVisited onDecember 30, 2025, 12:14 pm",
       "visits": "Time",
-      "unique": "Visited onDecember 15, 2025, 11:12 pm"
+      "unique": "Visited onDecember 30, 2025, 12:14 pm"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
+      "country": "NewVisitor from Moscow, Russia                                with1 pageview",
       "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onDecember 15, 2025, 1:39 pm",
+      "country": "TimeVisited onDecember 30, 2025, 11:25 am",
       "visits": "Time",
-      "unique": "Visited onDecember 15, 2025, 1:39 pm"
+      "unique": "Visited onDecember 30, 2025, 11:25 am"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
+      "country": "NewVisitor from Taichung, Taiwan                                with1 pageview",
       "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onDecember 15, 2025, 1:29 pm",
+      "country": "TimeVisited onDecember 30, 2025, 11:19 am",
       "visits": "Time",
-      "unique": "Visited onDecember 15, 2025, 1:29 pm"
+      "unique": "Visited onDecember 30, 2025, 11:19 am"
     },
     {
-      "country": "NewVisitor from Santa Clara, United States                                with1 pageview",
+      "country": "NewVisitor from Taichung, Taiwan                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "TimeVisited onDecember 30, 2025, 11:19 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 30, 2025, 11:19 am"
+    },
+    {
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 30, 2025, 5:52 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 30, 2025, 5:52 am"
+    },
+    {
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 30, 2025, 5:51 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 30, 2025, 5:51 am"
+    },
+    {
+      "country": "NewVisitor from South Korea                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 30, 2025, 5:04 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 30, 2025, 5:04 am"
+    },
+    {
+      "country": "NewVisitor from Stirling, United Kingdom                                with1 pageview",
       "visits": "Safari",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onDecember 15, 2025, 12:19 pm",
+      "country": "TimeVisited onDecember 30, 2025, 3:52 am",
       "visits": "Time",
-      "unique": "Visited onDecember 15, 2025, 12:19 pm"
+      "unique": "Visited onDecember 30, 2025, 3:52 am"
     },
     {
-      "country": "NewVisitor from Santa Clara, United States                                with1 pageview",
+      "country": "NewVisitor from Stirling, United Kingdom                                with1 pageview",
       "visits": "Safari",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onDecember 15, 2025, 12:15 pm",
+      "country": "TimeVisited onDecember 30, 2025, 3:05 am",
       "visits": "Time",
-      "unique": "Visited onDecember 15, 2025, 12:15 pm"
+      "unique": "Visited onDecember 30, 2025, 3:05 am"
     },
     {
-      "country": "NewVisitor from Santa Clara, United States                                with1 pageview",
+      "country": "NewVisitor from Stirling, United Kingdom                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "TimeVisited onDecember 30, 2025, 1:55 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 30, 2025, 1:55 am"
+    },
+    {
+      "country": "NewVisitor from Mountain View, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 30, 2025, 1:48 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 30, 2025, 1:48 am"
+    },
+    {
+      "country": "NewVisitor from Norway                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 8:27 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 8:27 pm"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Android"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 12:52 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 12:52 pm"
+    },
+    {
+      "country": "NewVisitor from Stirling, United Kingdom                                with1 pageview",
       "visits": "Safari",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onDecember 15, 2025, 12:12 pm",
+      "country": "TimeVisited onDecember 29, 2025, 11:59 am",
       "visits": "Time",
-      "unique": "Visited onDecember 15, 2025, 12:12 pm"
-    },
-    {
-      "country": "NewVisitor from Santa Clara, United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onDecember 15, 2025, 12:08 pm",
-      "visits": "Time",
-      "unique": "Visited onDecember 15, 2025, 12:08 pm"
+      "unique": "Visited onDecember 29, 2025, 11:59 am"
     },
     {
       "country": "NewVisitor from United States                                with1 pageview",
@@ -422,209 +594,179 @@
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onNovember 20, 2025, 2:31 pm",
+      "country": "TimeVisited onDecember 29, 2025, 11:56 am",
       "visits": "Time",
-      "unique": "Visited onNovember 20, 2025, 2:31 pm"
+      "unique": "Visited onDecember 29, 2025, 11:56 am"
+    },
+    {
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 11:29 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 11:29 am"
+    },
+    {
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 11:29 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 11:29 am"
+    },
+    {
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 11:23 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 11:23 am"
+    },
+    {
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 10:52 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 10:52 am"
+    },
+    {
+      "country": "NewVisitor from Palo Alto, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 9:54 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 9:54 am"
     },
     {
       "country": "NewVisitor from China                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onNovember 3, 2025, 7:37 am",
-      "visits": "Time",
-      "unique": "Visited onNovember 3, 2025, 7:37 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 26, 2025, 9:47 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 26, 2025, 9:47 am"
-    },
-    {
-      "country": "NewVisitor from New York, United States                                with1 pageview",
       "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 6:07 pm",
+      "country": "TimeVisited onDecember 29, 2025, 9:15 am",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 6:07 pm"
+      "unique": "Visited onDecember 29, 2025, 9:15 am"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
+      "country": "NewVisitor from Stanford, United States                                with1 pageview",
       "visits": "Safari",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 8:40 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 8:40 am"
+    },
+    {
+      "country": "NewVisitor from Singapore                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 12:53 pm",
+      "country": "TimeVisited onDecember 29, 2025, 7:20 am",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:53 pm"
+      "unique": "Visited onDecember 29, 2025, 7:20 am"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
+      "country": "NewVisitor from Blackwood, United Kingdom                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 12:37 pm",
+      "country": "TimeVisited onDecember 29, 2025, 7:18 am",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:37 pm"
+      "unique": "Visited onDecember 29, 2025, 7:18 am"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
+      "country": "NewVisitor from Blackwood, United Kingdom                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 12:36 pm",
+      "country": "TimeVisited onDecember 29, 2025, 7:15 am",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:36 pm"
+      "unique": "Visited onDecember 29, 2025, 7:15 am"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
+      "country": "NewVisitor from Stanford, United States                                with1 pageview",
       "visits": "Safari",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 6:43 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 6:43 am"
+    },
+    {
+      "country": "NewVisitor from Stanford, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 6:38 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 6:38 am"
+    },
+    {
+      "country": "NewVisitor from Stanford, United States                                with1 pageview",
+      "visits": "Safari",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 6:38 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 6:38 am"
+    },
+    {
+      "country": "NewVisitor from China                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 12:34 pm",
+      "country": "TimeVisited onDecember 29, 2025, 3:19 am",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:34 pm"
+      "unique": "Visited onDecember 29, 2025, 3:19 am"
     },
     {
       "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 3:10 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 3:10 am"
+    },
+    {
+      "country": "NewVisitor from Pasadena, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 29, 2025, 1:56 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 29, 2025, 1:56 am"
+    },
+    {
+      "country": "NewVisitor from Central, Hong Kong                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 12:32 pm",
+      "country": "TimeVisited onDecember 28, 2025, 8:30 am",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:32 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:30 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:30 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:30 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:30 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:28 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:28 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:27 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:27 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:26 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:26 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:23 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:23 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:19 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:19 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 12:19 pm",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 12:19 pm"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Android WebView",
-      "unique": "Android"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:44 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:44 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Android WebView",
-      "unique": "Android"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:44 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:44 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Android WebView",
-      "unique": "Android"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:44 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:44 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Android WebView",
-      "unique": "Android"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:44 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:44 am"
+      "unique": "Visited onDecember 28, 2025, 8:30 am"
     },
     {
       "country": "NewVisitor from United States                                with1 pageview",
@@ -632,184 +774,144 @@
       "unique": "Win10"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 11:41 am",
+      "country": "TimeVisited onDecember 28, 2025, 6:59 am",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:41 am"
+      "unique": "Visited onDecember 28, 2025, 6:59 am"
     },
     {
       "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 28, 2025, 6:57 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 28, 2025, 6:57 am"
+    },
+    {
+      "country": "NewVisitor from Champaign, United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 27, 2025, 7:13 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 27, 2025, 7:13 pm"
+    },
+    {
+      "country": "NewVisitor from Central, Hong Kong                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "TimeVisited onDecember 27, 2025, 4:22 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 27, 2025, 4:22 pm"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "TimeVisited onDecember 27, 2025, 7:47 am",
+      "visits": "Time",
+      "unique": "Visited onDecember 27, 2025, 7:47 am"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "TimeVisited onDecember 26, 2025, 9:50 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 26, 2025, 9:50 pm"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "TimeVisited onDecember 26, 2025, 9:47 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 26, 2025, 9:47 pm"
+    },
+    {
+      "country": "NewVisitor from Cambridge, United States                                with1 pageview",
       "visits": "Safari",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 11:37 am",
+      "country": "TimeVisited onDecember 26, 2025, 9:26 pm",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:37 am"
+      "unique": "Visited onDecember 26, 2025, 9:26 pm"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
+      "country": "NewVisitor from Pearland, United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "TimeVisited onDecember 26, 2025, 8:38 pm",
+      "visits": "Time",
+      "unique": "Visited onDecember 26, 2025, 8:38 pm"
+    },
+    {
+      "country": "NewVisitor from Singapore, Singapore                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 11:34 am",
+      "country": "TimeVisited onDecember 26, 2025, 4:10 pm",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:34 am"
+      "unique": "Visited onDecember 26, 2025, 4:10 pm"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
+      "country": "NewVisitor from Canada                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 11:31 am",
+      "country": "TimeVisited onDecember 26, 2025, 12:59 pm",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:31 am"
+      "unique": "Visited onDecember 26, 2025, 12:59 pm"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
+      "country": "NewVisitor from Canada                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 11:30 am",
+      "country": "TimeVisited onDecember 26, 2025, 12:44 pm",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:30 am"
+      "unique": "Visited onDecember 26, 2025, 12:44 pm"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
+      "country": "NewVisitor from Canada                                with1 pageview",
+      "visits": "Chrome",
       "unique": "MacOSX"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 11:27 am",
+      "country": "TimeVisited onDecember 26, 2025, 12:16 pm",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:27 am"
+      "unique": "Visited onDecember 26, 2025, 12:16 pm"
     },
     {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
+      "country": "NewVisitor from Central, Hong Kong                                with1 pageview",
+      "visits": "Firefox",
+      "unique": "Linux"
     },
     {
-      "country": "TimeVisited onOctober 23, 2025, 11:24 am",
+      "country": "TimeVisited onDecember 26, 2025, 12:14 pm",
       "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:24 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:23 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:23 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:21 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:21 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:20 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:20 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 11:13 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 11:13 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 10:35 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 10:35 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 9:08 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 9:08 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 9:08 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 9:08 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 9:06 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 9:06 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 9:05 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 9:05 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 9:04 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 9:04 am"
-    },
-    {
-      "country": "NewVisitor from United States                                with1 pageview",
-      "visits": "Safari",
-      "unique": "MacOSX"
-    },
-    {
-      "country": "TimeVisited onOctober 23, 2025, 9:00 am",
-      "visits": "Time",
-      "unique": "Visited onOctober 23, 2025, 9:00 am"
+      "unique": "Visited onDecember 26, 2025, 12:14 pm"
     },
     {
       "country": "United States",
-      "visits": "77 Locations",
-      "unique": "688"
+      "visits": "2 Locations",
+      "unique": "2"
     },
     {
       "country": "Top  locations",
@@ -820,276 +922,213 @@
       "country": "Top  locations",
       "visits": "Locations",
       "unique": "Visits"
-    },
-    {
-      "country": "",
-      "visits": "North Bergen, NJ",
-      "unique": "159"
     },
     {
       "country": "",
       "visits": "Santa Clara, CA",
-      "unique": "88"
-    },
-    {
-      "country": "",
-      "visits": "Cambridge, MA",
-      "unique": "14"
-    },
-    {
-      "country": "",
-      "visits": "New York, NY",
-      "unique": "12"
-    },
-    {
-      "country": "",
-      "visits": "Stanford, CA",
-      "unique": "11"
-    },
-    {
-      "country": "",
-      "visits": "Madison, WI",
-      "unique": "10"
-    },
-    {
-      "country": "",
-      "visits": "Four Oaks, NC",
-      "unique": "8"
+      "unique": "1"
     },
     {
       "country": "",
       "visits": "Chicago, IL",
-      "unique": "7"
-    },
-    {
-      "country": "",
-      "visits": "Seattle, WA",
-      "unique": "6"
-    },
-    {
-      "country": "",
-      "visits": "Philadelphia, PA",
-      "unique": "5"
-    },
-    {
-      "country": "",
-      "visits": "Brooklyn, NY",
-      "unique": "5"
-    },
-    {
-      "country": "",
-      "visits": "Pasadena, CA",
-      "unique": "5"
-    },
-    {
-      "country": "",
-      "visits": "Ashburn, VA",
-      "unique": "5"
-    },
-    {
-      "country": "",
-      "visits": "Los Angeles, CA",
-      "unique": "4"
-    },
-    {
-      "country": "",
-      "visits": "Fremont, CA",
-      "unique": "4"
-    },
-    {
-      "country": "",
-      "visits": "San Francisco, CA",
-      "unique": "4"
-    },
-    {
-      "country": "",
-      "visits": "Clifton, NJ",
-      "unique": "4"
-    },
-    {
-      "country": "",
-      "visits": "San Jose, CA",
-      "unique": "3"
-    },
-    {
-      "country": "",
-      "visits": "Ithaca, NY",
-      "unique": "3"
-    },
-    {
-      "country": "",
-      "visits": "Houston, TX",
-      "unique": "3"
-    },
-    {
-      "country": "China",
-      "visits": "23 Locations",
-      "unique": "463"
-    },
-    {
-      "country": "Singapore",
-      "visits": "3 Locations",
-      "unique": "71"
-    },
-    {
-      "country": "Romania",
-      "visits": "2 Locations",
-      "unique": "57"
-    },
-    {
-      "country": "Japan",
-      "visits": "5 Locations",
-      "unique": "50"
-    },
-    {
-      "country": "United Kingdom",
-      "visits": "7 Locations",
-      "unique": "41"
-    },
-    {
-      "country": "Hong Kong",
-      "visits": "9 Locations",
-      "unique": "39"
-    },
-    {
-      "country": "Canada",
-      "visits": "8 Locations",
-      "unique": "29"
-    },
-    {
-      "country": "Australia",
-      "visits": "3 Locations",
-      "unique": "22"
-    },
-    {
-      "country": "Germany",
-      "visits": "5 Locations",
-      "unique": "12"
-    },
-    {
-      "country": "Taiwan",
-      "visits": "2 Locations",
-      "unique": "9"
-    },
-    {
-      "country": "Russia",
-      "visits": "5 Locations",
-      "unique": "8"
-    },
-    {
-      "country": "Ukraine",
-      "visits": "2 Locations",
-      "unique": "8"
-    },
-    {
-      "country": "United Arab Emirates",
-      "visits": "2 Locations",
-      "unique": "7"
-    },
-    {
-      "country": "India",
-      "visits": "5 Locations",
-      "unique": "7"
-    },
-    {
-      "country": "South Korea",
-      "visits": "3 Locations",
-      "unique": "6"
-    },
-    {
-      "country": "Iran",
-      "visits": "3 Locations",
-      "unique": "6"
-    },
-    {
-      "country": "Slovenia",
-      "visits": "2 Locations",
-      "unique": "5"
-    },
-    {
-      "country": "France",
-      "visits": "2 Locations",
-      "unique": "5"
-    },
-    {
-      "country": "Estonia",
-      "visits": "",
-      "unique": "3"
-    },
-    {
-      "country": "Lebanon",
-      "visits": "",
-      "unique": "3"
-    },
-    {
-      "country": "Hungary",
-      "visits": "2 Locations",
-      "unique": "2"
-    },
-    {
-      "country": "Belgium",
-      "visits": "2 Locations",
-      "unique": "2"
-    },
-    {
-      "country": "Czechia",
-      "visits": "",
-      "unique": "2"
-    },
-    {
-      "country": "Sweden",
-      "visits": "",
       "unique": "1"
+    }
+  ],
+  "countries_history": [
+    {
+      "country": "NewVisitor from Stirling, United Kingdom                                with1 pageview",
+      "visits": "Safari",
+      "unique": "MacOSX"
     },
     {
-      "country": "South Africa",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Safari",
+      "unique": "MacOSX"
     },
     {
-      "country": "Philippines",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
     },
     {
-      "country": "Palestine",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from Toronto, Canada                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
     },
     {
-      "country": "New Zealand",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from Palo Alto, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "iOS"
     },
     {
-      "country": "Netherlands",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from China                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
     },
     {
-      "country": "Macao",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from Stanford, United States                                with1 pageview",
+      "visits": "Safari",
+      "unique": "iOS"
     },
     {
-      "country": "Italy",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from Singapore                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
     },
     {
-      "country": "Indonesia",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from Blackwood, United Kingdom                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
     },
     {
-      "country": "Cambodia",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from Stanford, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "iOS"
     },
     {
-      "country": "Brazil",
-      "visits": "",
-      "unique": "1"
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "NewVisitor from Pasadena, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "NewVisitor from Central, Hong Kong                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "NewVisitor from Champaign, United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Cambridge, United States                                with1 pageview",
+      "visits": "Safari",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Pearland, United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "NewVisitor from Singapore, Singapore                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Canada                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Central, Hong Kong                                with1 pageview",
+      "visits": "Firefox",
+      "unique": "Linux"
+    },
+    {
+      "country": "NewVisitor from Canada                                with1 pageview",
+      "visits": "Safari",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "NewVisitor from Mariupol, Ukraine                                with1 pageview",
+      "visits": "Safari",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Saint Joseph, United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "NewVisitor from The Bronx, United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "NewVisitor from Rietavas, Republic of Lithuania                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "NewVisitor from South Korea                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Houston, United States                                with1 pageview",
+      "visits": "Mobile Safari UIWebView",
+      "unique": "iOS"
+    },
+    {
+      "country": "NewVisitor from Santa Clara, United States                                with1 pageview",
+      "visits": "Safari",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Chicago, United States                                with1 pageview",
+      "visits": "Edge",
+      "unique": "Win10"
+    },
+    {
+      "country": "NewVisitor from Sydney, Australia                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Moscow, Russia                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Taichung, Taiwan                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from South Korea                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "NewVisitor from Stirling, United Kingdom                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "MacOSX"
+    },
+    {
+      "country": "NewVisitor from Mountain View, United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Win10"
+    },
+    {
+      "country": "NewVisitor from Norway                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "iOS"
+    },
+    {
+      "country": "NewVisitor from United States                                with1 pageview",
+      "visits": "Chrome",
+      "unique": "Android"
     }
   ]
 }

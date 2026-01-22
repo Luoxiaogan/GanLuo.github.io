@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-MapMyVisitors 数据爬虫脚本
+MapMyVisitors 数据爬虫脚本（增量更新版）
 从 https://mapmyvisitors.com/web/1bw90 爬取访问统计数据
+每次运行会合并新旧数据，保留所有历史记录
 """
 
 import requests
@@ -10,9 +11,13 @@ import json
 import re
 from datetime import datetime
 import urllib3
+import os
 
 # 禁用 SSL 警告
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# 数据文件路径
+DATA_FILE = 'visitor_stats.json'
 
 
 def scrape_visitor_stats(url="https://mapmyvisitors.com/web/1bw90"):
@@ -112,7 +117,85 @@ def scrape_visitor_stats(url="https://mapmyvisitors.com/web/1bw90"):
         return None
 
 
-def save_to_json(data, filename='visitor_stats.json'):
+def load_existing_data(filename=DATA_FILE):
+    """加载已有的数据"""
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except:
+            return None
+    return None
+
+
+def merge_data(old_data, new_data):
+    """
+    合并新旧数据，实现增量更新
+    - raw_data: 按 timestamp 去重合并
+    - countries: 使用新数据（最近的访问记录）
+    - 统计数字: 使用新数据
+    """
+    if not old_data:
+        return new_data
+
+    if not new_data:
+        return old_data
+
+    merged = {
+        'scrape_time': new_data.get('scrape_time'),
+        'url': new_data.get('url'),
+        'total_pageviews': new_data.get('total_pageviews'),
+        'today_pageviews': new_data.get('today_pageviews'),
+    }
+
+    # 合并 raw_data（按 timestamp 去重）
+    old_raw = old_data.get('raw_data', {})
+    new_raw = new_data.get('raw_data', {})
+
+    # 使用 timestamp 作为唯一标识
+    all_records = {}
+
+    # 先加入旧数据
+    for key, value in old_raw.items():
+        if isinstance(value, list) and len(value) > 0:
+            ts = value[0].get('timestamp')
+            if ts:
+                all_records[ts] = {key: value}
+
+    # 再加入新数据（会覆盖相同 timestamp 的记录）
+    for key, value in new_raw.items():
+        if isinstance(value, list) and len(value) > 0:
+            ts = value[0].get('timestamp')
+            if ts:
+                all_records[ts] = {key: value}
+
+    # 合并回 raw_data 格式
+    merged_raw = {}
+    for ts, record in all_records.items():
+        merged_raw.update(record)
+
+    merged['raw_data'] = merged_raw
+
+    # countries 使用新数据（包含最近的访问者详情）
+    # 但我们也保留一份历史记录
+    merged['countries'] = new_data.get('countries', [])
+
+    # 保存历史 countries 记录（去重）
+    old_countries_history = old_data.get('countries_history', [])
+    new_countries = new_data.get('countries', [])
+
+    # 提取新的访问记录（只保留有位置信息的）
+    for entry in new_countries:
+        country_text = entry.get('country', '')
+        if 'NewVisitor from' in country_text and entry not in old_countries_history:
+            old_countries_history.append(entry)
+
+    merged['countries_history'] = old_countries_history
+
+    return merged
+
+
+def save_to_json(data, filename=DATA_FILE):
     """保存数据到 JSON 文件"""
     if data:
         with open(filename, 'w', encoding='utf-8') as f:
@@ -151,13 +234,43 @@ def print_stats(data):
 
 
 if __name__ == '__main__':
-    # 爬取数据
-    stats = scrape_visitor_stats()
+    print("=" * 60)
+    print("MapMyVisitors 增量爬虫")
+    print("=" * 60)
 
-    # 打印统计
-    print_stats(stats)
+    # 加载已有数据
+    old_data = load_existing_data()
+    if old_data:
+        old_count = len(old_data.get('raw_data', {}))
+        print(f"已加载历史数据: {old_count} 条记录")
+    else:
+        old_count = 0
+        print("未找到历史数据，将创建新文件")
 
-    # 保存到 JSON 文件
-    if stats:
-        save_to_json(stats, 'visitor_stats.json')
-        print("\n提示: 如果某些数据未能提取，可能需要使用 Selenium 来处理动态加载的内容")
+    # 爬取新数据
+    new_stats = scrape_visitor_stats()
+
+    if new_stats:
+        new_count = len(new_stats.get('raw_data', {}))
+        print(f"本次爬取: {new_count} 条记录")
+
+        # 合并数据
+        merged_stats = merge_data(old_data, new_stats)
+        merged_count = len(merged_stats.get('raw_data', {}))
+
+        # 打印统计
+        print_stats(merged_stats)
+
+        # 保存合并后的数据
+        save_to_json(merged_stats)
+
+        # 显示增量信息
+        added_count = merged_count - old_count
+        print(f"\n{'=' * 60}")
+        print(f"增量更新完成!")
+        print(f"  历史记录: {old_count} 条")
+        print(f"  新增记录: {added_count} 条")
+        print(f"  总计记录: {merged_count} 条")
+        print(f"{'=' * 60}")
+    else:
+        print("爬取失败，保留原有数据")
