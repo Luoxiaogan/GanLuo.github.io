@@ -3,11 +3,11 @@ import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } fro
 export const theme: ThemeUserConfig = {
   // [Basic]
   /** Title for your website. Will be used in metadata and as browser tab title. */
-  title: "Gan Luo's Blog",
+  title: "Little Wolf's Blog",
   /** Will be used in index page & copyright declaration */
-  author: 'Gan Luo',
+  author: 'Little Wolf',
   /** Description metadata for your website. Can be used in page metadata. */
-  description: 'Personal blog of Gan Luo',
+  description: 'Personal blog of Little Wolf',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
   favicon: '/favicon/favicon.ico',
   /** The default social card image for your site which should be a path to an image in the `public/` directory. */
@@ -49,10 +49,7 @@ export const theme: ThemeUserConfig = {
   header: {
     menu: [
       { title: 'Blog', link: '/GanLuo.github.io/blog/blog' },
-      { title: 'Docs', link: '/GanLuo.github.io/blog/docs' },
-      { title: 'Projects', link: '/GanLuo.github.io/blog/projects' },
-      { title: 'Links', link: '/GanLuo.github.io/blog/links' },
-      { title: 'About', link: '/GanLuo.github.io/blog/about' }
+      { title: 'About', link: 'https://luoxiaogan.github.io/GanLuo.github.io/' }
     ]
   },
 
@@ -61,20 +58,7 @@ export const theme: ThemeUserConfig = {
     // Year format
     year: `© ${new Date().getFullYear()}`,
     // year: `© 2019 - ${new Date().getFullYear()}`,
-    links: [
-      // Registration link
-      {
-        title: 'Moe ICP 114514',
-        link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-sm' // Uno/TW CSS class
-      },
-      // Privacy Policy link
-      {
-        title: 'Site Policy',
-        link: '/GanLuo.github.io/blog/terms',
-        pos: 2 // position set to 2 will be appended to copyright line
-      }
-    ],
+    links: [],
     /** Enable displaying a "Astro & Pure theme powered" link in your site's footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
@@ -94,7 +78,7 @@ export const theme: ThemeUserConfig = {
     /** Blog page size for pagination (optional) */
     blogPageSize: 8,
     // Currently support weibo, x, bluesky
-    share: ['weibo', 'x', 'bluesky']
+    share: ['x']
   }
 }
 
