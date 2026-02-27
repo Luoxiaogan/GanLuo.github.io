@@ -11,6 +11,10 @@ push.sh
 *.synctex.gz
 *.out
 
+blog/node_modules/
+blog/dist/
+blog/.astro/
+
 SoP_GanLuo/
 .vscode/
 .shellrc
