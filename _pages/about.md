@@ -89,7 +89,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 - My nickname is little_wolf, which comes from a Chinese pun on my name. <span style="color: white; user-select: text;" title="bonus scene">wolf = lang_gou = luo_gan.</span>
 <!-- - My nickname is <span style="background-color: #ffff0082; padding: 2px 4px;">little_wolf</span>, which comes from a Chinese pun on my name. -->
 - <span style="color: rgb(99,142,201)">My favorite color is light blue, rgb(99,142,201)</span>.
-- I sometimes write blogs on [[Zhihu](https://www.zhihu.com/people/zou-chu-dong-xue-16/posts)].
+- I sometimes write blogs on [[Zhihu](https://www.zhihu.com/people/zou-chu-dong-xue-16/posts)] and [[Personal Blog](https://luoxiaogan.github.io/GanLuo.github.io/blog/)].
 <!-- - (๑•̀ㅂ•́)و✧ -->
 
 <div class="clustrmaps-container" style="display: none;">
