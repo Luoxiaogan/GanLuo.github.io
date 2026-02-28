@@ -103,6 +103,9 @@
       {% if author.vine %}
         <li><a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine" aria-hidden="true"></i> Vine</a></li>
       {% endif %}
+      {% if author.wechat %}
+        <li><a href="{{ author.wechat | relative_url }}"><i class="fab fa-fw fa-weixin" aria-hidden="true"></i> WeChat</a></li>
+      {% endif %}
       {% if author.googlescholar %}
         <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
       {% endif %}
@@ -197,6 +200,9 @@
       {% endif %}
       {% if author.vine %}
         <a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if author.wechat %}
+        <a href="{{ author.wechat | relative_url }}"><i class="fab fa-fw fa-weixin" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i></a>
