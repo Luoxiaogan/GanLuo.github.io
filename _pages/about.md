@@ -38,7 +38,7 @@ Please feel free to reach out!
 ## 📝 Publications and PrePrints
 \* denotes equal contribution; ($\alpha$-$\beta$) denotes alphabetical order; expand **TL;DR** for details.
 - **Service-Induced Congestion in Memory-Constrained LLM Serving** [[Arxiv](https://arxiv.org/abs/2606.15555)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6932098)]\\
-($\alpha$-$\beta$) Ruicheng Ao\*, Jing Dong, **<u>Gan Luo*</u>**, David Simchi-Levi\\
+($\alpha$-$\beta$) Ruicheng Ao\*, Jing Dong, **<u>Gan Luo*</u>**, David Simchi-Levi
 
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks** [[Arxiv](https://arxiv.org/abs/2506.04600)] [[Code](https://github.com/Luoxiaogan/ICML2025_project)]\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
@@ -51,7 +51,7 @@ Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
   </details>
 
 - **From Search to Synthesis: Training LLMs as Zero-Shot Workflow Generators** [[Arxiv](https://arxiv.org/abs/2606.30704)]\\
-**<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
+**<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints** [[Arxiv](https://arxiv.org/abs/2504.11320)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)] [[Code1](https://github.com/Luoxiaogan/vidur_or)] [[Code2: Simulator](https://github.com/Luoxiaogan/vllm_simulation)] [[Demo](https://or4llm.github.io)]\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
