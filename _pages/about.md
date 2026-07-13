@@ -26,7 +26,7 @@ ul {
 - Gan Luo(<font face=STKaiti>罗淦</font>)
 - Undergraduate Student
 - [[School of Mathematical Sciences, Peking University](https://www.math.pku.edu.cn)]
-- Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
+- Email: ganluo [at] stanford [dot] edu, luogan [at] stu [dot] pku [dot] edu [dot] cn
 - [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)], [[Github](https://github.com/Luoxiaogan)], [[Linkedin](https://www.linkedin.com/in/gan-luo-b04075286/)]
 
 I'm an incoming PhD student at Stanford [[MS&E](https://msande.stanford.edu)]. I received my bachelor's degree in Mathmematics from Peking University in 2026, where I was very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with (time order) Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Jing Dong](https://www.columbia.edu/~jd2736/)] at Columbia University, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://openreview.net/profile?id=~Liyuan_Liang1)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)].
