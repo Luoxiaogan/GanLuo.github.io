@@ -78,7 +78,7 @@ Liyuan Liang\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 <span class='anchor' id='educations'></span>
 
 ## 📖 Educations and Experience
-- *2023.04 - 2026.06 (expected)*, Undergraduate Student, School of Mathematical Sciences, Peking University
+- *2023.04 - 2026.06*, Undergraduate Student, School of Mathematical Sciences, Peking University
 - *2025.07 - 2025.09*, Intern, DAMO Academy, Hangzhou, China
 - *2022.09 - 2023.04*, Undergraduate Student, College of Environmental Sciences and Engineering, Peking University
 - *2019.09 - 2022.06*, Senior High School Student, Chongqing Nankai Secondary School
