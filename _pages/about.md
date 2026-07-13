@@ -29,14 +29,17 @@ ul {
 - Email: luogan [at] stu [dot] pku [dot] edu [dot] cn
 - [[Curriculum Vitae](../CV_GanLuo/cv.pdf)], [[Google Scholar](https://scholar.google.com/citations?user=wNnV8vsAAAAJ&hl=en)], [[Github](https://github.com/Luoxiaogan)], [[Linkedin](https://www.linkedin.com/in/gan-luo-b04075286/)]
 
-I am currently a senior undergraduate at School of Mathematical Sciences, Peking University, where I am very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with (time order) Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Jing Dong](https://www.columbia.edu/~jd2736/)] at Columbia University, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://openreview.net/profile?id=~Liyuan_Liang1)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)].
+I'm an incoming PhD student at Stanford MS&E. I received my bachelor's degree in Mathmematics from Peking University in 2026, where I was very fortunate to be advised by Prof. [[Kun Yuan](https://kunyuan827.github.io/)]. I have the privilege of working with (time order) Prof. [[David Simchi-Levi](https://slevi1.mit.edu)] at MIT, Prof. [[Jing Dong](https://www.columbia.edu/~jd2736/)] at Columbia University, Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)] at the [[Decision Intelligence Lab, DAMO Academy](https://damo.alibaba.com/labs/decision-intelligence)] and Prof. [[Bin Dong](http://faculty.bicmr.pku.edu.cn/~dongbin/)] at PKU. Throughout my research journey, I have been fortunate to learn from and collaborate with [[Liyuan Liang](https://openreview.net/profile?id=~Liyuan_Liang1)], [[Ruicheng Ao](https://www.mit.edu/~aorc/index.html)] and [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)].
 
-<span style="background-color: #ffff0082; padding: 2px 4px;">I am seeking PhD opportunities starting in Fall 2026</span>. Please feel free to reach out!
+Please feel free to reach out!
 
 <span class='anchor' id='publications'></span>
 
 ## 📝 Publications and PrePrints
 \* denotes equal contribution; ($\alpha$-$\beta$) denotes alphabetical order; expand **TL;DR** for details.
+- **Service-Induced Congestion in Memory-Constrained LLM Serving** [[Arxiv](https://arxiv.org/abs/2606.15555)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6932098)]\\
+($\alpha$-$\beta$) Ruicheng Ao\*, Jing Dong, **<u>Gan Luo*</u>**, David Simchi-Levi\\
+
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks** [[Arxiv](https://arxiv.org/abs/2506.04600)] [[Code](https://github.com/Luoxiaogan/ICML2025_project)]\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
 **_ICML 2025 Spotlight (top 2.6%)_** [[Link](https://icml.cc/virtual/2025/poster/45127)]
@@ -47,10 +50,8 @@ Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
   </ul>
   </details>
 
-- **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators**\\
-($\alpha$-$\beta$) **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
-<!-- Work during internship in Prof. [[Wotao Yin](https://wotaoyin.mathopt.com)]'s group at Alibaba, with my friend [[Zihan Qin](https://openreview.net/profile?id=~Zihan_Qin5)] who's constantly brimming with inspiration!\\ -->
-As project lead, coming soon to Arxiv.
+- **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators** [[Arxiv](https://arxiv.org/abs/2606.30704)]\\
+**<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints** [[Arxiv](https://arxiv.org/abs/2504.11320)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)] [[Code1](https://github.com/Luoxiaogan/vidur_or)] [[Code2: Simulator](https://github.com/Luoxiaogan/vllm_simulation)] [[Demo](https://or4llm.github.io)]\\
 ($\alpha$-$\beta$) Ruicheng Ao\*, **<u>Gan Luo*</u>**, David Simchi-Levi, Xinshang Wang\\
