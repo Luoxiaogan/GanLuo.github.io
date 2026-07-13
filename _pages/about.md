@@ -50,7 +50,7 @@ Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
   </ul>
   </details>
 
-- **MetaFlow: A Meta Approach of Training LLMs into Generalizable Workflow Generators** [[Arxiv](https://arxiv.org/abs/2606.30704)]\\
+- **From Search to Synthesis: Training LLMs as Zero-Shot Workflow Generators** [[Arxiv](https://arxiv.org/abs/2606.30704)]\\
 **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin\\
 
 - **Optimizing LLM Inference: Fluid-Guided Online Scheduling with Memory Constraints** [[Arxiv](https://arxiv.org/abs/2504.11320)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5195463)] [[Code1](https://github.com/Luoxiaogan/vidur_or)] [[Code2: Simulator](https://github.com/Luoxiaogan/vllm_simulation)] [[Demo](https://or4llm.github.io)]\\
