@@ -38,7 +38,9 @@ Please feel free to reach out!
 ## 📝 Publications and PrePrints
 \* denotes equal contribution; ($\alpha$-$\beta$) denotes alphabetical order; expand **TL;DR** for details.
 - **Service-Induced Congestion in Memory-Constrained LLM Serving** [[Arxiv](https://arxiv.org/abs/2606.15555)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6932098)]\\
-($\alpha$-$\beta$) Ruicheng Ao\*, Jing Dong, **<u>Gan Luo*</u>**, David Simchi-Levi
+($\alpha$-$\beta$) Ruicheng Ao\*, Jing Dong, **<u>Gan Luo*</u>**, David Simchi-Levi\\
+**_Under review at Operations Research_**\\
+**_Finalist in INFORMS Service Science Section Best Student Paper Award, 2026_**
 
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks** [[Arxiv](https://arxiv.org/abs/2506.04600)] [[Code](https://github.com/Luoxiaogan/ICML2025_project)]\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
