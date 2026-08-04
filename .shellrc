@@ -1,0 +1,41 @@
+#!/bin/bash
+# Project-specific shell commands for this repository
+
+# Clash proxy settings
+clash() {
+    export https_proxy=http://127.0.0.1:7890
+    export http_proxy=http://127.0.0.1:7890
+    export all_proxy=socks5://127.0.0.1:7890
+    echo "✓ Clash proxy enabled"
+}
+
+# Jekyll local server
+show() {
+    bundle exec jekyll serve --host 127.0.0.1 --port 4000 &
+}
+
+# Jekyll with Clash proxy
+show-proxy() {
+    export https_proxy=http://127.0.0.1:7890
+    export http_proxy=http://127.0.0.1:7890
+    export all_proxy=socks5://127.0.0.1:7890
+    bundle exec jekyll serve --host 127.0.0.1 --port 4000 &
+}
+
+# Astro blog local server
+show-blog() {
+    cd blog && bun dev &
+    cd ..
+    echo "✓ Blog dev server starting at http://localhost:4321/GanLuo.github.io/blog/"
+}
+
+# Both Jekyll + Astro blog
+show-all() {
+    bundle exec jekyll serve --host 127.0.0.1 --port 4000 &
+    cd blog && bun dev &
+    cd ..
+    echo "✓ Jekyll at http://127.0.0.1:4000/GanLuo.github.io/"
+    echo "✓ Blog  at http://localhost:4321/GanLuo.github.io/blog/"
+}
+
+echo "📦 Project commands loaded: clash, show, show-proxy, show-blog, show-all"
