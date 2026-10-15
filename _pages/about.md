@@ -38,20 +38,19 @@ Please feel free to reach out!
 ## 📝 Publications and PrePrints
 \* denotes equal contribution; ($\alpha$-$\beta$) denotes alphabetical order; expand **TL;DR** for details.
 - **Service-Induced Congestion in Memory-Constrained LLM Serving** [[Arxiv](https://arxiv.org/abs/2606.15555)] [[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6932098)]\\
-($\alpha$-$\beta$) Ruicheng Ao\*, Jing Dong, **<u>Gan Luo*</u>**, David Simchi-Levi
-<!-- **_Under review at Operations Research_**\\
-**_Finalist in INFORMS Service Science Section Best Student Paper Award, 2026_** -->
+($\alpha$-$\beta$) Ruicheng Ao\*, Jing Dong, **<u>Gan Luo*</u>**, David Simchi-Levi\\
+**_Under review at Operations Research_**\\
+**_Finalist in INFORMS Service Science Section Best Student Paper Award, 2026_**
 
 - **Achieving Linear Speedup and Optimal Complexity for Decentralized Optimization over Row-stochastic Networks** [[Arxiv](https://arxiv.org/abs/2506.04600)] [[Code](https://github.com/Luoxiaogan/ICML2025_project)]\\
 Liyuan Liang\*, Xinyi Chen\*, **<u>Gan Luo*</u>**, Kun Yuan\\
-**_ICML 2025 Spotlight (top 2.6%)_**
- <!-- [[Link](https://icml.cc/virtual/2025/poster/45127)] -->
-  <!-- <details style="margin-top: -0.0em; margin-bottom: 0;"><summary><strong>TL;DR</strong>: We determine the optimal convergence rate for decentralized optimization over a row stochastic network and design an algorithm to achieve it.</summary>
+**_ICML 2025 Spotlight (top 2.6%)_** [[Link](https://icml.cc/virtual/2025/poster/45127)]
+  <details style="margin-top: -0.0em; margin-bottom: 0;"><summary><strong>TL;DR</strong>: We determine the optimal convergence rate for decentralized optimization over a row stochastic network and design an algorithm to achieve it.</summary>
   <ul>
   <li>Introduced novel metrics to characterize the influence of row-stochastic mixing matrices and established the first convergence lower bound for decentralized optimization over row-stochastic networks. Developed a new analysis framework proving that [<a href="https://arxiv.org/pdf/1803.09169">PULL-DIAG algorithm</a>] achieves linear speedup and proposed a multi-gossip protocol that resolves instability issues and attains the lower bound with near-optimal complexity.</li>
   <li>Conducted all numerical experiments to validate the theoretical results on convergence lower bound, linear speedup, and near-optimal complexity.</li>
   </ul>
-  </details> -->
+  </details>
 
 - **From Search to Synthesis: Training LLMs as Zero-Shot Workflow Generators** [[Arxiv](https://arxiv.org/abs/2606.30704)]\\
 **<u>Gan Luo*</u>**, Zihan Qin\*, Bin Dong, Wotao Yin
