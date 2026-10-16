@@ -49,6 +49,7 @@ export const theme: ThemeUserConfig = {
   header: {
     menu: [
       { title: 'Blog', link: '/GanLuo.github.io/blog/blog' },
+      { title: 'Wiki', link: '/GanLuo.github.io/blog/wiki' },
       { title: 'About', link: 'https://luoxiaogan.github.io/GanLuo.github.io/' }
     ]
   },

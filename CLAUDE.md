@@ -8,13 +8,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 核心架构
 
-### Jekyll 网站结构
+这个仓库里实际上是两个完全独立的子站点，分别构建后拼接部署到同一个 GitHub Pages 域名下：
+
+| 子站点 | 目录 | 技术栈 | 线上路径 |
+|---|---|---|---|
+| 主页 | 仓库根目录 | Jekyll (Ruby) + AcadHomepage 主题 | `/GanLuo.github.io/` |
+| 博客（含 wiki） | `blog/` | Astro + astro-theme-pure 主题 | `/GanLuo.github.io/blog/` |
+
+两者源码、依赖、主题完全不共享，`.github/workflows/jekyll.yml` 会分别构建后把 `blog/dist` 拷进 Jekyll 的 `_site/blog`，整体一起部署。本地可以用根目录的 `./build_all.sh`（只构建）或 `./serve_all.sh`（构建 + 起本地服务器并自动打开浏览器，路径和线上一致）一键跑两者。
+
+### Jekyll 网站结构（主页部分）
 - **_pages/about.md**: 主页核心内容文件，包含个人简介、研究成果、教育背景等所有主要信息
 - **_config.yml**: 网站全局配置文件，包含作者信息、Google Scholar ID、网站元数据等
 - **_layouts/**: 页面布局模板
 - **_includes/**: 可复用的页面组件
 - **_sass/**: SCSS 样式文件
 - **assets/**: 静态资源（CSS、JS、图片等）
+
+### Wiki（`blog/src/content/wiki/`、`blog/src/pages/wiki/`）
+个人笔记/知识库，不是独立项目，而是照抄 `astro-theme-pure` 主题自带的 `docs` collection 模式在 `blog/` 里加的一个 `wiki` collection——和博客共用同一套主题、同一个 Astro 项目、同一份 pagefind 搜索索引。（之前评估过做成独立的 Astro + Starlight 项目，样式上手动对齐过 blog，但最终选了这个方案，Starlight 那套已经删掉了。）
+- 内容目录：`blog/src/content/wiki/notes/`，每个 `.md`/`.mdx` 文件一篇笔记，frontmatter 只需要 `title`（必填）、`description`（可选）、`order`（排序，数字越小越靠前）
+- 路由页面：`blog/src/pages/wiki/`（`index.astro` 落地页、`[...id].astro` 详情页、`WikiContents.astro` 侧边栏目录组件），结构照抄自 `blog/src/pages/docs/`
+- **侧边栏分类不是自动生成的**：新增笔记如果用了新的顶层目录（现在只有 `notes`），要去 `WikiContents.astro` 里的 `wikiCategories` 对象手动加一行映射，否则不会出现在侧边栏分类里
+- 线上路径：`/GanLuo.github.io/blog/wiki/`；blog 顶部导航栏（`site.config.ts` 的 `header.menu`）有 "Wiki" 入口
+- 本地开发：`cd blog && bun dev`，构建：`cd blog && bun run build`（和博客是同一个命令，wiki 页面随博客一起构建）
 
 ### 学术内容管理
 - **CV_GanLuo/**: LaTeX 格式的学术简历源文件
@@ -46,6 +63,15 @@ bundle exec jekyll serve
 
 # 构建静态网站
 bundle exec jekyll build
+```
+
+### 一键构建/预览全部子站点
+```bash
+# 只构建，产物合并到 _site/
+./build_all.sh
+
+# 构建 + 本地起服务器预览（路径与线上一致），默认 8000 端口
+./serve_all.sh
 ```
 
 ### LaTeX 简历编译

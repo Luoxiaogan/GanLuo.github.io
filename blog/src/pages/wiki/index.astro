@@ -1,0 +1,30 @@
+---
+import { Button } from 'astro-pure/user'
+import { cn } from 'astro-pure/utils'
+import PageLayout from '@/layouts/BaseLayout.astro'
+import { integ } from '@/site-config'
+
+import WikiContents from './WikiContents.astro'
+
+const meta = {
+  title: 'Wiki',
+  description: 'Personal wiki / knowledge base'
+}
+---
+
+<PageLayout {meta}>
+  <Button title='Back' href='/GanLuo.github.io/blog/' variant='back' />
+  <main class='mt-6 lg:mt-10'>
+    <div id='content-header' class='animate'>
+      <h1 class='mb-6 text-3xl font-medium'>Wiki</h1>
+    </div>
+
+    <div id='content' class={cn('animate mt-8 max-w-none md:min-w-[45ch]', integ.typography.class)}>
+      <p>
+        个人笔记 / 知识库，这是把它做成博客自带 <code>wiki</code> collection 的版本，和独立的
+        <a href='/GanLuo.github.io/wiki/' target='_blank'>Starlight 版 wiki</a> 对比用。
+      </p>
+      <WikiContents title={false} />
+    </div>
+  </main>
+</PageLayout>

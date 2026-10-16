@@ -1,0 +1,100 @@
+---
+import { type CollectionEntry } from 'astro:content'
+
+import { getBlogCollection } from 'astro-pure/server'
+import { cn } from 'astro-pure/utils'
+
+export const prerender = true
+export const partial = true
+
+const wikiCollection = (await getBlogCollection('wiki')) as CollectionEntry<'wiki'>[]
+// Group wiki pages by id first part (notes, etc.)
+const wikiByCate = wikiCollection.reduce((acc: { [key: string]: typeof wikiCollection }, doc) => {
+  const id = doc.id.split('/')[0]
+  if (!acc[id]) acc[id] = [] as typeof wikiCollection
+  acc[id].push(doc)
+  return acc
+}, {})
+
+const wikiCategories: { [key: string]: string } = {
+  notes: 'Notes'
+}
+
+type Props = {
+  title?: boolean
+  class?: string
+}
+
+const { title = true, class: className, ...props } = Astro.props
+---
+
+<wiki-toc class={cn('not-prose', className)} {...props}>
+  {title && <h2 class='text-foreground font-medium'>WIKI</h2>}
+  <ul class='mt-4 flex flex-col gap-y-5'>
+    {
+      Object.entries(wikiCategories).map(([id, title]: [string, string]) => (
+        <li>
+          <h3 class='text-muted-foreground text-xs tracking-widest uppercase'>{title}</h3>
+          <ul class='mt-2 flex flex-col'>
+            {(wikiByCate[id] ?? [])
+              .sort((a, b) => a.data.order - b.data.order)
+              .map((doc) => (
+                <li class='wiki-item flex relative ms-2 px-3 py-1 text-foreground/75 transition-all rounded-2xl'>
+                  <a class='flex-1 hover:text-foreground' href={`/GanLuo.github.io/blog/wiki/${doc.id}`}>
+                    {doc.data.title}
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
+</wiki-toc>
+
+<style>
+  wiki-toc .wiki-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: -0.5rem;
+    width: 2px;
+    background-color: hsl(var(--input) / var(--un-bg-opacity));
+  }
+
+  wiki-toc :global(.wiki-item.wiki-hl) {
+    background-color: hsl(var(--muted) / var(--un-bg-opacity));
+    font-weight: 500;
+    & a {
+      color: hsl(var(--primary) / var(--un-text-opacity));
+    }
+
+    &::before {
+      background-color: hsl(var(--primary) / var(--un-bg-opacity));
+    }
+  }
+</style>
+
+<script>
+  class WikiTOC extends HTMLElement {
+    link: string = ''
+
+    constructor() {
+      super()
+      this.link = window.location.pathname
+    }
+
+    connectedCallback() {
+      const links = this.querySelectorAll('a')
+      links.forEach((link) => {
+        if (link.getAttribute('href') === this.link) {
+          link.parentElement?.classList.add('wiki-hl')
+        }
+      })
+    }
+  }
+
+  customElements.define('wiki-toc', WikiTOC)
+</script>
