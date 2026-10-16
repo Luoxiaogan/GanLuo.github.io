@@ -3,6 +3,7 @@ import { type CollectionEntry, render } from 'astro:content'
 
 import { MediumZoom } from 'astro-pure/advanced'
 import { TOC } from 'astro-pure/components/pages'
+import { FormattedDate } from 'astro-pure/user'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import PageLayout from '@/layouts/ContentLayout.astro'
 
@@ -24,7 +25,7 @@ type Props = {
 
 const { post } = Astro.props
 const { Content, headings } = await render(post)
-const { description, title } = post.data
+const { description, title, updatedDate } = post.data
 ---
 
 <PageLayout meta={{ description, title }} back='/GanLuo.github.io/blog/wiki'>
@@ -43,6 +44,18 @@ const { description, title } = post.data
           <blockquote class='text-sm italic text-muted-foreground'>
             <q>{description}</q>
           </blockquote>
+        )
+      }
+      {
+        updatedDate && (
+          <span>
+            Last updated{' '}
+            <FormattedDate
+              class='font-sans'
+              date={updatedDate}
+              dateTimeOptions={{ year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }}
+            />
+          </span>
         )
       }
     </div>

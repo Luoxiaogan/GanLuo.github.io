@@ -16,7 +16,7 @@ interface Props {
 
 const {
   meta: { articleDate, description = config.description, ogImage, title },
-  highlightColor,
+  highlightColor = '#659EB9',
   ...props
 } = Astro.props
 ---
@@ -32,8 +32,8 @@ const {
       highlightColor && (
         <div
           id='highlight-gradient'
-          class='pointer-events-none absolute start-0 top-0 z-0 h-screen w-full opacity-25'
-          style={`background-image:linear-gradient(${highlightColor},transparent)`}
+          class='pointer-events-none fixed start-0 top-0 z-0 h-screen w-full'
+          style={`background-image:linear-gradient(${highlightColor},transparent);opacity:calc(0.25 * (1 - var(--scroll-progress, 0)))`}
         />
       )
     }
@@ -47,6 +47,26 @@ const {
       </div>
       <Footer />
     </div>
+
+    {/* Fade the highlight gradient from full (page top) to none (page bottom) */}
+    <script>
+      const root = document.documentElement
+      let queued = false
+      const update = () => {
+        queued = false
+        const max = root.scrollHeight - window.innerHeight
+        const progress = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0
+        root.style.setProperty('--scroll-progress', progress.toFixed(4))
+      }
+      const onScroll = () => {
+        if (queued) return
+        queued = true
+        requestAnimationFrame(update)
+      }
+      window.addEventListener('scroll', onScroll, { passive: true })
+      window.addEventListener('resize', onScroll)
+      update()
+    </script>
 
     {/* Set highlight color */}
     <style define:vars={{ highlightColor }}>

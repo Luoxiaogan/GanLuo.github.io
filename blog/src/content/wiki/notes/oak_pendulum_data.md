@@ -2,6 +2,7 @@
 title: Pendulum data on Oak
 description: What the Pendulum mirror on Sherlock/Oak contains, and what it is missing
 order: 2
+updatedDate: 2026-10-16
 ---
 
 A mirror of the [Pendulum Flow archive](https://archive.pendulumflow.com/)'s Polymarket order-book data, stored on Stanford Oak and reachable from Sherlock.
