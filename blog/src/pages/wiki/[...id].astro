@@ -27,7 +27,7 @@ const { Content, headings } = await render(post)
 const { description, title } = post.data
 ---
 
-<PageLayout meta={{ description, title }} back='/wiki'>
+<PageLayout meta={{ description, title }} back='/GanLuo.github.io/blog/wiki'>
   <Fragment slot='sidebar'>
     {!!headings.length && <TOC {headings} />}
     <WikiContents class='wiki-toc block mt-3' />
