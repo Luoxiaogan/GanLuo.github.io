@@ -23,8 +23,6 @@ A mirror of the [Pendulum Flow archive](https://archive.pendulumflow.com/)'s Pol
 └── objects/
 ```
 
-Group access is via `oak_p-ruizhe-share`. Reading parquet on Sherlock needs `module load devel python/3.12.1 py-pyarrow/18.1.0_py312`.
-
 ## What a parquet row is
 
 Every source stores the Polymarket CLOB **market-channel WebSocket** feed as one wide table: one row per message, typed by `event_type`. Columns not relevant to a type are null.
