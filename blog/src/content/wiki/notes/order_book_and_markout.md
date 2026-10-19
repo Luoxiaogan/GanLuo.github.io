@@ -11,6 +11,8 @@ Understanding Order Book, theory and empirical study
 
 ## 1. Order book, spread and zero profit condition
 
+### 1.1 Order book
+
 The book is the list of standing orders to sell (asks) and to buy (bids), ranked by price.
 
 - **Best bid** $b$: highest price a buyer (provider) is waiting to pay. **Best ask** $a$: lowest price a seller (provider) is waiting to accept.
@@ -29,6 +31,8 @@ For the bid side, the provider is willing to buy at $b$, "Someone wants to sell"
 
 Condider a trade in which a taker buys at the ask (the provider sells) $A=\text{ask}$. Among buyers, let $\alpha$ be the share of informed trader among buyers, and let $I=E[V|\text{public}, \text{informed}]$ be what an informed buyer knows the share is worth. From a noise buyer the provider gains from the half spread $A - M$: the noise trader pays $A$ for something worth $M$ in expectation of public knowledge.
 
+### 1.2 Zero profit condition
+
 **[GM 1985]** assume that liquidity providers compete with each other and this competition drives expected profit to zero (**zero profit condition**) (**Bertrand Competition**: If one provider positive expected profits, other providers will quote a tighter spread and win the order flow, so his profit cannot persist.)
 
 $$
@@ -42,7 +46,7 @@ So the spread is what noise traders pay to cover the provider's losses to inform
 **[GM 1985]** prices one quote. **[G 1994]**  puts the same logic into a limit order book.
 
 Many patient traders post limit orders; investors send market orders. A market order hits the book **level by level**. Each level is priced at the expected value *given that the order is big enough to reach it*, and big orders are more likely to be informed.
-- Result: small trades pay a positive spread, large trades pay more per share. Limit orders profit on small trades and lose on large informed ones, about zero on average.
+> Small trades pay a positive spread, large trades pay more per share. Limit orders profit on small trades and lose on large informed ones, about zero on average.
 
 ## 2. Stale quotes and sniping
 
@@ -75,37 +79,33 @@ In **[BCS 2015]**, free entry makes profit zero after speed costs(expected profi
 
 For a market to exist some participants must be willing to lose on average. If everyone were rational and equally informed, nobody would trade (**Milgrom–Stokey no-trade theorem**).
 
-## 4. Price discovery
+## 4. Price discovery, Markout and Price Impact
 
-**Price discovery is how information enters the price.** It is *not* what the markout looks like afterwards; the markout path is a consequence.
+### 4.1 Price Discovery
+
+**Price discovery is how information enters the price.** **Markout** path is a consequence of the price discovery and is the way we mesure it.
 
 | | Glosten–Milgrom | Budish et al. |
-|---|---|---|
+|---|:--|---|
 | Information | held by informed traders, unknown to the provider | public: provider and takers see it at the same time |
 | Enters the price through | informed **trades** and the provider's **Bayesian update** | the provider's **cancel**, slow and costly, so stale quotes get sniped |
 | A trade tells us | something new | nothing new |
 
-In GM you do not know the information; someone trades and you update. In BCS you know it already, but it still has to go through trades and cancels, and that is costly.
+In **[GM 1985]** you (provider) do not know the information; someone (investor) trades and you update. In **[BCS 2015]** you know it already, but it still has to go through trades and cancels, and that is costly.
 
-To study next: **permanent vs transitory price impact**. A permanent impact reflects information. A transitory one reflects inventory or flow pressure that reverses.
+### 4.2 Markout
 
-## 7. Markout: the empirical counterpart of the theory
-
-Theory tells us how to **understand** the market; markout is how we **measure** it. $E[V \mid \text{trade}]$ is easy to write in a paper but not observable, so we need a way to estimate it from data.
-
-For one trade with direction $d$ ($+1$ if the taker buys, $-1$ if sells), price $p$, and mid $M_{t+\Delta}$ a time $\Delta$ later:
-
+For **one trade** with direction $d$ ($+1$ if the taker buys, $-1$ if sells), price $p$, and mid $M_{t+\Delta}$ a time $\Delta$ later, we define the markout of the trader (taker) is:
 $$
-\text{markout}(\Delta) \;=\; d\,\bigl(M_{t+\Delta} - p\bigr) \quad\text{(taker's view)} .
+\text{markout}_{\text{taker}}(\Delta) = d\,\bigl(M_{t+\Delta} - p\bigr) = - \text{markout}_{\text{provider}}(\Delta) .
 $$
+Here $M_t=E[V|\mathcal{I}_{t}]$, $M_{t+\Delta}=E[V|\mathcal{I}_{t+\Delta}]$, since $\mathcal I_t \cup \{\text{trade}\} \subseteq \mathcal I_{t+\Delta}$(the information at time $t+\Delta$ contains the information at time $t$ and this trade), we have that:
+$$
+E[M_{t+\Delta}|\mathcal{I}_t, \text{trade}]=E[E[V|\mathcal{I}_{t+\Delta}]|\mathcal{I}_t, \text{trade}]=E[V|\mathcal{I}_t, \text{trade}]
+$$
+$E[V|\mathcal{I}_{t+\Delta}]$ is random from the view point of $\{\mathcal{I}_t,\text{trade}\}$, but $E[.|\mathcal{I}_t,\text{trade}]$ **averages over the information** that arrives between $t$ and $t+\Delta$ thus integrates out the new information. 
 
-The provider on the other side gets the negative.
-
-### What it estimates
-
-The future mid $M_{t+\Delta}$ is an **unbiased but noisy** estimate of $E[V \mid \text{trade}]$, and the trade price $p$ is known. So one markout is one noisy observation of $E[V \mid \text{trade}] - p$, and you need many observations (law of large numbers) before the average converges.
-
-### Three levels of average
+> The future mid $M_{t+\Delta}$ is an **unbiased but noisy** estimate of $E[V \mid \mathcal{I}_t, \text{trade}]$, and the trade price $p$ is known (the trade price). So **one markout of one trade** is one noisy observation of $E[V \mid\mathcal{I}_t, \text{trade}] - p$, and we need many observations (LLN) before the average converges.
 
 | Object | What it is | Example ($M=50$, ask $=60$) |
 |---|---|---|
@@ -115,29 +115,23 @@ The future mid $M_{t+\Delta}$ is an **unbiased but noisy** estimate of $E[V \mid
 
 Zero profit predicts that only the **last** one is zero. The middle one is what we look for in the data: wallets whose average markout is significantly different from zero.
 
-### The shape of the markout path
+### 4.3 Price Impact
 
-- At $\Delta = 0$ with the pre-trade mid: taker's markout $= -$ half-spread, so the **provider's markout is positive** (the spread she just earned).
-- As time goes by, information enters the price and $M_{t+\Delta}$ moves toward $E[V \mid \text{trade}]$.
-- If the zero-profit model holds, the provider's markout falls to $0$ and the all-taker markout is $0$.
-- If the average ends above or below $0$, providers earn rents or lose money.
-
-### Decomposition
-
+We can decompose the markout into a part that is known at the time of the trade (the half-spread) and a part that is revealed afterwards (the price impact).
 $$
+\begin{aligned}
 \underbrace{d(M_{t+\Delta} - p)}_{\text{taker markout}}
-= \underbrace{d(M_{t+\Delta} - M_t)}_{\text{price impact}}
-- \underbrace{d(p - M_t)}_{\text{half-spread}}
+&= \underbrace{d(M_{t+\Delta} - M_t)}_{\text{price impact}}
+- \underbrace{d(p - M_t)}_{\text{half-spread}}, \\[4pt]
+\underbrace{d(p - M_t)}_{\text{half-spread}}
+&= \underbrace{d(p - M_{t+\Delta})}_{\text{realized spread}}
++ \underbrace{d(M_{t+\Delta} - M_t)}_{\text{price impact}}.
+\end{aligned}
 $$
 
-Equivalently: half-spread $=$ realized spread $+$ price impact, where realized spread $= d(p - M_{t+\Delta})$ is the provider's gain. In GM after a buy the new mid moves to the ask, so price impact $= A - M =$ half-spread and the realized spread goes to $0$.
-
-### Who is the provider?
-
-In the paper's model, whoever posts limit orders is the provider. In data, a wallet that is the **maker side of a large share of trades** (and trades a lot) looks like a market maker, so we can identify providers from trade records even though the book diffs are only L2.
-
-## 8. Measurement (to be written)
-
-- Observables: trade price and direction, mid just before the trade, mid and quotes at later times, and the final payoff $V \in \{0,1\}$ at resolution.
-- Open points: how to define the mid, how to treat multi-level fills, which horizons $\Delta$, how to separate permanent from transitory impact, how to classify wallets.
-- Reference methods are in Ruizhe's three papers (perpetual futures, DEX price discovery, settlement manipulation).
+The price impact contains the information revealed by the trade, $E[V \mid \mathcal I_t, \text{trade}] - M_t$, plus noise from news arriving between $t$ and $t+\Delta$. The noise has mean zero given $\mathcal I_t$ and the trade, so the average price impact over many trades isolates the information content of the trade.
+$$
+M_{t+\Delta} - M_t
+= \underbrace{\bigl(E[V \mid \mathcal I_t, \text{trade}] - M_t\bigr)}_{\text{The information of this trade}}
++ \underbrace{\bigl(M_{t+\Delta} - E[V \mid \mathcal I_t, \text{trade}]\bigr)}_{t\to t+\Delta \text{ new info}}.
+$$
