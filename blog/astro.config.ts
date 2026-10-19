@@ -56,6 +56,8 @@ export default defineConfig({
       ]
     ],
     // https://docs.astro.build/en/guides/syntax-highlighting/
+    // ```mermaid blocks are left unhighlighted; src/components/Mermaid.astro renders them client-side.
+    syntaxHighlight: { type: 'shiki', excludeLangs: ['mermaid'] },
     shikiConfig: {
       themes: {
         light: 'github-light',

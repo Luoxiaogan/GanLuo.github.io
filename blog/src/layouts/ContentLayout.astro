@@ -4,6 +4,9 @@ import type { SiteMeta } from 'astro-pure/types'
 import { Button, Icon } from 'astro-pure/user'
 import { cn } from 'astro-pure/utils'
 import PageLayout from '@/layouts/BaseLayout.astro'
+import Mermaid from '@/components/Mermaid.astro'
+// Wiki and docs pages render math too; BlogPost.astro has the same import.
+import 'katex/dist/katex.min.css'
 import { integ } from '@/site-config'
 
 interface Props {
@@ -49,6 +52,7 @@ const { meta, highlightColor, back = '/', ...props } = Astro.props
       >
         <slot />
       </div>
+      <Mermaid />
     </article>
   </main>
 

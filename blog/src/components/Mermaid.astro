@@ -1,0 +1,142 @@
+---
+// Renders ```mermaid code blocks client-side with the site's own colours and font.
+// Shiki skips the `mermaid` language (astro.config.ts), so each block arrives as
+// <pre><code class="language-mermaid">...</code></pre>. Diagrams re-render when the
+// theme toggles (html.dark) and after Astro page navigation.
+---
+
+<script>
+  import mermaid from 'mermaid'
+
+  const sources = new WeakMap<HTMLElement, string>()
+
+  function cssVar(name: string, fallback: string): string {
+    const raw = getComputedStyle(document.documentElement).getPropertyValue(name).trim()
+    if (!raw) return fallback
+    // shadcn-style tokens are bare HSL triples ("222 47% 11%"); wrap them.
+    return /^[\d.]+\s+[\d.]+%\s+[\d.]+%$/.test(raw) ? `hsl(${raw})` : raw
+  }
+
+  function configure() {
+    const dark = document.documentElement.classList.contains('dark')
+    const fg = cssVar('--foreground', dark ? '#e5e7eb' : '#111827')
+    const bg = cssVar('--background', dark ? '#0b0b10' : '#fcfcfd')
+    const muted = cssVar('--muted', dark ? '#1f2937' : '#f3f4f6')
+    const border = cssVar('--border', dark ? '#374151' : '#d1d5db')
+    const primary = cssVar('--primary', dark ? '#93c5fd' : '#1d4ed8')
+    const font = getComputedStyle(document.body).fontFamily || 'sans-serif'
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'strict',
+      theme: 'base',
+      fontFamily: font,
+      themeVariables: {
+        darkMode: dark,
+        background: bg,
+        fontFamily: font,
+        fontSize: '15px',
+        primaryColor: muted,
+        primaryTextColor: fg,
+        primaryBorderColor: border,
+        secondaryColor: muted,
+        secondaryTextColor: fg,
+        secondaryBorderColor: border,
+        tertiaryColor: bg,
+        tertiaryTextColor: fg,
+        tertiaryBorderColor: border,
+        lineColor: fg,
+        textColor: fg,
+        mainBkg: muted,
+        nodeBorder: border,
+        clusterBkg: bg,
+        clusterBorder: border,
+        titleColor: fg,
+        edgeLabelBackground: bg,
+        actorBkg: muted,
+        actorBorder: border,
+        actorTextColor: fg,
+        signalColor: fg,
+        signalTextColor: fg,
+        noteBkgColor: muted,
+        noteTextColor: fg,
+        noteBorderColor: border,
+        labelBoxBkgColor: muted,
+        labelTextColor: fg,
+        attributeBackgroundColorOdd: bg,
+        attributeBackgroundColorEven: muted,
+        pie1: primary
+      }
+    })
+  }
+
+  function collect(): HTMLElement[] {
+    const found: HTMLElement[] = []
+    document.querySelectorAll<HTMLElement>('pre > code.language-mermaid').forEach((code) => {
+      const pre = code.parentElement as HTMLElement
+      const host = document.createElement('div')
+      host.className = 'mermaid-diagram'
+      sources.set(host, code.textContent ?? '')
+      pre.replaceWith(host)
+      found.push(host)
+    })
+    document.querySelectorAll<HTMLElement>('div.mermaid-diagram').forEach((host) => {
+      if (!found.includes(host)) found.push(host)
+    })
+    return found
+  }
+
+  async function renderAll() {
+    const hosts = collect()
+    if (!hosts.length) return
+    configure()
+    for (const [i, host] of hosts.entries()) {
+      const source = sources.get(host)
+      if (!source) continue
+      try {
+        const { svg, bindFunctions } = await mermaid.render(`mermaid-${Date.now()}-${i}`, source)
+        host.innerHTML = svg
+        bindFunctions?.(host)
+      } catch (error) {
+        host.innerHTML = `<pre class="mermaid-error">${String(error)}</pre>`
+      }
+    }
+  }
+
+  let scheduled: number | undefined
+  function scheduleRender() {
+    if (scheduled !== undefined) window.clearTimeout(scheduled)
+    scheduled = window.setTimeout(() => {
+      scheduled = undefined
+      void renderAll()
+    }, 50)
+  }
+
+  new MutationObserver((mutations) => {
+    if (mutations.some((m) => m.attributeName === 'class')) scheduleRender()
+  }).observe(document.documentElement, { attributes: true })
+
+  document.addEventListener('astro:page-load', scheduleRender)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scheduleRender, { once: true })
+  } else {
+    scheduleRender()
+  }
+</script>
+
+<style is:global>
+  .mermaid-diagram {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    text-align: center;
+  }
+  .mermaid-diagram svg {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .mermaid-error {
+    white-space: pre-wrap;
+    font-size: 0.8em;
+    color: hsl(var(--destructive, 0 84% 60%));
+  }
+</style>
