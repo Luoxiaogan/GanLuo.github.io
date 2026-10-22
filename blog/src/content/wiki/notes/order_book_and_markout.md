@@ -2,7 +2,7 @@
 title: Markout
 description: Theory behind the bid-ask spread, adverse selection, stale-quote sniping and the markout
 order: 3
-updatedDate: 2026-10-17
+updatedDate: 2026-10-21
 ---
 
 Papers: Glosten–Milgrom (1985) **[GM 1985]**, Glosten (1994) **[G 1994]** , Budish–Cramton–Shim (2015) **[BCS 2015]**. Kyle (1985) is background.
@@ -135,3 +135,101 @@ M_{t+\Delta} - M_t
 = \underbrace{\bigl(E[V \mid \mathcal I_t, \text{trade}] - M_t\bigr)}_{\text{The information of this trade}}
 + \underbrace{\bigl(M_{t+\Delta} - E[V \mid \mathcal I_t, \text{trade}]\bigr)}_{t\to t+\Delta \text{ new info}}.
 $$
+
+## 5. Example: taker markout in Polymarket BTC 5-minute markets
+
+### 5.1 Setup
+
+- **Data.** Pendulum mirror on Oak (`pmxt/v2`, order book and trades with millisecond timestamps), Polymarket data-api (wallets) and gamma (market info, resolution).
+- **Sample.** 2026-08-06, 288 five-minute cycles. This is before the switch to 60-second TWAP settlement (2026-08-07), so every cycle settles on the Chainlink closing price.
+- **Markout**, in cents per share, always for the **Up** token:
+$$
+\text{markout}_i(\Delta) = 100 \cdot d_i\,\bigl(M_{t_i+\Delta} - p_i\bigr).
+$$
+  - $d_i = +1$ for a **taker-long** trade (buy Up or sell Down), $d_i = -1$ for a **taker-short** trade (sell Up or buy Down). The price of a Down trade at $q$ is converted to $1-q$.
+  - $M$ is the Up mid-price $(\text{best bid} + \text{best ask})/2$. At $\Delta = 0$ we use the book just before the trade (the trade timestamp minus 180 ms, because trade timestamps in pmxt are about 100–300 ms later than the book). Afterwards we use the last two-sided book at $t+\Delta$. Once the market has settled, $M$ is replaced by the final value $V \in \{0, 1\}$.
+- **Reading the curves.** The horizontal axis is $\Delta$, the seconds *since the trade*, not the time within the cycle. At $\Delta = 0$ the markout equals minus the half-spread, the cost paid at the trade. The maker's markout is the mirror image (the opposite sign), so it is not drawn.
+- **Averaging.** *Equal-weighted* (blue): every trade counts the same. *Volume-weighted* (orange): weights are shares. In the 288-cycle plots the shaded band (equal-weighted) and the thin orange lines (volume-weighted) are 95% confidence intervals clustered by cycle.
+- **Sample filters and limits.** Gross of fees. Trades whose price falls on the wrong side of the reference quote (`wrong_side`, about 2.4%, mostly in the last seconds before the close) and trades with no mid-price are dropped. About 5% of trades are missing from pmxt because of WebSocket drops and are also dropped. Scripts: `scripts/btc5m/` in the research repo.
+
+### 5.2 One cycle: `btc-updown-5m-1786057200`
+
+2026-08-06 23:00–23:05 UTC, **Up won**. The book was very volatile in the last 10 seconds (Up dropped from about 0.95 to about 0.3) without flipping the outcome.
+
+**One trade (Figure 1).** A taker bought 8 Up shares at 0.18, 102.5 s into the window, with a pre-trade mid of 0.175. The markout at $\Delta = 0$ is about $-0.5$¢ (half-spread). The dashed line marks the close of the window; after it the curve is flat at the realized payoff.
+
+**The first 200 trades (Figure 2).** Gray lines are single trades and the blue line is their equal-weighted mean. The trades run from 298 s before the window opened to 122 s into it (negative time means before the open).
+
+| *Figure 1. Markout of one taker-long trade.* | *Figure 2. First 200 taker-long trades, individual curves and their mean.* |
+|:--:|:--:|
+| ![One taker-long trade (btc-updown-5m-1786057200)](./assets/btc5m_markout/single_cycle/1_single_long.png) | ![First 200 taker-long trades, equal-weighted](./assets/btc5m_markout/single_cycle/2_first200_long_ew.png) |
+
+**All trades of the cycle**, long and short, equal-weighted and volume-weighted. Figures 3–6 share the same vertical scale.
+
+| *Figure 3. All taker-long trades (853), equal-weighted.* | *Figure 4. All taker-long trades, volume-weighted.* |
+|:--:|:--:|
+| ![All taker-long trades, equal-weighted](./assets/btc5m_markout/single_cycle/3_all_long_ew.png) | ![All taker-long trades, volume-weighted](./assets/btc5m_markout/single_cycle/4_all_long_vw.png) |
+
+| *Figure 5. All taker-short trades (732), equal-weighted.* | *Figure 6. All taker-short trades, volume-weighted.* |
+|:--:|:--:|
+| ![All taker-short trades, equal-weighted](./assets/btc5m_markout/single_cycle/5_all_short_ew.png) | ![All taker-short trades, volume-weighted](./assets/btc5m_markout/single_cycle/6_all_short_vw.png) |
+
+**What to take from it.** Up rose and won, so the long curves climb to about $+36$¢ (equal-weighted) or $+44$¢ (volume-weighted), and the short curves fall to about $-46$¢ or $-39$¢. These end values are mostly the realized payoff $100\,d\,(V - p)$ of this one cycle, not evidence that takers had information. Trades from the same cycle share one price path and one outcome, so they are not independent and no confidence band is drawn.
+
+### 5.3 Several cycles pooled
+
+Trades from all cycles are pooled and averaged together (cycles with more trades get more weight). We do not average cycle by cycle first.
+
+#### 5 cycles (23:00–23:25 UTC, Up won 2 of 5)
+
+With only five clusters we do not draw confidence intervals.
+
+| *Figure 7. 5 cycles, all taker-long trades (2,722).* | *Figure 8. 5 cycles, all taker-short trades (3,216).* |
+|:--:|:--:|
+| ![5 cycles, all taker-long](./assets/btc5m_markout/pooled/5cycles_1_all_long.png) | ![5 cycles, all taker-short](./assets/btc5m_markout/pooled/5cycles_2_all_short.png) |
+
+The equal-weighted and volume-weighted curves already disagree a lot (at $\Delta = 300$ s, long: about 6.5¢ vs 9.2¢; short: about $-3$¢ vs $-7.6$¢). With so few cycles, a handful of large trades decides the picture.
+
+Wallet `0xe0229e10…` is the second-largest taker by volume in these 5 cycles, with balanced long and short trades. We follow it for all its taker trades (54), only its long trades (23), and only its short trades (31).
+
+![5 cycles, wallet 0xe0229e10, all trades](./assets/btc5m_markout/pooled/5cycles_3_wallet_all.png)
+
+*Figure 9. Wallet `0xe0229e10…`, all its taker trades.*
+
+| *Figure 10. Wallet `0xe0229e10…`, taker-long trades.* | *Figure 11. Wallet `0xe0229e10…`, taker-short trades.* |
+|:--:|:--:|
+| ![5 cycles, wallet 0xe0229e10, long](./assets/btc5m_markout/pooled/5cycles_4_wallet_long.png) | ![5 cycles, wallet 0xe0229e10, short](./assets/btc5m_markout/pooled/5cycles_5_wallet_short.png) |
+
+The numbers of trades are tiny, so these curves are mostly noise.
+
+#### 288 cycles (2026-08-06, full day, Up won 133)
+
+| *Figure 12. 288 cycles, all taker-long trades (242,937 trades, 7.39M shares).* | *Figure 13. 288 cycles, all taker-short trades (248,919 trades, 7.37M shares).* |
+|:--:|:--:|
+| ![288 cycles, all taker-long](./assets/btc5m_markout/pooled/288cycles_1_all_long.png) | ![288 cycles, all taker-short](./assets/btc5m_markout/pooled/288cycles_2_all_short.png) |
+
+- At $\Delta = 0$ both curves start at about $-0.8$¢: the average half-spread paid by a taker.
+- Within the first seconds the curves return to about $0$ (long about $0$, short about $+0.2$¢ at $\Delta = 10$ s): the price impact roughly offsets the half-spread. This is the qualitative shape the zero-profit model predicts for takers as a group.
+- At $\Delta = 300$ s, long is about $-1$¢ (equal-weighted; $-1.7$¢ volume-weighted) and short about $+1.8$¢ ($+1.5$¢). The signs are what we would expect from Down winning more cycles that day (155 of 288), that is, from drift in the outcome, not from information.
+- The 95% bands are several cents wide at long horizons (roughly $-5.5$ to $+3.5$¢ for long at $\Delta = 300$ s) and always contain $0$. We cannot reject zero, but with a band this wide, relative to a half-spread of about $0.8$¢, the test has little power.
+
+Wallet `0x66b1c3fe…`: among wallets with at least 50 trades in each direction, the one with the largest taker volume (2,964 trades, 628,988 shares, active in 176 cycles).
+
+![288 cycles, wallet 0x66b1c3fe, all trades](./assets/btc5m_markout/pooled/288cycles_3_wallet_all.png)
+
+*Figure 14. Wallet `0x66b1c3fe…`, all its taker trades.*
+
+| *Figure 15. Wallet `0x66b1c3fe…`, taker-long trades (1,370).* | *Figure 16. Wallet `0x66b1c3fe…`, taker-short trades (1,594).* |
+|:--:|:--:|
+| ![288 cycles, wallet 0x66b1c3fe, long](./assets/btc5m_markout/pooled/288cycles_4_wallet_long.png) | ![288 cycles, wallet 0x66b1c3fe, short](./assets/btc5m_markout/pooled/288cycles_5_wallet_short.png) |
+
+For all trades, the equal-weighted curve stays near $0$ (about $+0.2$¢ at $\Delta = 300$ s) and the volume-weighted curve near $-0.4$¢, with bands that contain $0$ throughout (the volume-weighted band is wider). The long and short curves separate somewhat but their bands are even wider. On this day there is no detectable edge for this wallet. It was chosen by volume, not by its markout, so there is no selection on the outcome.
+
+### 5.4 Caveats and next steps
+
+- **Gross of fees.** The settlement-manipulation paper says the 5-minute contracts charged takers a fee from launch, peaking at even odds. I have not checked the fee on 2026-08-06, and it may be of the same order as the 0.8¢ half-spread.
+- **One day.** Cycles on the same day share one market environment, so clustering by cycle may understate the uncertainty. More days are needed.
+- **Long and short are plotted separately.** The zero-profit condition is about all takers together, so the next step is a single curve with long and short pooled, in which the drift of the day largely cancels.
+- **Large $\Delta$ is not a pure mid-price markout.** For trades near the close, a large part of the horizon is after settlement, where $M$ is replaced by $V$. The curve then moves toward the unbiased payoff $d\,(V - p)$.
+- **Fills vs orders.** It is not stated whether several fills of one taker order are merged into one trade. A marketable order that walks the book should be one observation.
+- **Dropped trades.** `wrong_side` trades are concentrated in the most volatile seconds before the close, which are exactly where informed or sniping trades are most likely.
