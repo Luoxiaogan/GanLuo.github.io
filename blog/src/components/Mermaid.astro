@@ -134,6 +134,11 @@
     height: auto;
     margin: 0 auto;
   }
+  /* Labels with $$math$$ are laid out as a flex row, which drops the spaces around it.
+     Not scoped to .mermaid-diagram: Mermaid measures labels in a temporary node under <body>. */
+  .nodeLabel > div[style*='flex'] {
+    gap: 0.3em;
+  }
   .mermaid-error {
     white-space: pre-wrap;
     font-size: 0.8em;

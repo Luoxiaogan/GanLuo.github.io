@@ -50,6 +50,33 @@ span.katex-display {
   display: inline-block;
   padding-inline-start: 0.5rem;
 }
+/* [Colours] predefined text colours, one place to change them.
+   Math: \cred{..}, \cblue{..}, \cyellow{..}, \cgreen{..} (macros in astro.config.ts).
+   Text: <span class="c-red">..</span>, c-blue, c-yellow, c-green. */
+:root {
+  --c-red: #e5484d;
+  --c-blue: #3b82f6;
+  --c-yellow: #b8860b;
+  --c-green: #16a34a;
+}
+.dark {
+  --c-red: #e5484d;
+  --c-blue: #3b82f6;
+  --c-yellow: #e9c46a;
+  --c-green: #3fb950;
+}
+.c-red {
+  color: var(--c-red);
+}
+.c-blue {
+  color: var(--c-blue);
+}
+.c-yellow {
+  color: var(--c-yellow);
+}
+.c-green {
+  color: var(--c-green);
+}
 
 /* [Shiki basic] */
 .astro-code {

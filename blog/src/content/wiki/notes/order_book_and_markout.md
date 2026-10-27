@@ -136,9 +136,205 @@ M_{t+\Delta} - M_t
 + \underbrace{\bigl(M_{t+\Delta} - E[V \mid \mathcal I_t, \text{trade}]\bigr)}_{t\to t+\Delta \text{ new info}}.
 $$
 
-## 5. Example: taker markout in Polymarket BTC 5-minute markets
+## 5. Price Discovery, Closer
 
-### 5.1 Setup
+### 5.1 Notations
+
+In **[H 1991]** the notation differs from ours. We keep our notation and explain his here.
+
+- **Quote.** The best bid $\cblue{b}=q^b$ and best ask $\cblue{a}=q^a$ of the whole market: posted by the providers (market-maker / specialist), faced by the takers (trader / trading public). We use the equivalent pair (mid, spread): $q^a = q + s/2$, $q^b = q - s/2$, $s = q^a - q^b$.
+  - The mid tracks the value and carries the price impact; the spread is the provider's compensation (costs, adverse selection).
+  - **$q_t$** is the mid set **after** trade $t$, so a trade meets $q_{t-1}$, which is our $\cblue{M_t}=\cred{q_{t-1}}$.
+- **Clock time vs event time.** Our $\cblue{\Delta}$ is in seconds. **[H 1991]** counts events instead: $t$ goes up by one at every trade or quote change in the stock, by anyone, so $k$ steps ahead means $k$ **market events** later.
+- **Efficient price.** $E[\cblue{V} \mid \Phi_t]=m_t$($m_t$ in **[H 1991]**), the expected value given public information right after trade $t$. It is not observed. **[H 1991]** first assumes the quotes are symmetric around it, so $q_t = m_t$ (his eq. (1)), which is our $\cblue{M_t = E[V \mid \mathcal I_t]}$; <span class="c-red">he later relaxes it.</span>
+- **Quote revision.** $r_t = q_t - q_{t-1}$, the change of the mid. Summing the increments gives the level difference, since the middle terms cancel: $\sum_{k=0}^{K} r_{t+k} = q_{t+K} - q_{t-1}$, our $\cblue{M_{t+\Delta} - M_t}$ with $\cblue{\Delta}$ counted in events.
+- **Quote rule.** The 1989 data do not record who initiated a trade, so the sign is **inferred** from the prevailing quotes: above the mid is a buy, below is a sell, at the mid is unknown ($x_t = 0$). **Polymarket records the taker side directly**.
+- **Innovation.** A time-series term, not "something new" in the everyday sense: the innovation of a variable is the part the past cannot predict, $y_t - E[y_t \mid \text{past}]$. It has mean zero and is uncorrelated with everything in the past. Example: if buys tend to follow buys and $E[x_t \mid \text{past}] = 0.6$, a buy ($x_t = +1$) has innovation $0.4$ and a sell has $-1.6$. **[H 1991]** has two:
+  - $v_{2,t} = x_t - E[x_t \mid \Phi_{t-1}]$, the unexpected part of the trade, our $\cblue{d_t - E[d_t \mid \mathcal I_t]}$;
+  - $\cred{v_{1,t}} = r_t - E[r_t \mid \Phi_{t-1}, x_t]$, what is left of the quote revision once the trade is known, read as public news, our $\cblue{R_{t+1} - E[R_{t+1} \mid \mathcal I_t, d_t]}$ (with $\cblue{R_{t+1} = M_{t+1} - M_t}$, defined in 5.2).
+  - "The past" is the econometrician's data (past trades and quotes), which may be less than what traders know.
+
+Within one event $t$, **[H 1991]** fixes the order below. It is a convention about the whole market, not about one trader or one provider. The quote is the best bid / ask of **all providers** and the news is seen by everyone. The trade $x_t$ cannot react to news of the same event; the new quote, and so $r_t$, reacts to both(public news and the trade $x_t$).
+
+```mermaid
+block-beta
+  columns 3
+  S1["1. Quote $$q_{t-1}$$ stands"] space S2["2. A taker trades $$x_t$$"]
+  space R["$$r_t = q_t - q_{t-1}$$"] space
+  S4["4. Providers set $$q_t$$"] space S3["3. Public news arrives"]
+  S1 --> S2
+  S2 --> S3
+  S3 --> S4
+  S4 --> S1
+```
+
+### 5.2 Equations
+
+From here on $t$ counts events and $M_t$ is the mid just before event $t$. Define the change of the mid
+
+$$
+R_t = M_t - M_{t-1},
+$$
+
+so $R_{t+1} = M_{t+1} - M_t$ is the change across trade $t$, and $\sum_{k=1}^{\Delta} R_{t+k} = M_{t+\Delta} - M_t$ is our price impact.
+
+**Equation (1): the mid is always the efficient price.**
+
+$$
+M_t = E[V \mid \mathcal I_t] \quad \text{for every } t. \tag{1}
+$$
+
+- This is what 4.2 assumed. With $\mathcal I_t \subseteq \mathcal I_{t+\Delta}$, the tower property gives $E[M_{t+\Delta} \mid \mathcal I_t] = E\bigl[E[V \mid \mathcal I_{t+\Delta}] \mid \mathcal I_t\bigr] = E[V \mid \mathcal I_t] = M_t$: the mid is a **martingale**, and its future changes cannot be predicted from $\mathcal I_t$.
+- **[H 1991]** starts from (1) and later relaxes it to (3).
+
+**Equation (2): a regression for the change of the mid.**
+
+$$
+R_{t+1} = \underbrace{a_1 R_t + a_2 R_{t-1} + \cdots}_{\text{past mid changes}}
++ \underbrace{b_0\, d_t}_{\text{this trade}}
++ \underbrace{b_1 d_{t-1} + b_2 d_{t-2} + \cdots}_{\text{past trades}}
++ \cred{v_{1,t}}. \tag{2}
+$$
+
+- **$d_t$: the observed trade.** $d_t \in \{+1, -1, 0\}$ is the direction of the taker trade at event $t$: $+1$ for a buy, $-1$ for a sell, $0$ if no trade happens (**[H 1991]**'s $x^0_t$). It is a number at every event. In (2) it enters as a number. In a conditional expectation, "given the trade" means given the value of $d_t$. The **information inside the trade** is the result of that conditioning, how far it moves the expectation of $V$:
+
+  $$
+  E[V \mid \mathcal I_t, \text{trade}] - E[V \mid \mathcal I_t]=E[V \mid \mathcal I_t, d_t] - E[V \mid \mathcal I_t].
+  $$
+
+  - Given $\mathcal I_t$, knowing $d_t$ is the same as knowing its innovation $d_t - E[d_t \mid \mathcal I_t]$, since the two differ by a known number. So only the innovation can carry information inside the trade; the predictable part (buys tend to follow buys) tells us nothing new.
+  - So $b_0 d_t$ is the mid's reaction to the observed trade, not the trade's information content.
+- $b_0$ is the immediate reaction of the mid to this trade; $b_1, b_2, \dots$ are delayed reactions to past trades (a slow quote); $a_1, a_2, \dots$ are momentum or reversal in the mid itself (overshoot, then come back if $a_1 < 0$).
+- $\cred{v_{1,t}}$ is the part left unexplained, read as public news.
+- **Why (2) conflicts with (1).** Under (1) the mid is a martingale, so it can only move on what $\mathcal I_t$ did not know. If any $a_i$ or $b_i$ ($i \ge 1$) is non-zero, past mid changes or past trades predict the next change, and (1) fails. In the data they are non-zero (**[H 1991]** Table II: $a_1 = -0.118$, $b_1 = 0.007$, both significant).
+
+**Equation (3): the mid returns to the efficient price only in the long run.**
+
+$$
+\lim_{\Delta \to \infty} E[M_{t+\Delta} \mid \mathcal I_t] = E[V \mid \mathcal I_t]. \tag{3}
+$$
+
+- Write $M_t = E[V \mid \mathcal I_t] + u_t$, where $u_t$ is a temporary pricing error (slow quote, inventory, tick size). (1) says $u_t = 0$ always; (3) only says $E[u_{t+\Delta} \mid \mathcal I_t] \to 0$. (1) implies (3), not the other way, which is the sense in which (3) **relaxes** (1).
+- Example: after a buy everyone knows $E[V]$ moved from 50 to 53, but the quote steps up one unit per event, $51, 52, 53$. At $M = 51$, $u = -2$: (1) fails, (3) holds.
+- Consequence for 4.2: without (1), $E[M_{t+\Delta} \mid \mathcal I_t, \text{trade}] = E[V \mid \mathcal I_t, \text{trade}] + E[u_{t+\Delta} \mid \mathcal I_t, \text{trade}]$, and the last term vanishes only as $\Delta \to \infty$. A short-horizon markout still carries the temporary error, which is why **[H 1991]** measures the persistent impact.
+- **Polymarket.** At settlement $M$ is replaced by $V$, so with the horizon running to settlement (3) holds exactly: $E[M_{\text{settle}} \mid \mathcal I_t] = E[V \mid \mathcal I_t]$. Before settlement (1) can fail, for example with a 1¢ tick or a stale book in the last seconds.
+
+**Equation (4): a regression for the trade.**
+
+$$
+d_t = \underbrace{\phi_1 d_{t-1} + \phi_2 d_{t-2} + \cdots}_{\text{past trades}}
++ \underbrace{\psi_1 R_t + \psi_2 R_{t-1} + \cdots}_{\text{past mid changes}}
++ \cgreen{v_{2,t}}. \tag{4}
+$$
+
+- We write $\phi_i, \psi_i$ for **[H 1991]**'s $d_i, c_i$, which would clash with our $d_t$.
+- **Buys tend to follow buys** means $\phi_i > 0$ (**[H 1991]** Table II: $\phi_1 = 0.167$, $\phi_2 = 0.120$, $\phi_3 = 0.078$). Trades also react to past mid changes: $\psi_1 = -3.647$, so after the mid rises a sell is more likely.
+- Everything on the right except $\cgreen{v_{2,t}}$ is known at $\mathcal I_t$, so (4) splits the trade into an old and a new part:
+
+  $$
+  d_t = \underbrace{E[d_t \mid \mathcal I_t]}_{\text{predictable, old}} + \underbrace{\cgreen{v_{2,t}}}_{\text{innovation, new}} .
+  $$
+
+  Example: with only $\phi_1 = 0.167$ and a buy just before, $E[d_t \mid \mathcal I_t] = 0.167$. A buy then has innovation $0.833$, a sell $-1.167$, no trade $-0.167$.
+- There is no $R_{t+1}$ on the right: the trade comes before the quote revision it causes, so it cannot react to it (see the timing above). In (2), by contrast, $R_{t+1}$ does depend on $d_t$.
+- New is not the same as private. Noise traders also surprise the market, so only part of $\cgreen{v_{2,t}}$ is information: in the linear case the information inside the trade is $\lambda\,\cgreen{v_{2,t}}$, with $\lambda = 0$ if every taker is noise.
+
+**Equation (5): the two innovations are pure surprises.**
+
+$$
+\begin{aligned}
+&E[\cred{v_{1,t}}] = E[\cgreen{v_{2,t}}] = 0, \\
+&E[\cred{v_{1,t}}\,\cred{v_{1,s}}] = E[\cgreen{v_{2,t}}\,\cgreen{v_{2,s}}] = E[\cred{v_{1,t}}\,\cgreen{v_{2,s}}] = 0 \quad (s \ne t).
+\end{aligned} \tag{5}
+$$
+
+- They also satisfy $E[\cred{v_{1,t}}\,\cgreen{v_{2,t}}] = 0$ at the same $t$, because (2) already contains $d_t$: whatever in $R_{t+1}$ moves with the trade is in $b_0 d_t$, not in $\cred{v_{1,t}}$.
+- So a shock to $\cgreen{v_{2,t}}$ can be studied on its own, holding all other shocks at zero. That is what (6) does.
+
+**Equation (6): the information of a trade is the long-run change in the efficient price.**
+
+Start from rest (all past $d$ and $R$ equal to zero), give one unit of trade innovation at $t$, $\cgreen{v_{2,t}} = 1$, set every other shock to zero, and run (2) and (4) forward:
+
+$$
+\begin{aligned}
+d_t &= 1, \\
+R_{t+1} &= b_0, \\
+d_{t+1} &= \phi_1 d_t + \psi_1 R_{t+1}, \\
+R_{t+2} &= a_1 R_{t+1} + b_0 d_{t+1} + b_1 d_t, \\
+&\;\;\vdots
+\end{aligned}
+$$
+
+These are the expected trades and mid changes that follow one surprise. Add up the mid changes:
+
+$$
+\alpha_\Delta = \sum_{k=1}^{\Delta} E\bigl[R_{t+k} \mid \cgreen{v_{2,t}} = 1\bigr] = E\bigl[M_{t+\Delta} - M_t \mid \cgreen{v_{2,t}} = 1\bigr]. \tag{6}
+$$
+
+- $\alpha_\Delta$ is the price impact of one unit of **surprise**, not of one raw trade. It includes the follow-on trades that (4) predicts and the slow adjustment of the mid in (2), all caused by this one surprise.
+- By (3), as $\Delta \to \infty$ the temporary error $u$ dies out and $\alpha_\Delta$ converges to the change in the **efficient price**:
+
+  $$
+  \lim_{\Delta \to \infty} \alpha_\Delta = E[V \mid \mathcal I_t, \cgreen{v_{2,t}} = 1] - E[V \mid \mathcal I_t],
+  $$
+
+  the information inside one unit of trade innovation. This limit is **[H 1991]**'s measure of information.
+- If (1) holds (no lags, $b_0 = \lambda$), $\alpha_\Delta = \lambda$ at every $\Delta$: the short and long horizons agree. When they disagree, the gap is the temporary part.
+- For Ames Department Stores (**[H 1991]** Figure 1) a buy moves the mid by about \$0.014 at once and about \$0.028 after 20 events: the full impact is about twice the immediate one and arrives with a lag.
+
+### 5.3 VAR
+
+(2) and (4) together are a **vector autoregression** (VAR). Two regressions, then one forward computation.
+
+**What to regress.** Both equations, truncated at $K$ lags (**[H 1991]** uses $K = 5$), each by OLS on its own. Every regressor is observed data.
+
+$$
+R_{t+1} = \sum_{i=1}^{K} a_i\, R_{t+1-i} + \sum_{i=0}^{K} b_i\, d_{t-i} + \cred{v_{1,t}}, \tag{2'}
+$$
+
+$$
+d_t = \sum_{i=1}^{K} \phi_i\, d_{t-i} + \sum_{i=1}^{K} \psi_i\, R_{t+1-i} + \cgreen{v_{2,t}}. \tag{4'}
+$$
+
+- (2') is (2) cut at $K$ lags: the mid change across trade $t$ on the last $K$ mid changes ($R_t, \dots, R_{t-K+1}$), this trade ($d_t$) and the last $K$ trades ($d_{t-1}, \dots, d_{t-K}$). It gives $a_i, b_i$.
+- (4') is (4) cut at $K$ lags: the trade on the last $K$ trades and the last $K$ mid changes, with no $R_{t+1}$ on the right. It gives $\phi_i, \psi_i$, and its residual is the trade innovation $\cgreen{v_{2,t}}$.
+
+**Order of computation.**
+
+1. Build $R_t$ and $d_t$ from the data, in event time.
+2. Regress (2') to get $a_i, b_i$, and (4') to get $\phi_i, \psi_i$. The two regressions do not depend on each other.
+3. Run (6): start from zero, set $d_t = 1$ (that is, $\cgreen{v_{2,t}} = 1$), keep every other shock at zero, and alternate between the two fitted equations, each step using the values already computed:
+
+   $$
+   d_t = 1
+   \;\xrightarrow{(2')}\; R_{t+1}
+   \;\xrightarrow{(4')}\; d_{t+1}
+   \;\xrightarrow{(2')}\; R_{t+2}
+   \;\xrightarrow{(4')}\; d_{t+2}
+   \;\longrightarrow\; \cdots
+   $$
+
+   Written out, with every value before the shock set to zero ($d_s = 0$ for $s < t$, $R_s = 0$ for $s \le t$):
+
+   $$
+   \begin{aligned}
+   R_{t+k+1} &= \sum_{i=1}^{K} a_i\, R_{t+k+1-i} + \sum_{i=0}^{K} b_i\, d_{t+k-i}, && k \ge 0, \\
+   d_{t+k} &= \sum_{i=1}^{K} \phi_i\, d_{t+k-i} + \sum_{i=1}^{K} \psi_i\, R_{t+k+1-i}, && k \ge 1.
+   \end{aligned}
+   $$
+
+   At each step $k$ compute $d_{t+k}$ first (it needs $R_{t+k}$), then $R_{t+k+1}$ (it needs $d_{t+k}$).
+
+4. Add up the mid changes until the sum stops changing (**[H 1991]** stops at $\Delta = 20$):
+
+   $$
+   \alpha_\Delta = \sum_{k=1}^{\Delta} R_{t+k}, \qquad \lim_{\Delta \to \infty} \alpha_\Delta = \text{information of one unit of trade surprise}.
+   $$
+
+
+## 6. Example: taker markout in Polymarket BTC 5-minute markets (To Be Edit)
+
+### 6.1 Setup
 
 - **Data.** Pendulum mirror on Oak (`pmxt/v2`, order book and trades with millisecond timestamps), Polymarket data-api (wallets) and gamma (market info, resolution).
 - **Sample.** 2026-08-06, 288 five-minute cycles. This is before the switch to 60-second TWAP settlement (2026-08-07), so every cycle settles on the Chainlink closing price.
@@ -148,11 +344,10 @@ $$
 $$
   - $d_i = +1$ for a **taker-long** trade (buy Up or sell Down), $d_i = -1$ for a **taker-short** trade (sell Up or buy Down). The price of a Down trade at $q$ is converted to $1-q$.
   - $M$ is the Up mid-price $(\text{best bid} + \text{best ask})/2$. At $\Delta = 0$ we use the book just before the trade (the trade timestamp minus 180 ms, because trade timestamps in pmxt are about 100–300 ms later than the book). Afterwards we use the last two-sided book at $t+\Delta$. Once the market has settled, $M$ is replaced by the final value $V \in \{0, 1\}$.
-- **Reading the curves.** The horizontal axis is $\Delta$, the seconds *since the trade*, not the time within the cycle. At $\Delta = 0$ the markout equals minus the half-spread, the cost paid at the trade. The maker's markout is the mirror image (the opposite sign), so it is not drawn.
-- **Averaging.** *Equal-weighted* (blue): every trade counts the same. *Volume-weighted* (orange): weights are shares. In the 288-cycle plots the shaded band (equal-weighted) and the thin orange lines (volume-weighted) are 95% confidence intervals clustered by cycle.
+- **Averaging.** *Equal-weighted* (blue): every trade counts the same. *Volume-weighted* (orange): weights are shares. In the 288-cycle plots the shaded band (equal-weighted) and the thin orange lines (volume-weighted) are 95% **confidence intervals** clustered by cycle.
 - **Sample filters and limits.** Gross of fees. Trades whose price falls on the wrong side of the reference quote (`wrong_side`, about 2.4%, mostly in the last seconds before the close) and trades with no mid-price are dropped. About 5% of trades are missing from pmxt because of WebSocket drops and are also dropped. Scripts: `scripts/btc5m/` in the research repo.
 
-### 5.2 One cycle: `btc-updown-5m-1786057200`
+### 6.2 One cycle: `btc-updown-5m-1786057200`
 
 2026-08-06 23:00–23:05 UTC, **Up won**. The book was very volatile in the last 10 seconds (Up dropped from about 0.95 to about 0.3) without flipping the outcome.
 
@@ -223,7 +418,7 @@ Wallet `0x66b1c3fe…`: among wallets with at least 50 trades in each direction,
 |:--:|:--:|
 | ![288 cycles, wallet 0x66b1c3fe, long](./assets/btc5m_markout/pooled/288cycles_4_wallet_long.png) | ![288 cycles, wallet 0x66b1c3fe, short](./assets/btc5m_markout/pooled/288cycles_5_wallet_short.png) |
 
-For all trades, the equal-weighted curve stays near $0$ (about $+0.2$¢ at $\Delta = 300$ s) and the volume-weighted curve near $-0.4$¢, with bands that contain $0$ throughout (the volume-weighted band is wider). The long and short curves separate somewhat but their bands are even wider. On this day there is no detectable edge for this wallet. It was chosen by volume, not by its markout, so there is no selection on the outcome.
+For all trades, the equal-weighted curve stays near $0$ (about $+0.2$¢ at $\Delta = 300$ s) and the volume-weighted curve near $-0.4$¢, with bands that contain $0$ throughout (the volume-weighted band is wider). The long and short curves separate somewhat but their bands are even wider. On this day there is no detectable edge for this wallet. It was chosen by volume, not by its markout, so there is no selection on the outcome.****
 
 ### 5.4 Caveats and next steps
 
@@ -233,3 +428,5 @@ For all trades, the equal-weighted curve stays near $0$ (about $+0.2$¢ at $\Del
 - **Large $\Delta$ is not a pure mid-price markout.** For trades near the close, a large part of the horizon is after settlement, where $M$ is replaced by $V$. The curve then moves toward the unbiased payoff $d\,(V - p)$.
 - **Fills vs orders.** It is not stated whether several fills of one taker order are merged into one trade. A marketable order that walks the book should be one observation.
 - **Dropped trades.** `wrong_side` trades are concentrated in the most volatile seconds before the close, which are exactly where informed or sniping trades are most likely.
+
+	## 6. Price Impact

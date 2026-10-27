@@ -44,7 +44,21 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [
-      [rehypeKatex, {}],
+      [
+        rehypeKatex,
+        {
+          // Colour macros for notes: \cred{..}, \cblue{..}, \cyellow{..}, \cgreen{..}.
+          // The colours live in global.css ([Colours]), so they follow light/dark mode.
+          macros: {
+            '\\cred': '\\htmlClass{c-red}{#1}',
+            '\\cblue': '\\htmlClass{c-blue}{#1}',
+            '\\cyellow': '\\htmlClass{c-yellow}{#1}',
+            '\\cgreen': '\\htmlClass{c-green}{#1}'
+          },
+          trust: (context: { command: string }) => context.command === '\\htmlClass',
+          strict: (errorCode: string) => (errorCode === 'htmlExtension' ? 'ignore' : 'warn')
+        }
+      ],
       rehypeHeadingIds,
       [
         rehypeAutolinkHeadings,
