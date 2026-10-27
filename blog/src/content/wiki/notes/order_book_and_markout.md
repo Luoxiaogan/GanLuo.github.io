@@ -560,6 +560,8 @@ This is the sniping of section 2 [BCS 2015].
 - **Its markout is realized within seconds** (Figure 25, 97 days with order books). About +1.1¢ at $\Delta = 10$ s and flat up to 300 s, so the edge is a permanent move of the price (5.4), not a temporary error. All takers together: −0.6¢. The edge is stable from month to month (Figure 26).
 - **Speed, not a model.** A fair Up probability from spot moneyness and the time left does not predict its settlement markout (Figure 27).
 - **When it trades** (Figure 28, May–August). Net of fees it is positive only in the last minute of the window: the fee $0.07\,p(1-p)$ is small when the price is near 0 or 1.
+- **By the size of the move** (Figure 29, 2026-07-31 to 08-06). Group the trades by the Binance move in the second before the trade, in the direction of the bet. 19.6% of its volume comes after a move of 1 bp or more; for other takers the share is 5.6%. These trades earn +2.0¢ (1–2 bp) and +4.3¢ (≥ 2 bp) per share at settlement, more than its fee of about 1.36¢. They are 64% of its gross settlement markout. Within one second the Up mid moves +4.1¢ and +7.0¢ its way. After a move against it (≤ 0 bp, 10% of its volume) it loses 1.4¢, the same as other takers (−1.55¢).
+- **It hits quotes while they are being repriced.** The quote it hits last changed a median of 49 ms earlier (other takers: 227 ms), and 23 ms earlier after a move of 2 bp or more. Other takers who trade after a large move also earn (+2.5 to +3.0¢). The difference is that the wallet trades there 3.5 times as often, in share of volume.
 
 ![JetFadil BTC spot around its trades, ms](./assets/btc5m_markout/wallet/wallet_11_spot_event_study_ms.png)
 
@@ -573,14 +575,19 @@ This is the sniping of section 2 [BCS 2015].
 |:--:|:--:|
 | ![By model edge](./assets/btc5m_markout/wallet/wallet_6_by_model_edge.png) | ![By time in window](./assets/btc5m_markout/wallet/wallet_4_by_time_in_window.png) |
 
+![By the Binance move before the trade](./assets/btc5m_markout/wallet/wallet_12_by_pre_trade_spot_move.png)
+
+*Figure 29. Mid markout at 10 s and settlement markout by the Binance move in the second before the trade, the wallet vs other takers (1 in 5 sampled), 2026-07-31 to 08-06. Percentages: share of each group's volume.*
+
 ### 8.4 Fees, rebates, and when it made money
 
 - **Taker fee**: $0.07\,p(1-p)$ dollars per share, paid by the taker only.
 - **Maker rebate**: 20% of the taker fees of a market, paid daily to its makers in proportion to their filled liquidity.
 - **Taker rebate program** (from 2026-05-28): a taker gets back a share of the fees it paid, set by a tier based on its weighted volume over the last 30 days. Weighted volume = trade size × (1 − price) × 2.3 for crypto. Tiers: Gold 18%, Platinum 32%, Diamond 44%, Obsidian 50%.
-- **JetFadil** reached Gold on 2026-06-19 (17.5% of the previous day's fees, observed) and **Platinum on 2026-07-03 (32%)**. There were also two one-off payments ($4.5K on 06-22, $6.6K on 07-07).
+- **JetFadil.** Its first rebate is for 2026-06-19, at 17.5% of that day's fees (Gold). From **2026-07-03 it is 32% (Platinum)** until its last trade on 08-20. There were also two one-off payments ($4.5K on 06-22, $6.6K on 07-07). Total rebates: $54.6K.
+- **Timing of the tiers.** If the 30-day rule had applied to its whole history, it would have been Platinum from the launch on 05-28 ($1.86M of weighted volume). The observed dates fit weighted volume counted only from about 06-10. Counted from then, its weighted volume passes $1M at the start of 07-03 ($1.01M), the day Platinum starts. By 06-19 it had $0.55M, which is Gold. One wallet cannot tell whether 06-19 is when payments began or when it joined. Its 30-day weighted volume never reached Diamond's $4M (maximum $3.3M).
 
-Segmented regressions of the daily series (share-weighted, Newey–West SE; Figures 29–31):
+Segmented regressions of the daily series (share-weighted, Newey–West SE; Figures 30–32):
 
 | Break | Gross ¢/share | Fee ¢/share | Net ¢/share |
 |---|---|---|---|
@@ -594,9 +601,9 @@ Segmented regressions of the daily series (share-weighted, Newey–West SE; Figu
 
 ![Segmented regression, per share](./assets/btc5m_markout/wallet/seg_1_per_share.png)
 
-*Figure 29. Daily gross, fee and net per share, with the share-weighted mean between breaks.*
+*Figure 30. Daily gross, fee and net per share, with the share-weighted mean between breaks.*
 
-| *Figure 30. Daily net PnL and volume.* | *Figure 31. F statistic of a level break at each day.* |
+| *Figure 31. Daily net PnL and volume.* | *Figure 32. F statistic of a level break at each day.* |
 |:--:|:--:|
 | ![Daily net and volume](./assets/btc5m_markout/wallet/seg_2_daily_net_and_volume.png) | ![sup-F](./assets/btc5m_markout/wallet/seg_3_supF.png) |
 
@@ -604,17 +611,17 @@ Segmented regressions of the daily series (share-weighted, Newey–West SE; Figu
 
 This uses the PushIntensity of the settlement-manipulation paper: $|$Binance signed flow in the last 10 s$|$ / median over the first 25 bins. Cycles above the pre-TWAP 90th percentile (26.0) count as pushed. Sample: 2026-07-31 to 08-20.
 
-- **Before TWAP**: there is a spike of flow in the last 10 seconds (Figure 32). In pushed cycles the side of the push wins 72% of the time, against 56% in other cycles (Figure 33).
+- **Before TWAP**: there is a spike of flow in the last 10 seconds (Figure 33). In pushed cycles the side of the push wins 72% of the time, against 56% in other cycles (Figure 34).
 - **After TWAP** (2026-08-07): the spike is gone, and the push side wins 50% of the time.
-- **JetFadil is not the manipulator.** Before TWAP it loses in pushed cycles: −2.5¢ per share gross, −3.9¢ net, about −$5.6K in one week. In other cycles it earns +1.4¢ gross (Figure 34). After TWAP, pushed and other cycles look the same for it. The switch removed a loss it was paying to manipulators.
+- **JetFadil is not the manipulator.** Before TWAP it loses in pushed cycles: −2.5¢ per share gross, −3.9¢ net, about −$5.6K in one week. In other cycles it earns +1.4¢ gross (Figure 35). After TWAP, pushed and other cycles look the same for it. The switch removed a loss it was paying to manipulators.
 
-| *Figure 32. Binance flow by 10 s bin, before vs after TWAP.* | *Figure 33. How often the side of the final-10 s flow wins.* |
+| *Figure 33. Binance flow by 10 s bin, before vs after TWAP.* | *Figure 34. How often the side of the final-10 s flow wins.* |
 |:--:|:--:|
 | ![Flow profile](./assets/btc5m_markout/wallet/push_1_flow_profile.png) | ![Push decides](./assets/btc5m_markout/wallet/push_3_push_decides.png) |
 
 ![Wallet in pushed vs other cycles](./assets/btc5m_markout/wallet/push_2_wallet_pushed_vs_other.png)
 
-*Figure 34. The wallet's settlement markout in pushed and other cycles, before and after TWAP.*
+*Figure 35. The wallet's settlement markout in pushed and other cycles, before and after TWAP.*
 
 ### 8.6 Who pays
 
@@ -665,15 +672,15 @@ Most of the 15 largest takers have a positive gross markout (+0.3 to +1.45¢) an
 
 The last three columns are clock-time information shares, min–max over the six orderings. With the ordering BTC → flow → quotes, the full sample gives 0.22 / 0.05 / 0.73.
 
-| *Figure 35. Impact of a trade surprise, 04-14 to 08-09: pooled, mean of cycles, one cycle.* | *Figure 36. Information share of trades, per cycle.* |
+| *Figure 36. Impact of a trade surprise, 04-14 to 08-09: pooled, mean of cycles, one cycle.* | *Figure 37. Information share of trades, per cycle.* |
 |:--:|:--:|
 | ![Trade impact](./assets/btc5m_markout/price_discovery/full_pd_1_trade_impact.png) | ![Info share histogram](./assets/btc5m_markout/price_discovery/full_pd_2_info_share_hist.png) |
 
-| *Figure 37. Clock time: Up mid response to one-sd shocks in BTC, order flow and quotes.* | *Figure 38. Clock-time information shares.* |
+| *Figure 38. Clock time: Up mid response to one-sd shocks in BTC, order flow and quotes.* | *Figure 39. Clock-time information shares.* |
 |:--:|:--:|
 | ![Clock response](./assets/btc5m_markout/price_discovery/full_pd_3_clock_response.png) | ![Clock info shares](./assets/btc5m_markout/price_discovery/full_pd_4_clock_info_shares.png) |
 
-| *Figure 39. Permanent impact $\alpha_\infty$, daily mean of cycles.* | *Figure 40. Information share of trades, daily mean.* |
+| *Figure 40. Permanent impact $\alpha_\infty$, daily mean of cycles.* | *Figure 41. Information share of trades, daily mean.* |
 |:--:|:--:|
 | ![alpha by day](./assets/btc5m_markout/price_discovery/full_pd_5a_alpha_by_day.png) | ![share by day](./assets/btc5m_markout/price_discovery/full_pd_5b_share_by_day.png) |
 
@@ -682,7 +689,7 @@ The last three columns are clock-time information shares, min–max over the six
 - A trade surprise moves the Up mid by about **0.3¢ for good**, over 20–40 events. The immediate change is close to 0, because in this event definition the quote reacts at the following events. The full impact is about twice the impact after 10 events, the delayed adjustment of [H 1991] Figure 1.
 - **Trades carry only about 10–15% of the information** in the Up price. Most of it enters through the quotes themselves, and in clock time 8–22% of the variation is traced to BTC spot.
 - This fits 8.3. Polymarket quotes follow Binance with a delay, and fast takers hit the stale quotes. As 5.5 warns, part of what the event-time VAR counts as trade information is public news (the Binance move) that reaches the price through those trades.
-- The daily series (Figures 39–40) has a gap from mid-June to mid-July (no pmxt data). The information share of trades falls to about 0.05 in the first days of August, before the switch to TWAP.
+- The daily series (Figures 40–41) has a gap from mid-June to mid-July (no pmxt data). The information share of trades falls to about 0.05 in the first days of August, before the switch to TWAP.
 
 ## References
 
