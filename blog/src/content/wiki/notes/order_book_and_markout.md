@@ -1,11 +1,11 @@
 ---
-title: Markout
+title: Markout and Price Discovery
 description: Theory behind the bid-ask spread, adverse selection, stale-quote sniping and the markout
 order: 3
-updatedDate: 2026-10-21
+updatedDate: 2026-10-27
 ---
 
-Papers: Glosten–Milgrom (1985) **[GM 1985]**, Glosten (1994) **[G 1994]** , Budish–Cramton–Shim (2015) **[BCS 2015]**. Kyle (1985) is background.
+Papers: Glosten–Milgrom (1985) **[GM 1985]**, Glosten (1994) **[G 1994]** , Budish–Cramton–Shim (2015) **[BCS 2015]**, Hasbrouck (1991) **[H 1991]**. Kyle (1985) is background.
 
 Understanding Order Book, theory and empirical study
 
@@ -284,9 +284,9 @@ $$
 
 ### 5.3 VAR
 
-(2) and (4) together are a **vector autoregression** (VAR). Two regressions, then one forward computation.
+(2) and (4) together are a **vector autoregression** (VAR), a standard tool of time-series econometrics (Sims, 1980; see Hamilton, *Time Series Analysis*, ch. 10–11): several series modelled at once, each regressed on the past of all of them, and then simulated forward to see how a shock spreads (the *impulse response*). Macroeconomists use it to trace, say, a rate shock through output and inflation; **[H 1991]** uses it to trace a trade surprise through later trades and the mid. Two regressions, then one forward computation.
 
-**What to regress.** Both equations, truncated at $K$ lags (**[H 1991]** uses $K = 5$), each by OLS on its own. Every regressor is observed data.
+**What to regress.** Both equations, truncated at $K$ lags (**[H 1991]** uses $K = 5$), each by OLS on its own. Every regressor is observed data. Below, $a_i, b_i, \phi_i, \psi_i$ are the true coefficients and $\hat a_i, \hat b_i, \hat\phi_i, \hat\psi_i$ their OLS estimates (**[H 1991]**'s tables report the estimates without hats).
 
 $$
 R_{t+1} = \sum_{i=1}^{K} a_i\, R_{t+1-i} + \sum_{i=0}^{K} b_i\, d_{t-i} + \cred{v_{1,t}}, \tag{2'}
@@ -296,13 +296,13 @@ $$
 d_t = \sum_{i=1}^{K} \phi_i\, d_{t-i} + \sum_{i=1}^{K} \psi_i\, R_{t+1-i} + \cgreen{v_{2,t}}. \tag{4'}
 $$
 
-- (2') is (2) cut at $K$ lags: the mid change across trade $t$ on the last $K$ mid changes ($R_t, \dots, R_{t-K+1}$), this trade ($d_t$) and the last $K$ trades ($d_{t-1}, \dots, d_{t-K}$). It gives $a_i, b_i$.
-- (4') is (4) cut at $K$ lags: the trade on the last $K$ trades and the last $K$ mid changes, with no $R_{t+1}$ on the right. It gives $\phi_i, \psi_i$, and its residual is the trade innovation $\cgreen{v_{2,t}}$.
+- (2') is (2) cut at $K$ lags: the mid change across trade $t$ on the last $K$ mid changes ($R_t, \dots, R_{t-K+1}$), this trade ($d_t$) and the last $K$ trades ($d_{t-1}, \dots, d_{t-K}$). It gives $\hat a_i, \hat b_i$.
+- (4') is (4) cut at $K$ lags: the trade on the last $K$ trades and the last $K$ mid changes, with no $R_{t+1}$ on the right. It gives $\hat\phi_i, \hat\psi_i$, and its residual $\hat v_{2,t}$ estimates the trade innovation $\cgreen{v_{2,t}}$.
 
 **Order of computation.**
 
 1. Build $R_t$ and $d_t$ from the data, in event time.
-2. Regress (2') to get $a_i, b_i$, and (4') to get $\phi_i, \psi_i$. The two regressions do not depend on each other.
+2. Regress (2') to get $\hat a_i, \hat b_i$, and (4') to get $\hat\phi_i, \hat\psi_i$. The two regressions do not depend on each other.
 3. Run (6): start from zero, set $d_t = 1$ (that is, $\cgreen{v_{2,t}} = 1$), keep every other shock at zero, and alternate between the two fitted equations, each step using the values already computed:
 
    $$
@@ -318,8 +318,8 @@ $$
 
    $$
    \begin{aligned}
-   R_{t+k+1} &= \sum_{i=1}^{K} a_i\, R_{t+k+1-i} + \sum_{i=0}^{K} b_i\, d_{t+k-i}, && k \ge 0, \\
-   d_{t+k} &= \sum_{i=1}^{K} \phi_i\, d_{t+k-i} + \sum_{i=1}^{K} \psi_i\, R_{t+k+1-i}, && k \ge 1.
+   R_{t+k+1} &= \sum_{i=1}^{K} \hat a_i\, R_{t+k+1-i} + \sum_{i=0}^{K} \hat b_i\, d_{t+k-i}, && k \ge 0, \\
+   d_{t+k} &= \sum_{i=1}^{K} \hat\phi_i\, d_{t+k-i} + \sum_{i=1}^{K} \hat\psi_i\, R_{t+k+1-i}, && k \ge 1.
    \end{aligned}
    $$
 
@@ -328,9 +328,34 @@ $$
 4. Add up the mid changes until the sum stops changing (**[H 1991]** stops at $\Delta = 20$):
 
    $$
-   \alpha_\Delta = \sum_{k=1}^{\Delta} R_{t+k}, \qquad \lim_{\Delta \to \infty} \alpha_\Delta = \text{information of one unit of trade surprise}.
+   \hat\alpha_\Delta = \sum_{k=1}^{\Delta} R_{t+k}.
    $$
 
+   Its limit as $\Delta \to \infty$ estimates the information of one unit of trade surprise. Since it is built from estimates, $\hat\alpha_\Delta$ is an estimate of $\alpha_\Delta$ in (6) and has sampling error; its standard error needs the delta method or a bootstrap.
+
+### 5.4 Permanent and temporary price impact
+
+With $M = E[V \mid \mathcal I] + u$ from (3), the impact of one unit of trade surprise splits into two parts:
+
+$$
+\alpha_\Delta
+= \underbrace{\alpha_\infty}_{\text{permanent}}
++ \underbrace{\bigl(\alpha_\Delta - \alpha_\infty\bigr)}_{\text{temporary} \; = \; E[u_{t+\Delta} \mid \cgreen{v_{2,t}} = 1] \;\to\; 0}.
+$$
+
+- **Permanent**: the move in the efficient price, i.e. the information in the trade. It never reverses.
+- **Temporary**: the pricing error $u$ (inventory, slow quotes, tick size, split orders). It dies out and can have either sign: overshoot in the toy model of §II ($2 \to 1$), undershoot for Ames Department Stores (\$0.014 → \$0.028). Almost every non-information effect is temporary, so $\Delta \to \infty$ removes them all.
+- **Why it matters**: a short-horizon markout mixes the two parts, and only a long horizon splits the half-spread of 4.3 cleanly into realized spread and information. On Polymarket settlement gives the permanent part directly ($M = V$, $u = 0$).
+
+### 5.5 When the reading fails
+
+The VAR reads $\cred{v_{1,t}}$ as public news and $\cgreen{v_{2,t}}$ as private information plus noise. **[H 1991]** §III.B lists how this reading can fail. The estimates stay consistent; only the attribution goes wrong, and the paper offers no fix.
+
+- **Quote setters know things too** (the specialist sees the book). Their information is not measured.
+- **Public news leaks into $\cgreen{v_{2,t}}$** when the quote cannot follow it: price smoothing, stale reported quotes, stale limit orders that get picked off. The VAR then counts public news as trade information. Formally the reading needs $E[\cgreen{v_{2,t+k}} \mid \mathcal I^*_t] = 0$ for $k \ge 0$, where $\mathcal I^*_t$ is all public information, news included (his (14)).
+- **Misspecification.** Another model gives other innovations, and another split.
+
+**Polymarket.** Stale limit orders are the sniping of section 2: BTC moves on an outside exchange, the Up book lags, takers pick off the stale quotes before the close, and the VAR reports $\hat\alpha > 0$ although nobody has private information. A possible fix (ours, not in **[H 1991]**, in the spirit of Hasbrouck 1995): add the outside BTC price change as a regressor.
 
 ## 6. Example: taker markout in Polymarket BTC 5-minute markets (To Be Edit)
 
@@ -371,7 +396,7 @@ $$
 
 **What to take from it.** Up rose and won, so the long curves climb to about $+36$¢ (equal-weighted) or $+44$¢ (volume-weighted), and the short curves fall to about $-46$¢ or $-39$¢. These end values are mostly the realized payoff $100\,d\,(V - p)$ of this one cycle, not evidence that takers had information. Trades from the same cycle share one price path and one outcome, so they are not independent and no confidence band is drawn.
 
-### 5.3 Several cycles pooled
+### 6.3 Several cycles pooled
 
 Trades from all cycles are pooled and averaged together (cycles with more trades get more weight). We do not average cycle by cycle first.
 
@@ -420,7 +445,7 @@ Wallet `0x66b1c3fe…`: among wallets with at least 50 trades in each direction,
 
 For all trades, the equal-weighted curve stays near $0$ (about $+0.2$¢ at $\Delta = 300$ s) and the volume-weighted curve near $-0.4$¢, with bands that contain $0$ throughout (the volume-weighted band is wider). The long and short curves separate somewhat but their bands are even wider. On this day there is no detectable edge for this wallet. It was chosen by volume, not by its markout, so there is no selection on the outcome.****
 
-### 5.4 Caveats and next steps
+### 6.4 Caveats and next steps
 
 - **Gross of fees.** The settlement-manipulation paper says the 5-minute contracts charged takers a fee from launch, peaking at even odds. I have not checked the fee on 2026-08-06, and it may be of the same order as the 0.8¢ half-spread.
 - **One day.** Cycles on the same day share one market environment, so clustering by cycle may understate the uncertainty. More days are needed.
@@ -429,4 +454,10 @@ For all trades, the equal-weighted curve stays near $0$ (about $+0.2$¢ at $\Del
 - **Fills vs orders.** It is not stated whether several fills of one taker order are merged into one trade. A marketable order that walks the book should be one observation.
 - **Dropped trades.** `wrong_side` trades are concentrated in the most volatile seconds before the close, which are exactly where informed or sniping trades are most likely.
 
-	## 6. Price Impact
+## References
+
+- **[GM 1985]** Glosten, L. R. and Milgrom, P. R. (1985). Bid, ask and transaction prices in a specialist market with heterogeneously informed traders. *Journal of Financial Economics* 14(1), 71–100. [ScienceDirect](https://www.sciencedirect.com/science/article/pii/0304405X85900443)
+- **[G 1994]** Glosten, L. R. (1994). Is the electronic open limit order book inevitable? *The Journal of Finance* 49(4), 1127–1161. [Wiley](https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1994.tb02450.x)
+- **[BCS 2015]** Budish, E., Cramton, P. and Shim, J. (2015). The high-frequency trading arms race: Frequent batch auctions as a market design response. *The Quarterly Journal of Economics* 130(4), 1547–1621. [Oxford Academic](https://academic.oup.com/qje/article/130/4/1547/1916146)
+- **[H 1991]** Hasbrouck, J. (1991). Measuring the information content of stock trades. *The Journal of Finance* 46(1), 179–207. [Wiley](https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1991.tb03749.x)
+- Kyle, A. S. (1985). Continuous auctions and insider trading. *Econometrica* 53(6), 1315–1335. [JSTOR](https://www.jstor.org/stable/1913210)
