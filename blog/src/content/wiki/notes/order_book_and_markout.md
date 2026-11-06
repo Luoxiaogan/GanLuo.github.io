@@ -83,7 +83,7 @@ For a market to exist some participants must be willing to lose on average. If e
 
 ### 4.1 Price Discovery
 
-**Price discovery is how information enters the price.** **Markout** path is a consequence of the price discovery and is the way we mesure it.
+**Price discovery is how information enters the price.** A **markout** path is one consequence of price discovery: it measures the **price impact** of trades (4.3), which is only one part of it. Section 5.6 explains the difference.
 
 | | Glosten–Milgrom | Budish et al. |
 |---|:--|---|
@@ -129,7 +129,7 @@ $$
 \end{aligned}
 $$
 
-The price impact contains the information revealed by the trade, $E[V \mid \mathcal I_t, \text{trade}] - M_t$, plus noise from news arriving between $t$ and $t+\Delta$. The noise has mean zero given $\mathcal I_t$ and the trade, so the average price impact over many trades isolates the information content of the trade.
+When the mid is the efficient price ((1) in 5.2), the price impact contains the information revealed by the trade, $E[V \mid \mathcal I_t, \text{trade}] - M_t$, plus noise from news arriving between $t$ and $t+\Delta$. The noise has mean zero given $\mathcal I_t$ and the trade, so the average price impact over many trades isolates the information content of the trade.
 $$
 M_{t+\Delta} - M_t
 = \underbrace{\bigl(E[V \mid \mathcal I_t, \text{trade}] - M_t\bigr)}_{\text{The information of this trade}}
@@ -333,6 +333,40 @@ $$
 
    Its limit as $\Delta \to \infty$ estimates the information of one unit of trade surprise. Since it is built from estimates, $\hat\alpha_\Delta$ is an estimate of $\alpha_\Delta$ in (6) and has sampling error; its standard error needs the delta method or a bootstrap.
 
+**The same computation as a partial derivative.** Why does "give one shock, set the others to zero, run forward" measure the price impact? Substitute one equation into the other and keep expanding.
+
+1. **Substitute (4) into (2).** The trade $d_t$ on the right of (2) is itself given by (4):
+
+   $$
+   R_{t+1} = \sum_i a_i R_{t+1-i} + b_0\Bigl(\sum_i \phi_i d_{t-i} + \sum_i \psi_i R_{t+1-i} + \cgreen{v_{2,t}}\Bigr) + \sum_{i \ge 1} b_i d_{t-i} + \cred{v_{1,t}}.
+   $$
+
+2. **Keep substituting.** Every past $R$ and $d$ on the right is again given by (2) and (4), with older values and older shocks. Replace them, then replace the older ones, and so on. Each round pushes the lagged terms further into the past; with stable coefficients they shrink to zero. What is left is a sum of shocks only, the **moving-average form** of the VAR:
+
+   $$
+   R_{t+1} = \sum_{j \ge 0} \theta_j\, \cgreen{v_{2,t-j}} + \sum_{j \ge 0} \gamma_j\, \cred{v_{1,t-j}},
+   \qquad
+   M_{t+\Delta} - M_t = \sum_{k=1}^{\Delta} R_{t+k} = \sum_{k=1}^{\Delta} \sum_{j \ge 0} \Bigl(\theta_j\, \cgreen{v_{2,t+k-1-j}} + \gamma_j\, \cred{v_{1,t+k-1-j}}\Bigr).
+   $$
+
+   The coefficients $\theta_j, \gamma_j$ are products and sums of $a_i, b_i, \phi_i, \psi_i$, one for every path along which a shock reaches $R$.
+
+3. **Differentiate.** The price impact of one trade surprise is the partial derivative with respect to it:
+
+   $$
+   \alpha_\Delta = \frac{\partial\,(M_{t+\Delta} - M_t)}{\partial\, \cgreen{v_{2,t}}} = \sum_{k=1}^{\Delta} \theta_{k-1}.
+   $$
+
+   The derivative removes every other term of the expansion: the public news $\cred{v_{1,s}}$ at every date, and the trade surprises $\cgreen{v_{2,s}}$ at other dates $s \neq t$. Only the terms that contain $\cgreen{v_{2,t}}$ survive. Because the system is linear, the derivative does not depend on where it is taken; because the shocks are uncorrelated (5), it also equals the expected response $E[M_{t+\Delta} - M_t \mid \cgreen{v_{2,t}} = 1] - E[M_{t+\Delta} - M_t \mid \cgreen{v_{2,t}} = 0]$. This is (6).
+
+4. **Read off the expansion.** The forward recursion of step 3 computes exactly these coefficients:
+
+   $$
+   \theta_0 = b_0, \qquad \theta_1 = a_1 b_0 + b_0(\phi_1 + \psi_1 b_0) + b_1, \qquad \dots
+   $$
+
+   $\theta_1$ has three paths: the mid's own lag ($a_1 b_0$), the follow-on trade that the first trade predicts and its impact ($b_0(\phi_1 + \psi_1 b_0)$), and the delayed reaction to the first trade ($b_1$). The **permanent** impact is the full sum $\alpha_\infty = \sum_{j \ge 0} \theta_j$; the **temporary** impact at $\Delta$ is the part not yet added, $\alpha_\Delta - \alpha_\infty = -\sum_{j \ge \Delta} \theta_j$ (5.4). Differentiating with respect to $\cred{v_{1,t}}$ instead gives the impact of public news, $\sum_j \gamma_j$, which is the $\beta_\infty$ of 5.6.
+
 ### 5.4 Permanent and temporary price impact
 
 With $M = E[V \mid \mathcal I] + u$ from (3), the impact of one unit of trade surprise splits into two parts:
@@ -345,7 +379,7 @@ $$
 
 - **Permanent**: the move in the efficient price, i.e. the information in the trade. It never reverses.
 - **Temporary**: the pricing error $u$ (inventory, slow quotes, tick size, split orders). It dies out and can have either sign: overshoot in the toy model of §II ($2 \to 1$), undershoot for Ames Department Stores (\$0.014 → \$0.028). Almost every non-information effect is temporary, so $\Delta \to \infty$ removes them all.
-- **Why it matters**: a short-horizon markout mixes the two parts, and only a long horizon splits the half-spread of 4.3 cleanly into realized spread and information. On Polymarket settlement gives the permanent part directly ($M = V$, $u = 0$).
+- **Why it matters**: a short-horizon markout mixes the two parts, and only a long horizon splits the half-spread of 4.3 cleanly into realized spread and information. On Polymarket settlement gives the permanent part directly ($M = V$, $u = 0$), without bias but with the noise of the outcome (5.6).
 
 ### 5.5 When the reading fails
 
@@ -356,6 +390,46 @@ The VAR reads $\cred{v_{1,t}}$ as public news and $\cgreen{v_{2,t}}$ as private 
 - **Misspecification.** Another model gives other innovations, and another split.
 
 **Polymarket.** Stale limit orders are the sniping of section 2: BTC moves on an outside exchange, the Up book lags, takers pick off the stale quotes before the close, and the VAR reports $\hat\alpha > 0$ although nobody has private information. A possible fix (ours, not in **[H 1991]**, in the spirit of Hasbrouck 1995): add the outside BTC price change as a regressor.
+
+### 5.6 Price impact and price discovery
+
+Two different questions about the same price path.
+
+| | Price impact | Price discovery |
+|---|---|---|
+| Question | How far does one trade move the price, and how much of the move stays? | Through which channels does new information enter the price, and how much through each? |
+| Unit | one trade, or one unit of trade surprise $\cgreen{v_{2,t}}$ | every change of the efficient price over a period, with or without a trade |
+| Statistic | a mean, as a curve in $\Delta$: $\alpha_\Delta$ in (6) | a share of a variance |
+| Split | permanent $\alpha_\infty$ + temporary $\alpha_\Delta - \alpha_\infty$ (5.4) | trades vs. quotes and public news (vs. other markets) |
+
+**Price discovery as a variance share.** Let $w_t$ be the change of the efficient price caused by the shocks of event $t$. It is the long-run response to each shock: $w_t = \alpha_\infty\,\cgreen{v_{2,t}} + \beta_\infty\,\cred{v_{1,t}}$, where $\beta_\infty$ is the cumulative response of the mid to one unit of $\cred{v_{1,t}}$, computed like (6). The two shocks are uncorrelated (5), so their variances add:
+
+$$
+\operatorname{Var}(w_t) = \alpha_\infty^2\,\sigma_2^2 + \beta_\infty^2\,\sigma_1^2,
+\qquad
+IS_{\text{trade}} = \frac{\alpha_\infty^2\,\sigma_2^2}{\alpha_\infty^2\,\sigma_2^2 + \beta_\infty^2\,\sigma_1^2},
+$$
+
+with $\sigma_2^2 = \operatorname{Var}(\cgreen{v_{2,t}})$ and $\sigma_1^2 = \operatorname{Var}(\cred{v_{1,t}})$. $IS_{\text{trade}}$ is the share of the efficient-price variance that comes from trades, Hasbrouck's (1991b) summary measure of how informative trades are. **[H 1991]** mentions it (§VII) but does not estimate it. Hasbrouck (1995) applies the same idea across markets that trade one asset; here the other market is Binance.
+
+- Price impact is one input to price discovery, not the same thing. $IS_{\text{trade}}$ also depends on how large and how frequent trade surprises are ($\sigma_2^2$) and on everything that moves the price without a trade ($\beta_\infty^2\sigma_1^2$). In BTC 5-minute markets (section 9) one unit of trade surprise moves the Up mid by about 0.3¢ for good, yet trades explain only about 10–15% of the efficient-price variance: most information enters through the quotes.
+- Only the permanent part counts for discovery. The temporary part moves the mid but not $E[V \mid \mathcal I]$.
+
+**Why markouts measure price impact.**
+
+- The price-impact part of a markout, averaged over trades, estimates $E[M_{t+\Delta} - M_t \mid \text{trade}]$ (4.2–4.3): news after the trade averages out. It needs no model and no lag cutoff, one $\Delta$ at a time. The durability $\alpha_\Delta/\alpha_\infty$ and the permanent/temporary split of 5.4 read straight off the curve.
+- It is the same object as (6), estimated another way. Regressing $M_{t+\Delta} - M_t$ on the trade at $t$, separately for each $\Delta$, is a *local projection* (Jordà 2005) of the impulse response; the VAR gets it by iterating (2') and (4'). In population the two agree when the VAR has enough lags (Plagborg-Møller and Wolf 2021).
+- Two conditions for a clean impact:
+  1. **Use the surprise, not the raw trade.** Buys follow buys ($\phi_i > 0$), so the markout of a raw buy also carries the delayed impact of the earlier buys it moves with, and any drift of the mid. Regress on $\hat v_{2,t}$ from (4'), or keep past trades and mid changes as controls.
+  2. **Choose the horizon.** On Polymarket the settlement horizon gives the permanent impact without bias ($M = V$), but each trade then carries the noise of the outcome: $\operatorname{Var}(V \mid M) = M(1-M)$, up to $\pm 50$¢ per share. The bands of 6.3 are several cents wide even with 288 cycles. A horizon where the curve has already flattened (about 10 s for the wallet of 8.3) is far less noisy; settlement is then the check.
+
+**Why markouts do not measure price discovery.**
+
+1. **They only look where the trades are.** Discovery has to account for every change of the efficient price, including quotes that market makers move after a Binance move without any trade (the clock-time "quotes" share of section 9, 0.73–0.90 in the full sample). An average taken at trade times says nothing about those.
+2. **Markouts of nearby trades overlap, so they do not add up.** The window $[t, t+\Delta]$ of one trade contains the next trades and their impacts: two buys one second apart each get the impact of both in a 10-second markout. Summing markouts over trades counts the same move several times, and the resulting "shares" do not sum to one. Splitting a total needs shocks that are uncorrelated with each other, so that their variances add. That is what (5) provides, and why the VAR innovations are needed.
+3. **Impact is not contribution.** A sniper who hits a stale quote after Binance moved has a large markout (section 2, 8.3), but the information was already public and the quote would have moved anyway. The markout credits the trade; discovery asks what the trade added beyond what would have entered the price without it. That needs a counterfactual, here a model that includes the outside price (5.5).
+
+**What a markout can still do.** Condition it on the outside price. In BTC 5-minute markets $V$ depends only on the BTC price at the close, so any information about $V$ is information about where BTC is going. Around a Polymarket trade (Figure 28), the part of its permanent impact that Binance already showed before the trade is public information carried over from Binance. The part that Binance shows only after the trade is information that neither market had yet: private information of the Glosten–Milgrom kind, with Polymarket leading Binance. This splits the impact of a trade into public and private parts, but still says nothing about the price changes without trades. Section 8.3 does this for the fastest wallet, and sections 9.4–9.5 build the full decomposition.
 
 ## 6. Example: taker markout in Polymarket BTC 5-minute markets (To Be Edit)
 
@@ -518,8 +592,64 @@ By month, the takers' gross loss shrinks from about −1.4¢ (April) to −0.75�
 
 - **Takers as a group lose even before fees**, and providers earn the mirror image. With fees, takers lose about 1.2–1.8¢ per share. The venue keeps up to 80% of the fees (less the taker rebates of 8.4), so the net gain of providers (about +0.4 to +0.9¢) is much smaller than the takers' net loss.
 - Zero profit (1.2) would put the gross provider curve at about 0. It is positive, but it has fallen towards 0 over the months, which is what more competition among providers would do.
-- Before 2026-04-28 the data of section 8 show that the USDC fee was in practice not charged, so the April "net" lines overstate the cost.
+- Before 2026-04-28 the taker fee was charged in shares rather than USDC. On the fills of the wallet of section 8 it matches the fee schedule (8.2), so the April "net" lines are about right; most March cycles had an older, lower fee schedule.
 - The group average hides who wins: in section 8 one fast taker earns +1¢ per share gross, while the smallest takers lose 8¢ or more.
+
+### 7.5 Price impact by trade size, side, price level and time
+
+Here the object is the **price impact** of 4.3 and 5.6, not the markout: how far the Up mid moves after a taker trade, and how much of the move stays.
+
+- **Sample.** 2026-04-14 to 08-06 (94 days with books, all before the TWAP switch), every taker trade inside the live window $[t_0, t_0 + 300\text{ s})$: 62.6M trades. Dropped: trades before the open (3.0M), `wrong_side` (1.3M), no two-sided book just before the trade (1.0M).
+- **Impact** in cents of the Up price, $\text{imp}(\Delta) = 100\, d\,(M_{t+\Delta} - M_t)$, with $M_t$ the mid just before the trade (6.1). At settlement $M = V$, so $\text{imp}(\text{settle})$ is the permanent impact. The durability is $\text{imp}(\Delta)/\text{imp}(\text{settle})$. Equal-weighted per trade; 95% CIs clustered by day. Since the markout is the impact minus the half-spread (4.3), the table also gives the half-spread paid, $100\, d\,(p - M_t)$.
+- **Local projection** (5.6): for each $\Delta$, regress $100\,(M_{t+\Delta} - M_t)$ on $d \times$ size bucket and $d \times$ price bucket (the base is a pre-trade mid of 0.3–0.7), with and without controls for the signed taker flow and the mid change in the 1, 5 and 30 seconds before the trade.
+- Script: `scripts/btc5m/impact_by_size.py`.
+
+| Trade size (USDC) | Share of trades | Share of shares | Half-spread | $\Delta = 1$ s | 10 s | 60 s | Settle | Durability at 10 s |
+|---|---|---|---|---|---|---|---|---|
+| < 1 | 14.1% | 1.8% | 0.82 | 0.44 | 0.56 | 0.51 | 0.74 | 0.76 |
+| 1–5 | 47.6% | 14.2% | 1.00 | 0.82 | 1.10 | 1.14 | 1.45 | 0.76 |
+| 5–20 | 25.7% | 22.9% | 1.30 | 1.36 | 1.67 | 1.60 | 1.99 | 0.84 |
+| 20–100 | 10.8% | 32.9% | 1.37 | 1.31 | 1.52 | 1.37 | 1.88 | 0.81 |
+| 100–500 | 1.7% | 19.0% | 2.14 | 1.13 | 1.20 | 0.94 | 1.46 | 0.82 |
+| 500–2k | 0.2% | 6.8% | 4.58 | 0.96 | 0.49 | 0.00 | 0.18 ± 0.42 | — |
+| > 2k | 0.02% | 2.5% | 7.98 | 0.75 | −0.12 | −0.52 | 0.72 ± 0.76 | — |
+| **All** | | | 1.11 | 0.96 | 1.22 | 1.19 | 1.53 ± 0.12 | 0.80 |
+
+Cents of the Up price. CIs at 10 s are about ±0.1¢ for trades up to \$500.
+
+| *Figure 22. Price impact by trade size, $\Delta$ = 1 s to settlement.* | *Figure 23. Impact at 10 s, 60 s and settlement, and the half-spread paid, against trade size.* |
+|:--:|:--:|
+| ![Impact by size](./assets/btc5m_markout/impact/imp_1_by_size.png) | ![Impact vs size](./assets/btc5m_markout/impact/imp_2_vs_size.png) |
+
+| *Figure 24. Local projection: impact by size at a pre-trade mid of 0.3–0.7, raw trade vs. controls for the pre-trade flow and mid changes.* | *Figure 25. Impact by minute of the window.* |
+|:--:|:--:|
+| ![LP raw vs controls](./assets/btc5m_markout/impact/imp_4_lp_raw_vs_ctrl.png) | ![Impact by minute](./assets/btc5m_markout/impact/imp_7_by_minute.png) |
+
+**Permanent and temporary.** For the typical trade the impact is mostly permanent and arrives late, not early. The average trade moves the mid by about 1.2¢ within 10 s, and nothing comes back: the impact at settlement is 1.5¢. So about 80% of the permanent impact is there after 10 s, and the temporary part is negative (an undershoot, the delayed adjustment of **[H 1991]**'s Ames example), not an overshoot that reverts.
+
+**Size.** The impact of one trade rises with its size up to about \$20 and then falls.
+
+- Per trade it is increasing and concave up to \$5–20 (0.56¢ → 1.67¢ at 10 s while the mean size grows from \$0.8 to \$10), as in **[H 1991]** §VI. Per dollar it falls throughout: a \$1 trade moves the price by about 0.7¢ per dollar traded, a \$200 trade by about 0.006¢.
+- Above \$100 the impact *decreases*, and above \$500 it is **temporary**: about 1¢ in the first second, back to about 0 by 60 s, with no permanent part that we can detect. These trades pay a half-spread of 4.6–8¢ because they walk the book, so their gross markout at 10 s is −4 to −8¢ per share. They buy immediacy, not information. **[G 1994]** predicts that larger trades are more likely informed; on Polymarket the largest trades look like the opposite, liquidity demand that the providers absorb and then re-quote.
+- The pattern survives the controls (Figure 24): within the same price bucket the coefficient on $d \times$ size goes 1.0 / 1.5 / 2.0 / 1.9 / 1.8 / 1.3 / 1.0¢ at 10 s across the seven buckets.
+
+**Raw trade vs. surprise.** Controlling for the order flow and mid changes of the 30 seconds before the trade changes the impact by at most 0.05¢ (except for trades above \$2k). In clock time the trade a taker sends is barely predictable from the recent history of this market, so condition 1 of 5.6 does not bind here. Recent flow does matter on its own: 1,000 shares of signed flow in the previous second add about 0.7¢ to the move after the trade (the delayed adjustment again).
+
+**Side, price level and time.**
+
+| Group | Half-spread | 10 s | 60 s | Settle |
+|---|---|---|---|---|
+| Buy Up / buy Down (opening a position) | 1.13 / 1.14 | 1.26 / 1.29 | 1.14 / 1.30 | 1.55 / 1.68 |
+| Sell Up / sell Down (closing) | 0.97 / 0.98 | 0.87 / 0.80 | 1.04 / 0.90 | 0.93 / 0.95 |
+| Pre-trade mid 0.3–0.7 | 1.25 | 1.62 | 1.65 | 1.86 |
+| Pre-trade mid below 0.1 / above 0.9 | 0.75 / 0.74 | 0.27 / 0.26 | 0.07 / 0.03 | 0.74 / 0.79 |
+| First four minutes (each) | 0.97–1.02 | 1.06–1.16 | 1.10–1.19 | 1.25–1.39 |
+| Last minute | 1.61 | 1.62 | 1.40 | 2.35 |
+
+- Buys, which open a position, move the price about 50% more than sells; Up and Down are symmetric.
+- Near 0.5 the impact is large and immediate. Near 0 or 1 almost all of it arrives only by settlement (0.27¢ at 10 s, 0.74¢ at settlement): the trades there are about the outcome, which the book reflects late.
+- Trades in the last minute have the largest impact, both immediate and permanent. That is where a small BTC move matters most for the outcome (the sensitivity of the Up price to BTC grows as the time left shrinks), and where the fast takers of section 8 trade.
+- In the volume-weighted average of 7.3 (per share, all trades) takers lose 0.6¢ gross at 10 s, while here the average trade gains $1.22 - 1.11 = +0.1$¢. The difference is the weighting: per share, the large trades that lose 4–8¢ count much more.
 
 ## 8. Who wins: the wallet JetFadil (To Be Edit)
 
@@ -537,47 +667,96 @@ The wallet `0xe0229e10a858860218b6132f4234602c47bd6603` (profile name JetFadil) 
 | | USDC |
 |---|---|
 | Profile PnL (price × `/trades` size, held to settlement) | +281.5K |
-| Actual gross PnL, before fees | +187K |
-| Taker fees paid | −241K |
-| Taker rebates received | +55K |
-| **Actual net PnL** | **≈ +1K** |
+| Gross PnL before fees, $\sum (V - p) \times$ ordered size | +289.1K |
+| Taker fees paid: in shares (to late April) | −102.0K |
+| Taker fees paid: in USDC (from late April) | −240.8K |
+| Taker rebates received | +54.6K |
+| **Actual net PnL** (cash received − cash paid + rebates) | **+0.9K** |
 
-- **The profile number does not subtract fees and does not add rebates.** Adding up price × size from `/trades` to settlement gives $281.9K, within 0.15% of the profile.
-- Until late April, `/trades` reports buy sizes net of a fee in shares (an order for 60 shares shows 58.13), while the wallet paid price × 60 and redeemed 60 shares. That is why the profile's $281.5K is above the actual gross $187K. From May on the two sources agree, and the fee is paid in USDC on top.
-- By month (net, actual USDC): March +11.3K, April −8.6K, May −14.3K, June −9.9K, July +9.5K, August +12.9K.
+Gross − fees + rebates = net holds exactly, day by day: $289.1 - 102.0 - 240.8 + 54.6 = 0.9$K. The profile's number is the gross before fees, up to 7K (below).
 
-| *Figure 22. Cumulative PnL: the profile's number, actual gross, fees, rebates and net.* | *Figure 23. PnL per share by month.* |
+**Reconciliation.** Earlier versions of this note had an actual gross of +187K and fees of −241K, so profile − fees + rebates (282 − 241 + 55 = 96K) did not match the net (+1K). The 95K gap is the taker fee that was **taken in shares** before late April 2026 (script `scripts/btc5m/wallet_reconcile.py`):
+
+- From May on, the profile and the cash gross agree to the dollar every month, and the USDC fee paid above price × size equals the market's fee schedule $0.07\,p(1-p)$ per share (60,088 vs 59,905 USDC in May, within 0.3% in every month).
+- Before that, the wallet paid price × the ordered size in USDC (activity `usdcSize`; no USDC fee), but received fewer shares: of the winning shares it bought in April (2.663M by activity size) it redeemed only 2.592M. The 70.7K winning shares that were never paid out are the fee. The fee schedule (`crypto_fees_v2`, $0.07\,p(1-p)$ USDC, i.e. $0.07\,(1-p)$ shares per share) predicts 70.2K fee shares on those winning tokens: a match within 0.8%.
+- In March the fee in shares was lower (31.4K unredeemed winning shares, against 49.8K by the current schedule): most March cycles still had the older schedule `crypto_fees` (rate 0.25, exponent 2, in gamma), which charges less away from $p = 0.5$.
+- `/trades` reports buy sizes net of the fee in shares, but in April it deducts it twice: the size gap between activity and `/trades` is exactly $2.02 \times 0.07\,(1-p)$ in every price bucket. The profile adds up $(V - p) \times$ the `/trades` size, so it misses the cost of the fee shares (price × the shares paid for but not shown) and is close to the gross *before* fees. The second deduction makes it 7K lower than the gross.
+- Earlier, the activity-based "gross" was cash received − price × size, which before May is already net of the fee in shares. That is why it looked like the wallet earned nothing before fees started in USDC.
+- A second, smaller issue: from late April to May, 273 REDEEM rows (75K USDC) have an empty `asset` field and only an `outcomeIndex`; they must be matched by outcome index.
+
+By month (cents per share; net in actual USDC, by the market's window day):
+
+| Month | Shares | Gross | Fee (of which in shares) | Rebates | Net |
+|---|---|---|---|---|---|
+| 2026-03 | 4.08M | 1.13 | 0.77 (0.77) | 0 | +14.7K |
+| 2026-04 | 4.86M | 1.27 | 1.51 (1.46) | 0 | −12.0K |
+| 2026-05 | 4.47M | 1.03 | 1.34 | 0 | −14.1K |
+| 2026-06 | 3.35M | 0.91 | 1.39 | 0.19 | −9.7K |
+| 2026-07 | 4.44M | 1.08 | 1.39 | 0.59 | +12.1K |
+| 2026-08 | 5.33M | 1.07 | 1.30 | 0.42 | +9.9K |
+
+| *Figure 26. Cumulative PnL: the profile's number, gross before fees, fees (in shares, then USDC), rebates and net.* | *Figure 27. PnL per share by month.* |
 |:--:|:--:|
 | ![JetFadil cumulative PnL](./assets/btc5m_markout/wallet/wallet_1_cumulative_pnl.png) | ![JetFadil PnL per share by month](./assets/btc5m_markout/wallet/wallet_10_by_month.png) |
 
-So **before fees it earned about 0.7¢ per share; fees took all of it, and rebates brought it back to about zero.**
+So **before fees it earned about 1.1¢ per share, in every month (0.9–1.3¢); fees took all of it (1.3–1.5¢ from April), and rebates brought it back to about zero.**
 
 ### 8.3 Where the gross edge comes from: stale quotes
 
 This is the sniping of section 2 [BCS 2015].
 
-- **Millisecond event study** (Figure 24; Binance BTCUSDT aggTrades around the Polymarket trade time, 2026-07-31 to 08-06). About 0.8 to 0.3 s before its trade, BTC jumps **+0.5 bp in the direction of its bet**; for other takers the move is +0.1 bp. 5.9% of its trades come within one second of a move of 2 bp or more (other takers: 1.9%). Binance moves first, the Up quotes on Polymarket have not been updated, and the wallet hits them.
-- **Its markout is realized within seconds** (Figure 25, 97 days with order books). About +1.1¢ at $\Delta = 10$ s and flat up to 300 s, so the edge is a permanent move of the price (5.4), not a temporary error. All takers together: −0.6¢. The edge is stable from month to month (Figure 26).
-- **Speed, not a model.** A fair Up probability from spot moneyness and the time left does not predict its settlement markout (Figure 27).
-- **When it trades** (Figure 28, May–August). Net of fees it is positive only in the last minute of the window: the fee $0.07\,p(1-p)$ is small when the price is near 0 or 1.
-- **By the size of the move** (Figure 29, 2026-07-31 to 08-06). Group the trades by the Binance move in the second before the trade, in the direction of the bet. 19.6% of its volume comes after a move of 1 bp or more; for other takers the share is 5.6%. These trades earn +2.0¢ (1–2 bp) and +4.3¢ (≥ 2 bp) per share at settlement, more than its fee of about 1.36¢. They are 64% of its gross settlement markout. Within one second the Up mid moves +4.1¢ and +7.0¢ its way. After a move against it (≤ 0 bp, 10% of its volume) it loses 1.4¢, the same as other takers (−1.55¢).
+- **Millisecond event study** (Figure 28; Binance BTCUSDT aggTrades around the Polymarket trade time, 2026-07-31 to 08-06). About 0.8 to 0.3 s before its trade, BTC jumps **+0.5 bp in the direction of its bet**; for other takers the move is +0.1 bp. 5.9% of its trades come within one second of a move of 2 bp or more (other takers: 1.9%). Binance moves first, the Up quotes on Polymarket have not been updated, and the wallet hits them.
+- **Its markout is realized within seconds** (Figure 29, 97 days with order books). About +1.1¢ at $\Delta = 10$ s and flat up to 300 s, so the edge is a permanent move of the price (5.4), not a temporary error. All takers together: −0.6¢. The edge is stable from month to month (Figure 30).
+- **Speed, not a model.** A fair Up probability from spot moneyness and the time left does not predict its settlement markout (Figure 31).
+- **When it trades** (Figure 32, May–August). Net of fees it is positive only in the last minute of the window: the fee $0.07\,p(1-p)$ is small when the price is near 0 or 1.
+- **By the size of the move** (Figure 33, 2026-07-31 to 08-06). Group the trades by the Binance move in the second before the trade, in the direction of the bet. 19.6% of its volume comes after a move of 1 bp or more; for other takers the share is 5.6%. These trades earn +2.0¢ (1–2 bp) and +4.3¢ (≥ 2 bp) per share at settlement, more than its fee of about 1.36¢. They are 64% of its gross settlement markout. Within one second the Up mid moves +4.1¢ and +7.0¢ its way. After a move against it (≤ 0 bp, 10% of its volume) it loses 1.4¢, the same as other takers (−1.55¢).
 - **It hits quotes while they are being repriced.** The quote it hits last changed a median of 49 ms earlier (other takers: 227 ms), and 23 ms earlier after a move of 2 bp or more. Other takers who trade after a large move also earn (+2.5 to +3.0¢). The difference is that the wallet trades there 3.5 times as often, in share of volume.
 
 ![JetFadil BTC spot around its trades, ms](./assets/btc5m_markout/wallet/wallet_11_spot_event_study_ms.png)
 
-*Figure 24. Binance BTC price around the wallet's trades and other takers' trades, $10^4\, d \ln(S(t+k)/S(t))$, millisecond resolution.*
+*Figure 28. Binance BTC price around the wallet's trades and other takers' trades, $10^4\, d \ln(S(t+k)/S(t))$, millisecond resolution.*
 
-| *Figure 25. Taker markout of the wallet vs all takers, 2026-04-14 to 08-09.* | *Figure 26. The wallet's taker markout by month at $\Delta$ = 10, 60, 300 s.* |
+| *Figure 29. Taker markout of the wallet vs all takers, 2026-04-14 to 08-09.* | *Figure 30. The wallet's taker markout by month at $\Delta$ = 10, 60, 300 s.* |
 |:--:|:--:|
 | ![JetFadil taker markout](./assets/btc5m_markout/wallet/full_2_all_wallet_taker.png) | ![JetFadil markout by month](./assets/btc5m_markout/wallet/full_5_wallet_by_month.png) |
 
-| *Figure 27. Settlement markout by model edge (fair value from spot minus price).* | *Figure 28. Settlement markout by time in the window, May–August.* |
+| *Figure 31. Settlement markout by model edge (fair value from spot minus price).* | *Figure 32. Settlement markout by time in the window, May–August.* |
 |:--:|:--:|
 | ![By model edge](./assets/btc5m_markout/wallet/wallet_6_by_model_edge.png) | ![By time in window](./assets/btc5m_markout/wallet/wallet_4_by_time_in_window.png) |
 
 ![By the Binance move before the trade](./assets/btc5m_markout/wallet/wallet_12_by_pre_trade_spot_move.png)
 
-*Figure 29. Mid markout at 10 s and settlement markout by the Binance move in the second before the trade, the wallet vs other takers (1 in 5 sampled), 2026-07-31 to 08-06. Percentages: share of each group's volume.*
+*Figure 33. Mid markout at 10 s and settlement markout by the Binance move in the second before the trade, the wallet vs other takers (1 in 5 sampled), 2026-07-31 to 08-06. Percentages: share of each group's volume.*
+
+**Why it is faster: the left part and the right part.** Figure 28 has two sides. Left of the trade, Binance has already moved: that is **public information**, and the wallet carries it to quotes that have not caught up (the sniping of [BCS 2015]). Right of the trade, Binance keeps moving in the wallet's direction: that is information Binance did not have yet when the wallet traded, its **own information** in the Glosten–Milgrom sense. Figure 34 draws both markets in the same units. With $F$ the Binance fair value of Up (9.4) and $M$ the Up mid, it plots $d\,(F_{t+k} - F_t)$ and $d\,(M_{t+k} - M_t)$ around the trade:
+
+- About half a second before the wallet trades, $F$ jumps by about 4¢ of the Up price in its direction; for other takers by under 1¢. The Up mid is already being repriced, jumps at the trade, and is about 2¢ higher within a second. $F$ keeps rising by another 2¢ over the next 5 seconds.
+- To split the price impact $d\,(M_{t+\Delta} - M_t)$ into the two sides, regress it, over all taker trades, on the Binance move before the trade, $\text{pre} = d\,(F_t - F_{t-1\,\text{s}})$, and after it, $\text{post} = d\,(F_{t+\Delta} - F_t)$: $\text{impact} = c + \beta_L\, \text{pre} + \beta_R\, \text{post} + e$. The $\beta$'s are Polymarket's pass-through of Binance moves, the same for every taker. Part of the move after the trade is predictable from the move before it (Binance momentum, also public), so also regress $\text{post} = \gamma\, \text{pre} + u$. A group's mean impact then splits exactly into:
+
+| Part | Formula | Meaning |
+|---|---|---|
+| Public, left | $\beta_L\,\overline{\text{pre}}$ | Binance had already moved |
+| Public, continuation | $\beta_R\,\gamma\,\overline{\text{pre}}$ | the Binance move that the move before predicts |
+| Own, right | $\beta_R\,(\overline{\text{post}} - \gamma\,\overline{\text{pre}})$ | Binance moves after the trade that the move before does not predict |
+| Polymarket only | the rest | not explained by Binance |
+
+Per share, 2026-07-31 to 08-06 (34,866 wallet trades, 3.46M other trades; 95% CI by cycle bootstrap about ±0.1–0.2¢; script `scripts/btc5m/trade_lr_split.py`):
+
+| | Impact | Public, left | Public, continuation | Own, right | Polymarket only |
+|---|---|---|---|---|---|
+| JetFadil, $\Delta$ = 1 s | 1.97 | 0.57 | 0.07 | 0.21 | 1.12 |
+| JetFadil, $\Delta$ = 10 s | 1.71 | 0.31 | 0.31 | 1.25 | −0.17 |
+| JetFadil, $\Delta$ = 60 s | 1.81 | 0.28 | 0.39 | 2.03 | −0.90 |
+| Other takers, $\Delta$ = 10 s | 0.74 | 0.06 | 0.06 | 0.16 | 0.47 |
+
+| *Figure 34. Binance fair value and Up mid around a taker trade, the wallet vs other takers (per share).* | *Figure 35. The price impact split into public (left) and own (right) parts.* |
+|:--:|:--:|
+| ![Paths around the trade](./assets/btc5m_markout/formation/lr_1_paths_vw.png) | ![Impact split](./assets/btc5m_markout/formation/lr_2_split_vw.png) |
+
+- **At 1 second** the wallet's impact is mostly the public part and "Polymarket only": it hits quotes that are being repriced at that moment (8.3, 49 ms), by market makers who see the same move or faster venues.
+- **At 10 seconds and beyond** the largest part is the right side: Binance keeps moving its way by more than the move before the trade predicts. That part is 8 times larger than for other takers (1.25 vs 0.16¢), and the public left part 5 times (0.31 vs 0.06¢).
+- "Own" means: not in Binance spot yet. It can come from faster sources than Binance spot (BTC perpetual futures, other exchanges, the Binance order book) rather than from a private model; the data cannot tell these apart. The Polymarket-only part turns negative at long horizons because the Up mid passes on only part of the later Binance move.
+- Section 9.5 does the same split for the price as a whole (price discovery), not for one trade.
 
 ### 8.4 Fees, rebates, and when it made money
 
@@ -587,23 +766,23 @@ This is the sniping of section 2 [BCS 2015].
 - **JetFadil.** Its first rebate is for 2026-06-19, at 17.5% of that day's fees (Gold). From **2026-07-03 it is 32% (Platinum)** until its last trade on 08-20. There were also two one-off payments ($4.5K on 06-22, $6.6K on 07-07). Total rebates: $54.6K.
 - **Timing of the tiers.** If the 30-day rule had applied to its whole history, it would have been Platinum from the launch on 05-28 ($1.86M of weighted volume). The observed dates fit weighted volume counted only from about 06-10. Counted from then, its weighted volume passes $1M at the start of 07-03 ($1.01M), the day Platinum starts. By 06-19 it had $0.55M, which is Gold. One wallet cannot tell whether 06-19 is when payments began or when it joined. Its 30-day weighted volume never reached Diamond's $4M (maximum $3.3M).
 
-Segmented regressions of the daily series (share-weighted, Newey–West SE; Figures 30–32):
+Segmented regressions of the daily series (share-weighted, Newey–West SE; Figures 36–38), with the fee in shares counted as a fee (8.2). The shift is the change in the mean at the break:
 
 | Break | Gross ¢/share | Fee ¢/share | Net ¢/share |
 |---|---|---|---|
-| 2026-04-28, fees start to be paid in USDC | +0.97 (t = 5.3) | +1.33 | −0.06 (t = −0.3) |
-| 2026-07-03, rebate tier 32% | +0.57 (t = 3.1) | | +0.35 (t = 2.0) |
-| 2026-08-07, TWAP settlement | +0.34 (t = 2.0) | | +0.15 (t = 1.1) |
+| 2026-04-28, fees start to be paid in USDC | 1.21 → shift −0.18 (t = −1.6) | 1.17 → +0.18 (t = 1.0) | −0.06 (t = −0.3) |
+| 2026-07-03, rebate tier 32% | −0.03 (t = −0.3) | +0.08 (t = 0.7) | +0.35 (t = 2.0) |
+| 2026-08-07, TWAP settlement | −0.11 (t = −1.1) | −0.02 (t = −0.2) | +0.15 (t = 1.1) |
 
-- **Unknown-break test.** For gross per share the largest F is 48.6 on 2026-05-01 (5% critical value about 8.85). For net per share no break is significant (largest F 4.1).
-- **Reading.** When fees started, the wallet traded much less and only when its edge was larger. Its gross edge rose from about 0 to about 1¢ per share, and its net stayed near zero. This is the free-entry zero profit of [BCS 2015], with fees as the cost.
-- **July–August.** About 1.05¢ gross − 1.35¢ × (1 − 0.32) ≈ +0.13¢ per share, plus the one-off payments. **The rebate tier is what made these months positive.**
+- **Unknown-break test.** For gross per share there is no break (largest F 2.6; 5% critical value about 8.85). The fee per share has one large break on **2026-04-05** (F = 85: 0.98 → 1.38¢), and so does the volume (F = 92: 567K → 163K shares a day). For net per share no break is significant (largest F 4.1, on 06-21, when the rebates begin).
+- **Reading.** The gross edge was about 1.1–1.2¢ per share all along; it did not change when the fee moved from shares to USDC on 04-28 (an earlier version of this table showed a jump of +0.97¢ there, which was the fee in shares being counted as a loss of gross edge). What changed is the cost: when the fee reached its full level in early April, the wallet cut its volume by about 70% and kept a net of about zero. That is the free-entry zero profit of [BCS 2015], with fees as the cost of entry.
+- **July–August.** About 1.07¢ gross − 1.35¢ × (1 − 0.32) ≈ +0.15¢ per share, plus the one-off payments. **The rebate tier is what made these months positive.**
 
 ![Segmented regression, per share](./assets/btc5m_markout/wallet/seg_1_per_share.png)
 
-*Figure 30. Daily gross, fee and net per share, with the share-weighted mean between breaks.*
+*Figure 36. Daily gross, fee and net per share, with the share-weighted mean between breaks.*
 
-| *Figure 31. Daily net PnL and volume.* | *Figure 32. F statistic of a level break at each day.* |
+| *Figure 37. Daily net PnL and volume.* | *Figure 38. F statistic of a level break at each day.* |
 |:--:|:--:|
 | ![Daily net and volume](./assets/btc5m_markout/wallet/seg_2_daily_net_and_volume.png) | ![sup-F](./assets/btc5m_markout/wallet/seg_3_supF.png) |
 
@@ -611,17 +790,17 @@ Segmented regressions of the daily series (share-weighted, Newey–West SE; Figu
 
 This uses the PushIntensity of the settlement-manipulation paper: $|$Binance signed flow in the last 10 s$|$ / median over the first 25 bins. Cycles above the pre-TWAP 90th percentile (26.0) count as pushed. Sample: 2026-07-31 to 08-20.
 
-- **Before TWAP**: there is a spike of flow in the last 10 seconds (Figure 33). In pushed cycles the side of the push wins 72% of the time, against 56% in other cycles (Figure 34).
+- **Before TWAP**: there is a spike of flow in the last 10 seconds (Figure 39). In pushed cycles the side of the push wins 72% of the time, against 56% in other cycles (Figure 40).
 - **After TWAP** (2026-08-07): the spike is gone, and the push side wins 50% of the time.
-- **JetFadil is not the manipulator.** Before TWAP it loses in pushed cycles: −2.5¢ per share gross, −3.9¢ net, about −$5.6K in one week. In other cycles it earns +1.4¢ gross (Figure 35). After TWAP, pushed and other cycles look the same for it. The switch removed a loss it was paying to manipulators.
+- **JetFadil is not the manipulator.** Before TWAP it loses in pushed cycles: −2.5¢ per share gross, −3.9¢ net, about −$5.6K in one week. In other cycles it earns +1.4¢ gross (Figure 41). After TWAP, pushed and other cycles look the same for it. The switch removed a loss it was paying to manipulators.
 
-| *Figure 33. Binance flow by 10 s bin, before vs after TWAP.* | *Figure 34. How often the side of the final-10 s flow wins.* |
+| *Figure 39. Binance flow by 10 s bin, before vs after TWAP.* | *Figure 40. How often the side of the final-10 s flow wins.* |
 |:--:|:--:|
 | ![Flow profile](./assets/btc5m_markout/wallet/push_1_flow_profile.png) | ![Push decides](./assets/btc5m_markout/wallet/push_3_push_decides.png) |
 
 ![Wallet in pushed vs other cycles](./assets/btc5m_markout/wallet/push_2_wallet_pushed_vs_other.png)
 
-*Figure 35. The wallet's settlement markout in pushed and other cycles, before and after TWAP.*
+*Figure 41. The wallet's settlement markout in pushed and other cycles, before and after TWAP.*
 
 ### 8.6 Who pays
 
@@ -629,11 +808,14 @@ Every share it buys is sold by a maker, so before fees its gain is exactly the m
 
 | Whole history | JetFadil | Makers on the other side | Polymarket |
 |---|---|---|---|
-| Gross trading PnL | +187K | −187K | 0 |
-| Taker fees | −241K | | +241K |
-| Maker rebates (20% of fees) | | +48K | −48K |
+| Gross trading PnL (ordered shares) | +289K | −289K | 0 |
+| Taker fees: in shares (to late April) | −102K | | +102K |
+| Taker fees: in USDC | −241K | | +241K |
+| Maker rebates (20% of the USDC fees) | | +48K | −48K |
 | Taker rebates | +55K | | −55K |
-| **Net** | **≈ +1K** | **≈ −139K** | **≈ +138K** |
+| **Net** | **+1K** | **≈ −241K** | **≈ +240K** |
+
+The makers sold the full ordered size, so their gross loss is the wallet's gross gain before fees. Whether the fees taken in shares were also rebated to makers (20% would be another 20K) is not checked.
 
 The makers earn their loss back from other takers. In 2026-07-31 to 08-06 (all taker wallets, settlement markout per share):
 
@@ -650,14 +832,14 @@ Most of the 15 largest takers have a positive gross markout (+0.3 to +1.45¢) an
 ### 8.7 Caveats
 
 - data-api records only, not on-chain fills. The fees from May on are checked against real payments.
-- Before late April the shares the wallet actually received are between the activity size and the `/trades` size. Per-fill splits (Figure 28) use May–August only; totals use market-level cash flows.
+- Before late April the fee was taken in shares. The shares the wallet actually received are known exactly only for winning tokens (from the redemptions); totals use these market-level cash flows, and per-fill splits (Figure 32) use May–August only.
 - The event studies, push test and wallet ranking use one or three weeks around the switch; the mid-based curves use 97 days. pmxt has no BTC 5-minute books from about 06-13 to 07-13, nor for 08-10 to 08-17.
 
 ## 9. Price discovery in BTC 5-minute markets (To Be Edit)
 
 ### 9.1 Setup
 
-- **Event-time VAR**, as in 5.3. An event is a trade or a change of the Up mid within the live window. $d_t$ is the trade direction, $R_{t+1}$ the Up mid change in cents, $K = 10$ lags, and trades are moved back 180 ms so that they come before the quote update they cause (6.1). From (2') and (4') we compute $\alpha_\Delta$ (6) and the information share of trades.
+- **Event-time VAR**, as in 5.3. An event is a trade or a change of the Up mid within the live window. $d_t$ is the trade direction, $R_{t+1}$ the Up mid change in cents, $K = 10$ lags, and trades are moved back 180 ms so that they come before the quote update they cause (6.1). From (2') and (4') we compute $\alpha_\Delta$ (6) and the information share of trades $IS_{\text{trade}}$ (5.6).
 - **Clock-time VAR** in 1-second bins with the outside price, as suggested in 5.5: $y_s = (\text{BTC return (bp)}, \text{signed taker shares}, R_s)$, 5 lags. Structural shocks come from a Cholesky decomposition in all six orderings, which gives bounds on the information shares.
 - **Estimates**: the pooled VAR (summed cross products), the mean of per-cycle VARs, and single cycles. Samples: 2026-04-14 to 08-09 (26,248 cycles with order books), the week 07-31 to 08-06, and 08-06 alone.
 
@@ -672,15 +854,15 @@ Most of the 15 largest takers have a positive gross markout (+0.3 to +1.45¢) an
 
 The last three columns are clock-time information shares, min–max over the six orderings. With the ordering BTC → flow → quotes, the full sample gives 0.22 / 0.05 / 0.73.
 
-| *Figure 36. Impact of a trade surprise, 04-14 to 08-09: pooled, mean of cycles, one cycle.* | *Figure 37. Information share of trades, per cycle.* |
+| *Figure 42. Impact of a trade surprise, 04-14 to 08-09: pooled, mean of cycles, one cycle.* | *Figure 43. Information share of trades, per cycle.* |
 |:--:|:--:|
 | ![Trade impact](./assets/btc5m_markout/price_discovery/full_pd_1_trade_impact.png) | ![Info share histogram](./assets/btc5m_markout/price_discovery/full_pd_2_info_share_hist.png) |
 
-| *Figure 38. Clock time: Up mid response to one-sd shocks in BTC, order flow and quotes.* | *Figure 39. Clock-time information shares.* |
+| *Figure 44. Clock time: Up mid response to one-sd shocks in BTC, order flow and quotes.* | *Figure 45. Clock-time information shares.* |
 |:--:|:--:|
 | ![Clock response](./assets/btc5m_markout/price_discovery/full_pd_3_clock_response.png) | ![Clock info shares](./assets/btc5m_markout/price_discovery/full_pd_4_clock_info_shares.png) |
 
-| *Figure 40. Permanent impact $\alpha_\infty$, daily mean of cycles.* | *Figure 41. Information share of trades, daily mean.* |
+| *Figure 46. Permanent impact $\alpha_\infty$, daily mean of cycles.* | *Figure 47. Information share of trades, daily mean.* |
 |:--:|:--:|
 | ![alpha by day](./assets/btc5m_markout/price_discovery/full_pd_5a_alpha_by_day.png) | ![share by day](./assets/btc5m_markout/price_discovery/full_pd_5b_share_by_day.png) |
 
@@ -689,7 +871,124 @@ The last three columns are clock-time information shares, min–max over the six
 - A trade surprise moves the Up mid by about **0.3¢ for good**, over 20–40 events. The immediate change is close to 0, because in this event definition the quote reacts at the following events. The full impact is about twice the impact after 10 events, the delayed adjustment of [H 1991] Figure 1.
 - **Trades carry only about 10–15% of the information** in the Up price. Most of it enters through the quotes themselves, and in clock time 8–22% of the variation is traced to BTC spot.
 - This fits 8.3. Polymarket quotes follow Binance with a delay, and fast takers hit the stale quotes. As 5.5 warns, part of what the event-time VAR counts as trade information is public news (the Binance move) that reaches the price through those trades.
-- The daily series (Figures 40–41) has a gap from mid-June to mid-July (no pmxt data). The information share of trades falls to about 0.05 in the first days of August, before the switch to TWAP.
+- The daily series (Figures 46–47) has a gap from mid-June to mid-July (no pmxt data). The information share of trades falls to about 0.05 in the first days of August, before the switch to TWAP.
+
+**How to read Figures 42–47** (with the definitions of 5.6):
+
+- Figure 42 is $\alpha_\Delta$ of (6): the cumulative change of the Up mid after one unit of trade surprise, in events. Where it flattens is the permanent impact $\alpha_\infty$. "Pooled" fits one VAR to all cycles; "mean of cycles" averages one VAR per cycle.
+- Figure 43 is the histogram over cycles of $IS_{\text{trade}}$, the share of the efficient-price variance that comes from trade surprises. Most of the mass is near 0: in most cycles trades add little information beyond the quotes.
+- Figures 44–45 are the clock-time VAR in 1-second bins. A 1-second bin contains the Binance move, the trades and the quote update together, so which comes "first" is an assumption (the Cholesky ordering), and the six orderings give wide bounds (BTC 0.08–0.22, quotes 0.73–0.90). Section 9.4 removes most of this ambiguity with 100 ms bins.
+
+### 9.4 Four channels into the Up price
+
+The question of the 10-27 meeting: when the Up price goes from 0.5 to 1, which part came from traders bringing Binance news, which part from traders' own information, which part from market makers repricing after Binance without any trade, and which part from nothing we can see?
+
+**Setup.**
+
+- **Binance fair value.** $F_t = 100\,\Phi\bigl(\ln(S_t/K)/(\sigma\sqrt{\tau_t})\bigr)$ cents, the Up price if BTC were a driftless random walk and Binance were the only source of news. $S_t$ is the last Binance BTCUSDT trade (aggTrades, millisecond timestamps), $K$ the last Binance price at the open (a proxy for the Chainlink open price), $\sigma$ the standard deviation of 1-second log returns in the 30 minutes before the open, and $\tau_t$ the seconds left (floor 0.5 s).
+- **Series**, in 100 ms bins inside the window: $\Delta F_b$, the signed taker flow $x_b$ (thousands of Up-equivalent shares, trades moved back 180 ms as in 6.1), and the Up mid change $\Delta M_b$ (cents).
+- **Model.** A recursive VECM: each variable is regressed on a constant, the same-bin values of the variables before it in the order $F \to x \to M$, 10 lags (1 s) of all three, and the gap $z_{b-1} = M_{b-1} - F_{b-1}$ (the error-correction term: $M$ and $F$ both end at the outcome). The residuals are three uncorrelated **structural shocks**: Binance news $e^F$, flow not explained by Binance or the past $e^x$, and quote moves not explained by Binance, flow or the past $e^M$.
+- **Exact decomposition.** Run the fitted model forward with only one kind of shock switched on (the historical decomposition of a VAR). By linearity, every cycle's path splits exactly (to $10^{-12}$¢) into five parts:
+
+| Part | What it is | Meeting label |
+|---|---|---|
+| Binance via quotes | $e^F$ with the flow response shut off: market makers reprice after Binance without a trade | (c) |
+| Binance via trades | $e^F$ through the flow it triggers: takers carry Binance news to stale quotes | (b) |
+| Flow shocks | $e^x$: trades that Binance and the past do not explain | (a) private information, plus noise |
+| Quote shocks | $e^M$: quote moves that Binance, trades and the past do not explain | (d), including market makers trading on other markets |
+| Opening gap | constants and the gap at the open | |
+
+- **Shares.** For intervals of length $L$, $\text{share}_j = \sum \text{part}_j \cdot \text{total} / \sum \text{total}^2$ over all intervals and cycles. The shares sum to 1. A part that moves against the total has a negative share.
+- **Sample.** The pre-TWAP week 2026-07-31 to 08-06 (2,015 cycles; Binance aggTrades are on Sherlock from 07-30). Robustness: 1-second bins with 1 s Binance klines over 2026-04-14 to 08-06 (25,564 cycles). Script: `scripts/btc5m/price_formation.py`.
+
+**Results.** Shares of the Up mid's moves:
+
+| Interval $L$ | Binance via quotes (c) | Binance via trades (b) | Flow shocks (a) | Quote shocks (d) | Opening gap |
+|---|---|---|---|---|---|
+| 1 s | 0.28 | 0.01 | 0.01 | 0.71 | 0.00 |
+| 10 s | 0.39 | 0.01 | 0.01 | 0.59 | 0.00 |
+| 60 s | 0.52 | 0.02 | 0.02 | 0.44 | 0.00 |
+| Whole window | 0.59 | 0.02 | 0.04 | 0.36 | 0.00 |
+| *1 s bins, 04-14 to 08-06: 10 s / 60 s / whole window* | *0.42 / 0.58 / 0.67* | *0.01 / 0.01 / 0.01* | *0.03 / 0.02 / 0.00* | *0.55 / 0.39 / 0.32* | |
+
+- The order $x \to F \to M$ gives the same shares to the second decimal: within 100 ms, trades and Binance do not move together, so the ordering no longer matters (unlike the 1-second VAR of 9.1). Estimating without the last 10 s of each window changes the whole-window shares by at most 0.05.
+
+Impulse responses to one-standard-deviation shocks (cents; week sample):
+
+| Shock | Up mid after 0.5 s / 1 s / 10 s / 60 s | Binance fair value after 1 s / 10 s / 60 s |
+|---|---|---|
+| Binance news (+0.67¢ in $F$) | 0.35 / 0.48 / 0.52 / 0.53 | 0.83 / 0.81 / 0.66 |
+| … with the trade channel shut off | 0.35 / 0.47 / 0.51 / 0.51 | 0.83 / 0.81 / 0.65 |
+| Flow (86 shares) | 0.07 / 0.09 / 0.09 / 0.09 | 0.01 / 0.02 / 0.06 |
+| Quote (+0.68¢ in $M$) | 0.70 / 0.71 / 0.72 / 0.70 | 0.06 / 0.15 / 0.44 |
+
+| *Figure 48. Shares of the Up mid's moves by channel, by interval length.* | *Figure 49. Impulse responses of the Up mid, and of $F$, to one-sd shocks.* |
+|:--:|:--:|
+| ![Shares](./assets/btc5m_markout/formation/form_1_shares_M_week.png) | ![IRF](./assets/btc5m_markout/formation/form_3_irf_week.png) |
+
+| *Figure 50. One cycle (`btc-updown-5m-1785629400`, Up won): the Up mid split by channel.* | *Figure 51. Shares of the Binance fair value's moves: the part Polymarket anticipated.* |
+|:--:|:--:|
+| ![Example](./assets/btc5m_markout/formation/form_2_example_1785629400_week.png) | ![F shares](./assets/btc5m_markout/formation/form_4_shares_F_week.png) |
+
+**Reading.**
+
+- **Binance news enters the Up price through the quotes, not through trades.** After a Binance move the Up mid follows within half a second, and shutting off the trade channel changes almost nothing (0.51¢ instead of 0.53¢ after 60 s). Takers carrying Binance news to stale quotes, the sniping of 8.3, account for only 1–2% of the price's movement. Sniping is where money changes hands, not where the price is formed.
+- **Traders' own information is small:** flow shocks explain 1–4%. The event-time information share of trades in 9.2 (0.08–0.15) is an upper bound, as 5.5 warns: that VAR has no Binance, so it credits the trades with Binance news.
+- **The quotes themselves lead Binance.** A quote shock is permanent (0.70¢ after 60 s), and the Binance fair value follows it: 0.15¢ after 10 s, 0.44¢ after 60 s. Polymarket quote shocks explain 13% of $F$'s moves over 60 s and 20% over a whole window (Figure 51). So the market makers have information that Binance spot does not have yet: faster venues such as BTC perpetual futures, and the Chainlink reference that decides the outcome. Two signs of the latter: $F$ ends on the wrong side of the outcome in 4.6% of cycles, the Up mid in only 0.9%. This is the fourth channel of the meeting, market makers moving on other markets; with Binance spot as the only outside price it shows up inside (d).
+- **Binance moves are passed through only partly.** After a Binance shock the Up mid moves about 0.6 of the change in $F$, and $F$ itself gives back about a fifth of its move within a minute. The short-run Binance moves are partly noise, and the market makers do not follow them fully.
+- **Caveats.** $F$ is a proxy: Binance, not Chainlink; $K$ is the Binance open; $\sigma$ comes from the half hour before. Near the close $F$ is very sensitive to $S$, so in single cycles the Binance and quote parts can be large and offsetting (Figure 50); the shares over 1–60 s are the robust numbers. One week of millisecond data; the full sample uses 1-second bins.
+
+### 9.5 Price discovery with the wallet separated: own information and public information by origin
+
+Section 8.3 split the price impact of the wallet's trades. Here the object is **price discovery** (5.6): of all the moves of the Up price, how much is the wallet's own information, how much is public information, and does that public information come from Binance or from Polymarket?
+
+- **Model.** As in 9.4, with the taker flow split by who trades: $x^w$ the wallet's trades (matched by transaction hash), $x^o$ all other takers. Four series $(\Delta F, x^w, x^o, \Delta M)$, order $F \to x^w \to x^o \to M$, 10 lags of 100 ms, gap term. Four structural shocks:
+  - $e^F$: **public information from Binance**;
+  - $e^{x^w}$: the wallet's trades that Binance and the past do not explain, its **own information**;
+  - $e^{x^o}$: the same for all other takers;
+  - $e^M$: quote moves that Binance, all trades and the past do not explain, **public information that originates in Polymarket** (market makers' own sources).
+- **Exact decomposition** of every cycle's path (error below $10^{-12}$¢). Binance news is further split by the channel it takes into the Up price: quotes alone (both flows shut off), the wallet's trades (only the other takers' flow shut off, minus quotes alone), and other takers' trades (the rest).
+- Sample: 2026-07-31 to 08-06, 2,015 cycles, 34,866 wallet trades (100 ms bins, Binance aggTrades). Rows in italics: 2026-04-14 to 08-06, 25,564 cycles, 423,666 wallet trades, 1-second bins with 1 s Binance klines and 5 lags. Script: `scripts/btc5m/price_discovery_wallet.py`.
+
+Shares of the **Up mid's** moves:
+
+| Interval | Binance → quotes | Binance → wallet's trades | Binance → other trades | **Public from Binance** | Wallet's own | Others' own | **Public from Polymarket** |
+|---|---|---|---|---|---|---|---|
+| 1 s | 0.261 | 0.015 | 0.005 | **0.281** | 0.009 | 0.007 | **0.703** |
+| 10 s | 0.365 | 0.022 | 0.010 | **0.397** | 0.007 | 0.013 | **0.583** |
+| 60 s | 0.496 | 0.026 | 0.015 | **0.537** | 0.005 | 0.020 | **0.438** |
+| Whole window | 0.567 | 0.023 | 0.018 | **0.608** | −0.006 | 0.033 | **0.363** |
+| *1 s bins, 04-14 to 08-06: 10 s* | *0.381* | *0.040* | *0.008* | ***0.429*** | *0.027* | *0.023* | ***0.521*** |
+| *1 s bins: 60 s* | *0.533* | *0.049* | *0.010* | ***0.592*** | *0.018* | *0.017* | ***0.373*** |
+| *1 s bins: whole window* | *0.624* | *0.046* | *0.012* | ***0.682*** | *−0.005* | *−0.000* | ***0.323*** |
+
+Shares of the **Binance fair value's** moves (who was ahead of Binance):
+
+| Interval | Binance itself | Through trades' feedback | Wallet's own | Others' own | Polymarket quotes |
+|---|---|---|---|---|---|
+| 10 s | 0.942 | 0.011 | 0.002 | 0.000 | 0.044 |
+| 60 s | 0.848 | 0.017 | 0.004 | 0.001 | 0.127 |
+| Whole window | 0.754 | 0.029 | 0.002 | 0.006 | 0.193 |
+| *1 s bins: 60 s* | *0.855* | *0.028* | *0.010* | *0.002* | *0.104* |
+| *1 s bins: whole window* | *0.812* | *0.042* | *0.001* | *−0.003* | *0.140* |
+
+Each row sums to 1 together with the opening gap (at most 0.015).
+
+Responses to one shock, per 1,000 shares of flow (cents; 60 s after the shock):
+
+| Shock | Up mid | Binance fair value | Binance / Up mid |
+|---|---|---|---|
+| Wallet's own flow | 18.4 | 13.0 | 0.70 |
+| Other takers' flow | 1.0 | 0.6 | 0.62 |
+| *1 s bins: wallet's own flow* | *58.8* | *43.2* | *0.74* |
+| *1 s bins: other takers' flow* | *0.79* | *0.41* | *0.52* |
+
+**Reading.**
+
+- **Public information from Binance** is the largest source over a minute or more (54–61%), and almost all of it enters through quotes. The wallet carries a little of it (1.5–2.6% of the Up price's moves in the week, 4–5% over the four months), more than all other takers together (0.5–1.8%, and about 1%) with 1% of the trades.
+- **Public information that originates in Polymarket** is the other large source (36–70%, larger at short intervals). Part of it is ahead of Binance: Polymarket quote shocks explain 13% of the Binance fair value's moves over 60 s and 19% over a window. The market makers watch sources faster than Binance spot.
+- **The wallet's own information is small for the price as a whole** (under 1% of the Up price's moves): it trades rarely. **Per share it is the most informative flow in the market:** 1,000 shares of its unexplained flow move the Up mid by 18¢, 18 times more than other takers' flow, and 70% of that move shows up in Binance within a minute (with 1-second bins over four months: about 75 times, and 74%). Over the four months its own information is 1.8–3.7% of the Up price's moves at 1–60 s, about as much as all other takers together, and nothing over a whole window: its information is about the next seconds, not the outcome. This is the right side of Figure 34, seen in the whole price process.
+- So the three layers of the meeting: (1) the wallet's own information, large per trade but small in total; (2) public information from Binance, mostly priced by the market makers' quotes, partly carried by takers, the wallet most of all; (3) public information from Polymarket's own quotes, a large part of short-run price moves and partly ahead of Binance.
 
 ## References
 
@@ -697,4 +996,8 @@ The last three columns are clock-time information shares, min–max over the six
 - **[G 1994]** Glosten, L. R. (1994). Is the electronic open limit order book inevitable? *The Journal of Finance* 49(4), 1127–1161. [Wiley](https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1994.tb02450.x)
 - **[BCS 2015]** Budish, E., Cramton, P. and Shim, J. (2015). The high-frequency trading arms race: Frequent batch auctions as a market design response. *The Quarterly Journal of Economics* 130(4), 1547–1621. [Oxford Academic](https://academic.oup.com/qje/article/130/4/1547/1916146)
 - **[H 1991]** Hasbrouck, J. (1991). Measuring the information content of stock trades. *The Journal of Finance* 46(1), 179–207. [Wiley](https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1991.tb03749.x)
+- Hasbrouck, J. (1991b). The summary informativeness of stock trades: an econometric analysis. *The Review of Financial Studies* 4(3), 571–595.
+- Hasbrouck, J. (1995). One security, many markets: determining the contributions to price discovery. *The Journal of Finance* 50(4), 1175–1199.
+- Jordà, Ò. (2005). Estimation and inference of impulse responses by local projections. *American Economic Review* 95(1), 161–182.
+- Plagborg-Møller, M. and Wolf, C. K. (2021). Local projections and VARs estimate the same impulse responses. *Econometrica* 89(2), 955–980.
 - Kyle, A. S. (1985). Continuous auctions and insider trading. *Econometrica* 53(6), 1315–1335. [JSTOR](https://www.jstor.org/stable/1913210)
