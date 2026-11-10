@@ -86,4 +86,9 @@ The wallet that earned the most in a sample was partly lucky, so picking the top
 2. on one half, pick the top 50 takers by settlement PnL, $\sum \text{direction} \times (V - \text{price}) \times \text{shares}$;
 3. score them on the other half; swap the halves and pool.
 
-If they are still good on the half they were not picked on, the group has a persistent edge. The figure comparing in-sample and out-of-sample PnL by league, and splitting the out-of-sample PnL by timing (pre-game, within 30 seconds after a score, other in-game), will be added here.
+If they are still good on the half they were not picked on, the group has a persistent edge. Six leagues: NFL, college football, NBA, WNBA, MLB, NHL.
+
+![Cross-fitting the top 50 takers, and where their edge comes from](./assets/price_discovery/crossfit.png)
+
+- **Panel A.** In-sample the top 50 earn +5.8 to +10.3¢ per share in every league. On the other half they earn −0.6 to +2.8¢: most of the in-sample number is selection on luck. What survives is positive in NFL (+2.8¢), college football (+2.4¢), MLB (+1.9¢) and WNBA (+0.6¢), and about zero or negative in NBA and NHL.
+- **Panel B.** Out of sample, trades in the 30 seconds after an ESPN-timestamped score earn in all six leagues (+2.3 to +5.7¢), and that is the largest of the three in NBA, WNBA, MLB and NHL; pre-game trades lose there. Football is the exception: the same wallets also earn pre-game (NFL +3.3¢, college football +7.6¢). So the edge is mostly speed on public news, except in football, where there is also a pre-game edge.
